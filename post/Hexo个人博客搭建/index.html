@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Hexo个人博客搭建 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://github.com/wbupt/wbupt.github.io/favicon.ico?v=1678798656240">
+<link rel="stylesheet" href="https://github.com/wbupt/wbupt.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+title: Hexo个人博客搭建
+
+
+
+安装nodejs、git
+
+
+在文件夹中右击 Git Bash Here
+
+
+使用npm命令安装Hexo，输入：
+npm install -g hexo-cli
+hexo init
+hexo ne..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://github.com/wbupt/wbupt.github.io">
+        <img src="https://github.com/wbupt/wbupt.github.io/images/avatar.png?v=1678798656240" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://github.com/wbupt/wbupt.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Hexo个人博客搭建</h2>
+            <div class="post-date">2023-03-14</div>
+            
+            <div class="post-content" v-pre>
+              <hr>
+<p>title: Hexo个人博客搭建</p>
+<hr>
+<ol>
+<li>
+<p>安装nodejs、git</p>
+</li>
+<li>
+<p>在文件夹中右击 <code>Git Bash Here</code></p>
+</li>
+<li>
+<p>使用npm命令安装Hexo，输入：</p>
+<pre><code class="language-python">npm install -g hexo-cli
+hexo init
+hexo new 我的新博客
+hexo g #生成
+hexo s #启动服务预览
+hexo d #部署
+# 打开浏览器输入地址
+localhost:4000
+hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令
+</code></pre>
+</li>
+<li>
+<p>配置网站</p>
+</li>
+</ol>
+<p>进入根目录里的themes文件夹，里面也有个<code>_config.yml</code>文件</p>
+<pre><code class="language-python">deploy:
+  type: git
+  repo: git@github.com:仓库名/仓库名.github.io.git
+  branch: main 
+</code></pre>
+<ul>
+<li>安装Git部署插件</li>
+</ul>
+<pre><code class="language-python">npm install hexo-deployer-git --save # 安装上传文件
+hexo clean 
+hexo g 
+hexo d
+</code></pre>
+<pre><code class="language-python">ssh-keygen -t rsa -f  ~/.ssh/wbupt -C &quot;2934785957@qq.com&quot;
+ssh -T [2934785957@qq.com protected]
+ssh -T git@wbupt.github.com #新的ssh_key验证
+
+
+</code></pre>
+<p>(git新设置）分别进入两个Hexo博客.git目录下执行以下命令单独设置用户名/邮箱</p>
+<pre><code class="language-python">git config user.name &quot;beiyoudaxue&quot;
+git config user.email &quot;wxyfyz@163.com&quot;
+git config user.name &quot;wbupt&quot;
+git config user.email &quot;2934785957@qq.com&quot;
+</code></pre>
+<ol>
+<li></li>
+<li></li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://github.com/wbupt/wbupt.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

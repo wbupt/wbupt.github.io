@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Typora相关知识 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://github.com/wbupt/wbupt.github.io/favicon.ico?v=1678798656240">
+<link rel="stylesheet" href="https://github.com/wbupt/wbupt.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Typora更新问题
+2022.7.16 更新
+今天又不行了，只能安装一个老版本试试4：下载地址【提取密码：c1se】
+2022.7.24 更新
+经网友评论提醒，又提供了一个新方案。
+方案四：修改 Typora 相应注册表的权限56 (详细..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://github.com/wbupt/wbupt.github.io">
+        <img src="https://github.com/wbupt/wbupt.github.io/images/avatar.png?v=1678798656240" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://github.com/wbupt/wbupt.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Typora相关知识</h2>
+            <div class="post-date">2023-03-14</div>
+            
+            <div class="post-content" v-pre>
+              <p><a href="https://blog.csdn.net/yyywxk/article/details/125133205">Typora更新问题</a></p>
+<h1 id="2022716-更新">2022.7.16 更新</h1>
+<p>今天又不行了，只能安装一个老版本试试<a href="https://blog.csdn.net/yyywxk/article/details/125133205#fn4">4</a>：<a href="https://pan.baidu.com/s/1DE1onEjoGYyGDUnXHI8BvQ?pwd=c1se">下载地址【提取密码：c1se】</a></p>
+<p>2022.7.24 更新<br>
+经网友评论提醒，又提供了一个新方案。</p>
+<p>方案四：修改 Typora 相应注册表的权限56 (详细步骤见参考博文，作为旧版本失效后的一种补充)：<br>
+打开注册表：按Windows+R打开运行窗口，输入 regedit。<br>
+进入路径计算机\HKEY_CURRENT_USER\SOFTWARE\Typora。<br>
+在右键菜单选择权限，把各个用户的权限全部设置为 拒绝。<br>
+————————————————<br>
+版权声明：本文为CSDN博主「yyywxk」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/yyywxk/article/details/125133205</p>
+<h2 id="typora-plugin-bilibili">typora-plugin-bilibili</h2>
+<p>哔哩哔哩图片上传, Typora插件，实现图片粘贴即可上传到哔哩哔哩，并替换链接</p>
+<h3 id="重要提示">重要提示</h3>
+<p><strong>由于B站相簿的上传API自身出现问题，现在切换到动态的图片API，因此需要多加一个参数csrf(为Cookie里面的bili_jct)</strong></p>
+<p>示例</p>
+<pre><code>插件客户端路径 token=0829d25Cdd19b*b1 csrf=cb397c0fbf619237
+</code></pre>
+<h3 id="用go重写产物缩小5倍体积点击下载即可">用Go重写，产物缩小5倍体积，点击下载即可</h3>
+<h1 id="b站图床-短链firefox-chrome-edge">B站图床、短链(Firefox、Chrome、Edge)</h1>
+<p>哔哩哔哩图床插件，速度快,多种图片压缩格式选择，自动读取Bilibili的Cookie，不再需要手动输入。 基于<a href="https://github.com/xlzy520/vitesse-webext">vitesse-webext</a> 重构</p>
+<h3 id="在线安装">在线安装</h3>
+<p><a href="https://chrome.google.com/webstore/detail/b%E7%AB%99%E5%9B%BE%E5%BA%8A/domljbndjbjgpkhdbmfgmiclggdfojnd?hl=zh-CN">Chrome、Edge</a></p>
+<p><a href="https://addons.mozilla.org/addon/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%9B%BE%E5%BA%8A/">Firefox</a></p>
+<h3 id="本地安装">本地安装</h3>
+<p><a href="https://jiali0126.oss-cn-shenzhen.aliyuncs.com/share/extension.zip">下载</a></p>
+<h3 id="安装步骤">安装步骤</h3>
+<ol>
+<li>进入<code>拓展程序</code>,可以通过地址栏输入<code>chrome://extensions/</code>，也可以从 <code>更多工具</code>-&gt;<code>拓展程序</code>进入</li>
+<li>右上角开启<code>开发者模式</code></li>
+<li>左侧点击 <code>加载已解压的拓展程序</code>,然后选择上面下载好的压缩包解压后的文件夹即可。</li>
+</ol>
+<h3 id="本地开发支持热更新">本地开发(支持热更新)</h3>
+<ol>
+<li>执行<code>npm i</code>或者<code>pnpm i</code>, 执行<code>npm run dev</code>或<code>pnpm run dev</code></li>
+<li>上一步(安装步骤)将文件夹选择为<code>extension</code>文件夹</li>
+</ol>
+<h3 id="构建">构建</h3>
+<p>执行<code>npm run build</code>或<code>pnpm run build</code></p>
+<h3 id="截屏">截屏</h3>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://github.com/wbupt/wbupt.github.io/post/hello_world/">
+                  <h3 class="post-title">
+                    hello_world
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

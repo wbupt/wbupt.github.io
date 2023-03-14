@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/wbupt/wbupt.github.io</id>
+    <title>Gridea</title>
+    <updated>2023-03-14T12:57:44.285Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://github.com/wbupt/wbupt.github.io"/>
+    <link rel="self" href="https://github.com/wbupt/wbupt.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://github.com/wbupt/wbupt.github.io/images/avatar.png</logo>
+    <icon>https://github.com/wbupt/wbupt.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Typora相关知识]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/Typora相关知识/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/Typora相关知识/">
+        </link>
+        <updated>2023-03-14T02:51:40.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/yyywxk/article/details/125133205">Typora更新问题</a></p>
+<h1 id="2022716-更新">2022.7.16 更新</h1>
+<p>今天又不行了，只能安装一个老版本试试<a href="https://blog.csdn.net/yyywxk/article/details/125133205#fn4">4</a>：<a href="https://pan.baidu.com/s/1DE1onEjoGYyGDUnXHI8BvQ?pwd=c1se">下载地址【提取密码：c1se】</a></p>
+<p>2022.7.24 更新<br>
+经网友评论提醒，又提供了一个新方案。</p>
+<p>方案四：修改 Typora 相应注册表的权限56 (详细步骤见参考博文，作为旧版本失效后的一种补充)：<br>
+打开注册表：按Windows+R打开运行窗口，输入 regedit。<br>
+进入路径计算机\HKEY_CURRENT_USER\SOFTWARE\Typora。<br>
+在右键菜单选择权限，把各个用户的权限全部设置为 拒绝。<br>
+————————————————<br>
+版权声明：本文为CSDN博主「yyywxk」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/yyywxk/article/details/125133205</p>
+<h2 id="typora-plugin-bilibili">typora-plugin-bilibili</h2>
+<p>哔哩哔哩图片上传, Typora插件，实现图片粘贴即可上传到哔哩哔哩，并替换链接</p>
+<h3 id="重要提示">重要提示</h3>
+<p><strong>由于B站相簿的上传API自身出现问题，现在切换到动态的图片API，因此需要多加一个参数csrf(为Cookie里面的bili_jct)</strong></p>
+<p>示例</p>
+<pre><code>插件客户端路径 token=0829d25Cdd19b*b1 csrf=cb397c0fbf619237
+</code></pre>
+<h3 id="用go重写产物缩小5倍体积点击下载即可">用Go重写，产物缩小5倍体积，点击下载即可</h3>
+<h1 id="b站图床-短链firefox-chrome-edge">B站图床、短链(Firefox、Chrome、Edge)</h1>
+<p>哔哩哔哩图床插件，速度快,多种图片压缩格式选择，自动读取Bilibili的Cookie，不再需要手动输入。 基于<a href="https://github.com/xlzy520/vitesse-webext">vitesse-webext</a> 重构</p>
+<h3 id="在线安装">在线安装</h3>
+<p><a href="https://chrome.google.com/webstore/detail/b%E7%AB%99%E5%9B%BE%E5%BA%8A/domljbndjbjgpkhdbmfgmiclggdfojnd?hl=zh-CN">Chrome、Edge</a></p>
+<p><a href="https://addons.mozilla.org/addon/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%9B%BE%E5%BA%8A/">Firefox</a></p>
+<h3 id="本地安装">本地安装</h3>
+<p><a href="https://jiali0126.oss-cn-shenzhen.aliyuncs.com/share/extension.zip">下载</a></p>
+<h3 id="安装步骤">安装步骤</h3>
+<ol>
+<li>进入<code>拓展程序</code>,可以通过地址栏输入<code>chrome://extensions/</code>，也可以从 <code>更多工具</code>-&gt;<code>拓展程序</code>进入</li>
+<li>右上角开启<code>开发者模式</code></li>
+<li>左侧点击 <code>加载已解压的拓展程序</code>,然后选择上面下载好的压缩包解压后的文件夹即可。</li>
+</ol>
+<h3 id="本地开发支持热更新">本地开发(支持热更新)</h3>
+<ol>
+<li>执行<code>npm i</code>或者<code>pnpm i</code>, 执行<code>npm run dev</code>或<code>pnpm run dev</code></li>
+<li>上一步(安装步骤)将文件夹选择为<code>extension</code>文件夹</li>
+</ol>
+<h3 id="构建">构建</h3>
+<p>执行<code>npm run build</code>或<code>pnpm run build</code></p>
+<h3 id="截屏">截屏</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[hello_world]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/hello_world/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/hello_world/">
+        </link>
+        <updated>2023-03-14T02:51:40.000Z</updated>
+        <content type="html"><![CDATA[<p>world</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[案例文本]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/案例文本 - 副本/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/案例文本 - 副本/">
+        </link>
+        <updated>2023-03-14T02:51:40.000Z</updated>
+        <content type="html"><![CDATA[<p>复制即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[案例文本]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/案例文本/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/案例文本/">
+        </link>
+        <updated>2023-03-14T02:51:40.000Z</updated>
+        <content type="html"><![CDATA[<p>复制即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea + Github 搭建个人博客]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/Gridea + Github 搭建个人博客/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/Gridea + Github 搭建个人博客/">
+        </link>
+        <updated>2023-03-14T02:35:23.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="gridea-github-pages-快速-易上手但是不稳定的博客">Gridea + Github Pages 快速、易上手，但是不稳定的博客</h2>
+<p><code>配置详情</code></p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314164115130.png" alt="image-20230314164115130" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[这个是国家]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/这个是国家/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/这个是国家/">
+        </link>
+        <updated>2023-03-14T02:35:23.000Z</updated>
+        <content type="html"><![CDATA[<p>2</p>
+<p>er</p>
+<p>这个是国家</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[hello]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/hello/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/hello/">
+        </link>
+        <updated>2023-03-14T02:30:20.000Z</updated>
+        <summary type="html"><![CDATA[<p><code>标题1</code></p>
+<p>😒<img src="/post-images/1678761046217.ico" alt="" loading="lazy"><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><code>标题1</code></p>
+<p>😒<img src="https://github.com/wbupt/wbupt.github.io/post-images/1678761046217.ico" alt="" loading="lazy"><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></p>
+<!-- more -->
+<p>hello world</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pytorch实践学习]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/Pytorch实践学习/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/Pytorch实践学习/">
+        </link>
+        <updated>2023-03-14T02:22:34.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="p-1-overview">P 1 Overview</h2>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306161838698.png" alt="image-20230306161838698" loading="lazy"></figure>
+<p>链式法则</p>
+<p>Deep learning is not too difficult</p>
+<p>basic algebra probability python</p>
+<p>There are lots of deep learning framework</p>
+<ul>
+<li>starting from scratch do not be required</li>
+<li>enabled efficient and convient use of GPU</li>
+<li>lots of components of neural networks provided by framewokd</li>
+</ul>
+<p>Popular deep learning frameworks</p>
+<ul>
+<li>theano</li>
+<li>Caffe</li>
+<li>Torch / Pytorch.</li>
+</ul>
+<p>Dynamical graph</p>
+<p>More flexible</p>
+<p>easy to debug</p>
+<p>intuitive and cleaner code</p>
+<p>More neural netoworkic</p>
+<h2 id="2-线性模型">2 线性模型</h2>
+<ol>
+<li>DataSet</li>
+<li>Mode</li>
+<li>Training</li>
+</ol>
+<p>training数据：平时练习题；</p>
+<p>validating数据：诊断；</p>
+<p>test数据：考试题</p>
+<p>overfit 过拟合	泛化</p>
+<p>What would be the best model for the data?</p>
+<p>Linear model?</p>
+<p>Training Loss (Error)</p>
+<p>损失函数</p>
+<p>mean sqrt error</p>
+<p>###Mean Square Error（均方误差）</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306164815661.png" alt="image-20230306164815661" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306164833614.png" alt="image-20230306164833614" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306170357312.png" alt="image-20230306170357312" loading="lazy"></figure>
+<h2 id="03-梯度下降算法">03 梯度下降算法</h2>
+<figure data-type="image" tabindex="5"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306171118394.png" alt="image-20230306171118394" loading="lazy"></figure>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mo>(</mo><msub><mover accent="true"><mi>y</mi><mo>^</mo></mover><mi>n</mi></msub><mo>−</mo><msub><mi>y</mi><mi>n</mi></msub><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">cost(\omega)=\dfrac{1}{N}\sum_{n=1}^N(\hat y_n-y_n)^2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0954490000000003em;vertical-align:-1.267113em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li>注意：只能实现算法的局部最优</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230307165249276.png" alt="image-20230307165249276" loading="lazy"></figure>
+<p>鞍点：梯度为0的点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></p>
+<p>Do the update</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mi>ω</mi><mo>−</mo><mi>α</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ω</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\omega=\omega-\alpha\dfrac{\partial{cost}}{\partial\omega}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord"><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>公式更新$$a+b$$公式</p>
+<p>Update weight by every grad of sample of train_set.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>=</mo><mi>w</mi><mo>−</mo><mi>a</mi><mi>w</mi><mi mathvariant="normal">/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">w=w-a{w}/{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span><span class="mord">/</span><span class="mord"><span class="mord">3</span></span></span></span></span>接口</p>
+<h2 id="04-反向传播">04 反向传播</h2>
+<p>Linear Model <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>y</mi><mo>^</mo></mover><mo>=</mo><mi>x</mi><mo>∗</mo><mi>ω</mi></mrow><annotation encoding="application/x-tex">\hat{y}=x*\omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span></span></span></span></p>
+<p>Stochastic Gradient Descent <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mi>ω</mi><mo>−</mo><mi>α</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ω</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\omega=\omega-\alpha\dfrac{\partial loss}{\partial\omega}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<img src="../../../AppData/Roaming/Typora/typora-user-images/image-20230307173428700.png" alt="image-20230307173428700" style="zoom:50%;" />
+<p>In PyTorch, Tensor is the important component in constructing dynamic computational graph.</p>
+<p>It contains data and grad, which storage the value of node and gradient w.r.t loss respectively.</p>
+<p>1<div class="class1 class2"></p>
+<pre><code>.box {
+  word-wrap: break-word; /* 允许单词内换行 */
+  overflow-wrap: break-word; /* 允许单词内换行 */
+}
+</code></pre>
+<p>qnjugs</p>
+<pre><code>letter-spacing: 0px; /* 文字间水平距离 */
+line-height: 25px; /* 文字间垂直距离 */
+</code></pre>
+<p>t1=clock;</p>
+<p>t2=clock;tc(t2,t1);</p>
+<h2 id="p6-逻辑斯蒂回归-logistic-regression-分类问题">P6 逻辑斯蒂回归 Logistic Regression--分类问题</h2>
+<figure data-type="image" tabindex="7"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310104957472.png" alt="image-20230310104957472" loading="lazy"></figure>
+<p><strong>In classification, the output of model is the probability of input belongs to the exact clss.</strong></p>
+<p>Logistic function: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sigma(x)=\dfrac{1}{1+e^{-x}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>在[-00, +00]区间的函数关系</p>
+<figure data-type="image" tabindex="8"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310105326421.png" alt="image-20230310105326421" loading="lazy"></figure>
+<p>Logistic function</p>
+<pre><code class="language-matlab">ix = 1;
+wave = -10:0.1:10
+for x = wave(ix)
+    y(ix) = 1 / (1 + exp(1)^(-x) );
+    ix = ix + 1;
+end
+
+plot(wave,y,'b', 'LineWidth',.5);hold on;
+colorbar;axis equal;hold on;colormap jet;
+set(gca,'FontSize',30,'FontName','Times New Roman', 'LineWidth',1.5);
+</code></pre>
+<img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310110316830.png" alt="image-20230310110316830" style="zoom: 50%;" />
+<figure data-type="image" tabindex="9"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111136283.png" alt="image-20230310111136283" loading="lazy"></figure>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mo>=</mo><mo>−</mo><mo>(</mo><mi>y</mi><mi>log</mi><mo>⁡</mo><mover accent="true"><mi>y</mi><mo>^</mo></mover><mo>+</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>y</mi><mo>)</mo><mi>log</mi><mo>⁡</mo><mo>(</mo><mn>1</mn><mo>−</mo><mover accent="true"><mi>y</mi><mo>^</mo></mover><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">loss=-(y\log\hat y+(1-y)\log(1-\hat y))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<figure data-type="image" tabindex="10"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111303257.png" alt="image-20230310111303257" loading="lazy"></figure>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>y</mi><mi>n</mi></msub><mi>log</mi><mo>⁡</mo><msub><mover accent="true"><mi>y</mi><mo>^</mo></mover><mi>n</mi></msub><mo>+</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>y</mi><mi>n</mi></msub><mo>)</mo><mi>log</mi><mo>⁡</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mover accent="true"><mi>y</mi><mo>^</mo></mover><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">loss=-\dfrac{1}{N}\sum_{n=1}^N y_n\log\hat y_n+(1-y_n)\log(1-\hat y_n)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0954490000000003em;vertical-align:-1.267113em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<pre><code>criterion = torch.nn.BCELoss(size_average=False)
+</code></pre>
+<ol>
+<li><strong>Prepare Dataset</strong> - we shall talk about this later</li>
+<li><strong>Design model using Class</strong> - inherit from nn.Module</li>
+<li><strong>Construct loss and optimizer</strong> - using PyTorch API</li>
+<li><strong>Training Cycle</strong> - Forward, backward, update</li>
+</ol>
+<pre><code>import torch
+import torch.nn.functional as F
+import numpy as np
+import matplotlib.pyplot as plt
+# Prepare dataset
+x_data = torch.Tensor([[1.0], [2.0], [3.0]])
+y_data = torch.Tensor([[0], [0], [1]])
+# Design model using Class
+class LogisticRegressionModel(torch.nn.Module):
+    def __init__(self):
+        super(LogisticRegressionModel, self).__init__()
+        self.linear = torch.nn.Linear(1, 1)
+
+    def forward(self, x):
+        y_pred = F.sigmoid(self.linear(x))
+        return y_pred
+model = LogisticRegressionModel()
+
+# Construct loss and optimizer using PyTorch API
+criterion = torch.nn.BCELoss(size_average=False)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+# Training cycle
+for epoch in range(1000):
+    y_pred = model(x_data)
+    loss = criterion(y_pred, y_data)
+    print('epoch={}, loss={}'.format(epoch, loss.data))
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+x = np.linspace(0, 10, 200)
+x_t = torch.Tensor(x).view((200, 1))
+y_t = model(x_t)
+y = y_t.data.numpy()
+plt.plot(x, y)
+plt.plot([0, 10], [0.5, 0.5], c='r')
+plt.xlabel('Hours')
+plt.ylabel('Probability of Pass')
+plt.grid()
+plt.show()
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112103083.png" alt="image-20230310112103083" loading="lazy"></figure>
+<h2 id="p-7-处理多维特征的输入">P 7  处理多维特征的输入</h2>
+<p>Logistic regression model<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>y</mi><mo>^</mo></mover><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><mo>=</mo><mi>σ</mi><mo>(</mo><msup><mi>x</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><mo>∗</mo><mi>ω</mi><mo>+</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{y}^{(i)}=\sigma(x^{(i)}*\omega+b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0824399999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span></p>
+<p>Logistic regression model<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>y</mi><mo>^</mo></mover><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msup><mo>=</mo><mi>σ</mi><mo>(</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mn>8</mn></msubsup><msubsup><mi>x</mi><mi>n</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup><mo>⋅</mo><msub><mi>ω</mi><mi>n</mi></msub><mo>+</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{y}^{(i)}=\sigma(\sum\limits_{n=1}^{8}x_n^{(i)}\cdot\omega_n+b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0824399999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.468226em;vertical-align:-0.9671129999999999em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5011130000000001em;"><span style="top:-2.132887em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9671129999999999em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.5834080000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11659199999999997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mn>8</mn></munderover><msubsup><mi>x</mi><mi>n</mi><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup><mo>⋅</mo><msub><mi>ω</mi><mi>n</mi></msub><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>1</mn><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>8</mn><mrow><mo>(</mo><mi>i</mi><mo>)</mo></mrow></msubsup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>8</mn></msub></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sum\limits_{n=1}^8x_n^{(i)}\cdot\omega_n=\begin{bmatrix}x_1^{(i)}&amp;...&amp;x_8^{(i)}\end{bmatrix}\begin{bmatrix}\omega_1\\ \vdots\\ \omega_8\end{bmatrix}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.068226em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8011130000000004em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.260000000000001em;vertical-align:-1.8800000000000006em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">]</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3800000000000003em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1674999999999995em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8800000000000006em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>Logistic regression Model</p>
+<figure data-type="image" tabindex="12"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112846700.png" alt="image-20230310112846700" loading="lazy"></figure>
+<p>Sigmoid function is in an element-wise fashion.</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mover accent="true"><mi>y</mi><mo>^</mo></mover><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mover accent="true"><mi>y</mi><mo>^</mo></mover><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>σ</mi><mo fence="true">(</mo><msup><mi>z</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup><mo fence="true">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>σ</mi><mo fence="true">(</mo><msup><mi>z</mi><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msup><mo fence="true">)</mo></mrow></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo><mi>σ</mi><mo fence="true">(</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>z</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>Z</mi><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix}\hat{y}^{(1)}\\ \vdots\\ \hat{y}^{(N)}\end{bmatrix}=\begin{bmatrix}\sigma\bigl(z^{(1)}\bigr)\\ \vdots\\ \sigma\bigl(z^{(N)}\bigr)\end{bmatrix}=\sigma\bigl(\begin{bmatrix}z^{(1)}\\ \vdots\\ Z^{(N)}\end{bmatrix}\bigr)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.356em;vertical-align:-1.9280000000000002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.428em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999993em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1195em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9280000000000002em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.356em;vertical-align:-1.9280000000000002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.428em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span></span></span><span style="top:-3.3674999999999993em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1195em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9280000000000002em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.356em;vertical-align:-1.9280000000000002em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.428em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999993em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1195em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9280000000000002em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>z</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>1</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>⋯</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>8</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>8</mn></msub></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z^{(1)}=\begin{bmatrix}x_1^{(1)}&amp;\cdots&amp;x_8^{(1)}\end{bmatrix}\begin{bmatrix}\omega_1\\ \vdots\\ \omega_8\end{bmatrix}+b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.938em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.260000000000001em;vertical-align:-1.8800000000000006em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size2">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="minner">⋯</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9524000000000001em;"><span style="top:-2.9524em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.45239999999999997em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size2">]</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3800000000000003em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1674999999999995em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8800000000000006em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>z</mi><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msup><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>1</mn><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msubsup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>⋯</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>8</mn><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msubsup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>8</mn></msub></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z^{(N)}=\begin{bmatrix}&amp;\vdots\\ x_1^{(N)}&amp;\cdots&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\\ \vdots\\ \omega_8\end{bmatrix}+b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.938em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.260000000000001em;vertical-align:-1.8800000000000006em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8823999999999999em;"><span style="top:-3.8823999999999996em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"></span></span><span style="top:-2.4775999999999994em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3824000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8823999999999999em;"><span style="top:-4.0699em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.6650999999999994em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="minner">⋯</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3824000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.022399999999999975em;"><span style="top:-2.0223999999999998em;"><span class="pstrut" style="height:3.0448em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3824em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size4">]</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3800000000000003em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1674999999999995em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8800000000000006em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>Z</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>Z</mi><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>1</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>8</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>⋱</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>1</mn><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msubsup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msubsup><mi>x</mi><mn>8</mn><mrow><mo>(</mo><mi>N</mi><mo>)</mo></mrow></msubsup></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>1</mn></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>ω</mi><mn>8</mn></msub></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>+</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>b</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">⋮</mi><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>b</mi></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{bmatrix}Z^{(1)}\\ \vdots\\ Z^{(N)}\end{bmatrix}=\begin{bmatrix}x_1^{(1)}&amp;...&amp;x_8^{(1)}\\ \vdots&amp;\ddots&amp;\vdots\\ x_1^{(N)}&amp;...&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\\ \vdots\\ \omega_8\end{bmatrix}+\begin{bmatrix}b\\ \vdots\\ b\end{bmatrix}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.356em;vertical-align:-1.9280000000000002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.428em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999993em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1195em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9280000000000002em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.80204em;vertical-align:-2.15003em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5848em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-1.9626999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0848000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5848em;"><span style="top:-5.04em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span><span style="top:-3.1799999999999997em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="minner">⋱</span></span></span><span style="top:-1.7751999999999997em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0848000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5848em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-1.9626999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.26630799999999993em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0848000000000004em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.6520099999999998em;"><span style="top:-1.6499900000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-2.80499em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-3.40599em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.65201em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15003em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3800000000000003em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1674999999999995em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8800000000000006em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:4.260000000000001em;vertical-align:-1.8800000000000006em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎢</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.3800000000000003em;"><span style="top:-5.2275em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord mathdefault">b</span></span></span><span style="top:-3.3674999999999997em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span><span style="top:-2.1674999999999995em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord mathdefault">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8800000000000006em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.351015em;"><span style="top:-1.9499950000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-3.104995em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎥</span></span></span><span style="top:-4.351015em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.850025em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>矩阵化 向量化 便于运行</p>
+<pre><code>self.linear = torch.nn.Linear(8,1)
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310113341902.png" alt="image-20230310113341902" loading="lazy"></figure>
+<img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114142966.png" alt="image-20230310114142966" style="zoom: 80%;" />
+<ol>
+<li>扣书本</li>
+<li>读文档，基本的架构（泛化能力）</li>
+</ol>
+<p>Example: artificial neural network</p>
+<figure data-type="image" tabindex="14"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114513426.png" alt="image-20230310114513426" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114608659.png" alt="image-20230310114608659" loading="lazy"></figure>
+<p>Diabetes Prediction</p>
+<ol>
+<li>Prepare dataset</li>
+<li>Design model using Class</li>
+<li>Construct loss and optimizer</li>
+<li>Training cycle</li>
+</ol>
+<pre><code class="language-python">import numpy as np
+import torch
+
+xy = np.loadtxt('diabetes.csv.gz', delimiter=',', dtype=np.float32)
+x_data = torch.from_numpy(xy[:, :-1])
+y_data = torch.from_numpy(xy[:, [-1]])
+
+
+class Model(torch.nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.linear1 = torch.nn.Linear(8, 6)
+        self.linear2 = torch.nn.Linear(6, 4)
+        self.linear3 = torch.nn.Linear(4, 1)
+        self.sigmoid = torch.nn.Sigmoid()
+
+    def forward(self, x):
+        x = self.sigmoid(self.linear1(x))
+        x = self.sigmoid(self.linear2(x))
+        x = self.sigmoid(self.linear3(x))
+        return x
+
+
+model = Model()
+
+criterion = torch.nn.BCELoss(size_average=True)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+
+for epoch in range(100):
+    # Forward
+    y_pred = model(x_data)
+    loss = criterion(y_pred, y_data)
+    print(epoch, loss.item())
+    # Backward
+    optimizer.zero_grad()
+    loss.backward()
+    # Update
+    optimizer.step()
+</code></pre>
+<pre><code class="language-python">import numpy as np
+import torch
+
+xy = np.loadtxt('diabetes.csv.gz', delimiter=',', dtype=np.float32)
+x_data = torch.from_numpy(xy[:, :-1])
+y_data = torch.from_numpy(xy[:, [-1]])
+
+
+class Model(torch.nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.linear1 = torch.nn.Linear(8, 6)
+        self.linear2 = torch.nn.Linear(6, 4)
+        self.linear3 = torch.nn.Linear(4, 1)
+        self.sigmoid = torch.nn.Sigmoid()
+
+    def forward(self, x):
+        x = self.sigmoid(self.linear1(x))
+        x = self.sigmoid(self.linear2(x))
+        x = self.sigmoid(self.linear3(x))
+        return x
+
+
+model = Model()
+
+criterion = torch.nn.BCELoss(size_average=True)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+
+for epoch in range(100):
+    # Forward前馈
+    y_pred = model(x_data)
+    loss = criterion(y_pred, y_data)
+    print(epoch, loss.item())
+    # Backward反馈
+    optimizer.zero_grad()
+    loss.backward()
+    # Update更新
+    optimizer.step()
+
+</code></pre>
+<p>可以使用各种各样的激活函数</p>
+<h2 id="p-8-加载数据集">P 8 加载数据集</h2>
+<p><strong>Dataset and DataLoader</strong></p>
+<pre><code class="language-python"># Training clcle
+for epoch in range(training_epochs):
+    # Loop over all batches
+    for i in range(totaol_batch):
+</code></pre>
+<ul>
+<li>Definition: Epoch</li>
+</ul>
+<p>One forward pass and one backward pass of all the training examples.</p>
+<ul>
+<li>Definition: Batch_Size</li>
+</ul>
+<p>The number of training examples in one forward backward pass.</p>
+<ul>
+<li>Definition: Iteration</li>
+</ul>
+<p>Number of passes, each pass using [<strong>batch size</strong>] number of examples.</p>
+<pre><code class="language-python">import torch
+from torch.utils.data import Dataset
+from torch.utils.data import DataLoader
+class DiabetesDataset(Dataset):
+    def __init__(self):
+        pass
+    # The expression, dataset[index], will call this magic function.
+    def __getitem__(self, index):
+        pass
+    # This magic function returns length of dataset.
+    def __len__(self):
+        pass
+# Construct DiabetesDataset object.
+dataset = DiabetesDataset()
+# Initialize loader with batch-size,shuffle, num_workers=2:读取两个进程process number.
+train_loader = DataLoader(dataset=dataset,
+                          batch_size=32,
+                          shuffle=True,
+                          num_workers=2)
+</code></pre>
+<p>Dataset is an abstract class. We can define our class inherited from this class.</p>
+<p>几乎每个魔法方法是python的内置方法。方法都有对应的内置函数，或者运算符，对这个对象使用这些函数或者运算符时就会调用类中的对应魔法方法，可以理解为重写这些python的内置函</p>
+<p>The implementation of multiprocessing is different on Windows, which uses <strong>spawn</strong> instead of <strong>fork</strong>.<br>
+So left code will cause:</p>
+<pre><code class="language-python">train_loader = DataLoader(dataset=dataset,
+                          batch_size=32,
+                          shuffle=True,
+                          num_workers=2)
+……
+for epoch in range(100):
+    for i, data in enumerate(train_loader, 0):
+        ……
+</code></pre>
+<pre><code class="language-python">train_loader = DataLoader(dataset=dataset,
+                          batch_size=32,
+                          shuffle=True,
+                          num_workers=2)
+……
+if __name__ == '__main__':
+    for epoch in range(100):
+        for i, data in enumerate(train_loader, 0):
+            # 1. Prepare data
+</code></pre>
+<p>So we have to wrap the code with an if-clause to protect the code from executing multiple times.</p>
+<pre><code class="language-python">class DiabetesDataset(Dataset):
+    def __init__(self, filepath):
+        xy = np.loadtxt(filepath, delimiter=',', dtype=np.float32)
+        self.len = xy.shape[0]
+        self.x_data = torch.from_numpy(xy[:, :-1])
+        self.y_data = torch.from_numpy(xy[:, [-1]])
+        
+        def __getitem__(self, index):
+            return self.x_data[index], self.y_data[index]
+        def __len__(self):
+            return self.len
+        
+dataset = DiabetesDataset('diabetes.csv.gz')
+train_loader = DataLoader(dataset=dataset, batch_size=32, shuffle=True, num_workers=2)
+</code></pre>
+<pre><code class="language-python">import numpy as np
+import torch
+from torch.utils.data import Dataset, DataLoader
+
+
+# Prepare dataset
+# Dataset and Dataloader
+class DiabetesDataset(Dataset):  # Diabetes is inherited from abstract class Dataset. N行（8特征列，1目标列）
+    def __init__(self, filepath):  # filepath路径
+        xy = np.loadtxt(filepath, delimiter=',', dtype=np.float32)  # 读取32浮点数
+        self.len = xy.shape[0]  # xy.shape = [N, 0]  xy.shape[0] = N
+        self.x_data = torch.from_numpy(xy[:, :-1])
+        self.y_data = torch.from_numpy(xy[:, [-1]])
+
+    def __getitem__(self, index):  # The expression, dataset[index], will call this magic function.
+        return self.x_data[index], self.y_data[index]
+
+    def __len__(self):  # This magic function returns length of dataset.
+        return self.len
+
+
+dataset = DiabetesDataset('diabetes.csv.gz')
+train_loader = DataLoader(dataset=dataset, batch_size=32, shuffle=True, num_workers=2)  # shuffle 打乱
+
+
+# Design model using Class
+# inherit from nn.Module
+class Model(torch.nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.linear1 = torch.nn.Linear(8, 6)
+        self.linear2 = torch.nn.Linear(6, 4)
+        self.linear3 = torch.nn.Linear(4, 1)
+        self.sigmoid = torch.nn.Sigmoid()
+
+    def forward(self, x):
+        x = self.sigmoid(self.linear1(x))
+        x = self.sigmoid(self.linear2(x))
+        x = self.sigmoid(self.linear3(x))
+        return x
+
+
+model = Model()
+# Construct loss and optimizer
+# using PyTorch API
+criterion = torch.nn.BCELoss(reduction='mean')
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+# Training cycle
+# forward, backward, update
+if __name__ == '__main__':
+    for epoch in range(100):
+        # for i, data in enumerate(train_loader, 0): # train_loader (x, y) 赋值在data里 8:25
+        for i, (inputs, labels) in enumerate(train_loader, 0):  # train_loader (x, y) 赋值在data里 8:25
+            # 1. Prepare data
+            # inputs, labels = data
+            # 2. Forward
+            y_pred = model(inputs)
+            loss = criterion(y_pred, labels)
+            if i % 10 == 0:
+                if epoch % 10 == 0:
+                    print('epoch= {}, i= {}, loss= {}'.format(epoch, i, loss.item()))
+            # 3. Backward
+            optimizer.zero_grad()
+            loss.backward()
+            # 4. Update
+            optimizer.step()
+</code></pre>
+<pre><code class="language-python">import torch
+from torch.utils.data import DataLoader
+from torchvision import transforms
+from torchvision import datasets
+
+
+train_dataset = datasets.MNIST(root='../dataset/mnist',
+                               train=True,
+                               transform= transforms.ToTensor(),
+                               download=True)
+test_dataset = datasets.MNIST(root='../dataset/mnist',
+                              train=False,
+                              transform= transforms.ToTensor(),
+                              download=True)
+train_loader = DataLoader(dataset=train_dataset,
+                          batch_size=32,
+                          shuffle=True)
+test_loader = DataLoader(dataset=test_dataset,
+                         batch_size=32,
+                         shuffle=False)
+for batch_idx, (inputs, target) in enumerate(train_loader):
+    ……
+</code></pre>
+<p>Build DataLoader for</p>
+<p>Build a classifier using the DataLoader.</p>
+<h2 id="p-9-多分类问题">P 9  多分类问题</h2>
+<p>How to design the neural network?</p>
+<p>There are 10 labels in minist dataset.</p>
+<ol>
+<li>Linear layer</li>
+<li>Sigmoid layer</li>
+<li>Input layer</li>
+</ol>
+<pre><code class="language-python">import torch
+import numpy as np
+y = np.array([1, 0, 0])
+z = np.array([0.2, 0.1, -0.1])
+y_pred = np.exp(z) / np.exp(z).sum()
+loss = (- y * np.log(y_pred)).sum()
+print(loss)
+y = torch.LongTensor([0])
+z = torch.Tensor([[0.2, 0.1, -0.1]])
+criterion = torch.nn.CrossEntropyLoss()
+loss = criterion(z, y)
+print(loss)
+</code></pre>
+<pre><code class="language-python">import torch
+criterion = torch.nn.CrossEntropyLoss()
+Y = torch.LongTensor([2, 0, 1])
+Y_pred1 = torch.Tensor([[0.1, 0.2, 0.9],
+                        [1.1, 0.1, 0.2],
+                        [0.2, 2.1, 0.1]])
+Y_pred2 = torch.Tensor([[0.8, 0.2, 0.3],
+                        [0.2, 0.3, 0.5],
+                        [0.2, 0.2, 0.5]])
+l1 = criterion(Y_pred1, Y)
+l2 = criterion(Y_pred2, Y)
+print(&quot;Batch Loss1 = &quot;, l1.data, &quot;\nBatch Loss2=&quot;, l2.data)
+</code></pre>
+<pre><code class="language-python">x = x.view(-1, 784)
+self.l1 = torch.nn.Linear(784, 512)
+x
+</code></pre>
+<p><code>48:00</code>部分</p>
+<pre><code class="language-python">def test():
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in test_loader:
+            images, labels = data
+            outputs = model(images)
+            _, predicted = torch.max(outputs.data, dim=1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+    print('Accuracy on test set: %d %%' % (100 * correct / total))
+</code></pre>
+<pre><code class="language-python">if __name__ == '__main__':
+    for epoch in range(10): # 一轮训练，一轮测试
+        train(epoch)
+        test()
+</code></pre>
+<p><code>or</code></p>
+<pre><code class="language-python">if __name__ == '__main__':
+    for epoch in range(10): # 一轮训练，一轮测试
+        train(epoch)
+        if epoch % 10 = 9 # 每10轮测试一次
+        	test()
+</code></pre>
+<h2 id="p-10-卷积神经网络基础篇">P 10 卷积神经网络(基础篇)</h2>
+<p><code>a</code></p>
+<ol>
+<li>Convolution</li>
+<li>Subsampling</li>
+<li>Convolution</li>
+<li>Subsampling</li>
+<li>Fully Connected</li>
+<li>Fully</li>
+<li>Connected</li>
+</ol>
+<p><code>图像可以表示为像素</code>--RGB栅格图像 <code>P10-12:00</code></p>
+<p><code>==a==</code></p>
+<figure data-type="image" tabindex="16"><img src="I:%5Cweb%5CGridea%5Cmd_picture%5Cimage-20230314114425455.png" alt="image-20230314114425455" loading="lazy"></figure>
+<ol>
+<li>Input</li>
+<li>Kernel</li>
+<li>
+<h6 id="output">Output</h6>
+</li>
+</ol>
+<p>这个是普通的文本文字<br>
+<strong>这个是粗体</strong><br>
+<em>这个是斜体</em><br>
+<code>这个用于突出显示，或者说是高亮</code><br>
+<code>a</code></p>
+<figure data-type="image" tabindex="17"><img src="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314165217313.png" alt="image-20230314165217313" loading="lazy"></figure>
+<p>卷积核有多少个</p>
+<pre><code class="language-python">
+; Typora
+; 快捷增加字体颜色
+; SendInput {Text} 解决中文输入法问题
+
+#IfWinActive ahk_exe Typora.exe
+{
+    ; Ctrl+Alt+o 橙色
+    ^!o::addFontColor(&quot;orange&quot;)
+
+    ; Ctrl+Alt+r 红色
+    ^!r::addFontColor(&quot;red&quot;)
+
+    ; Ctrl+Alt+b 浅蓝色
+    ^!b::addFontColor(&quot;cornflowerblue&quot;)
+}
+
+; 快捷增加字体颜色
+addFontColor(color){
+    clipboard := &quot;&quot; ; 清空剪切板
+    Send {ctrl down}c{ctrl up} ; 复制
+    SendInput {TEXT}&lt;font color='%color%'&gt;
+    SendInput {ctrl down}v{ctrl up} ; 粘贴
+    If(clipboard = &quot;&quot;){
+        SendInput {TEXT}&lt;/font&gt; ; Typora 在这不会自动补充
+    }else{
+        SendInput {TEXT}&lt;/ ; Typora中自动补全标签
+    }
+}
+#IfWinActive ahk_exe Typora.exe
+{
+    ; Ctrl+Alt+K javaCode    
+    ; crtl是  ^ , shift是 + , k是  k键
+    ^+k::addCodeJava()
+}
+addCodeJava(){
+Send,{```}
+Send,{```}
+Send,{```}
+Send,python
+Send,{Enter}
+Return
+}
+</code></pre>
+<p><code>卷积核大小</code></p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;_&#039; at position 25: …es kernel\text{_̲size}_{width}(卷…'>n(个数)\times kernel\text{_size}_{width}(卷积核的大小)\times kernel\text{_size}_{height}(卷积核)
+</p>
+<pre><code class="language-python">import torch
+in_channels, out_channels= 5, 10
+width, height = 100, 100
+kernel_size = 3
+batch_size = 1
+input = torch.randn(batch_size, # ba
+                    in_channels, # n
+                    width,# W
+                    height) # H
+conv_layer = torch.nn.Conv2d(in_channels, # n
+                             out_channels, # m
+                             kernel_size=kernel_size) # (5,3)
+output = conv_layer(input) # 卷积层
+
+print(input.shape)
+print(output.shape)
+print(conv_layer.weight.shape)
+</code></pre>
+<figure data-type="image" tabindex="18"><img src="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314171723480.png" alt="image-20230314171723480" loading="lazy"></figure>
+<p><code>padding</code>：填充。一般(3*3)</p>
+<pre><code class="language-python">import torch
+input = [3,4,6,5,7,
+         2,4,6,8,2,
+         1,6,7,8,4,
+         9,7,4,6,2,
+         3,7,5,4,1]
+input = torch.Tensor(input).view(1, 1, 5, 5)
+conv_layer = torch.nn.Conv2d(1, 1, kernel_size=3, padding=1, bias=False)
+kernel = torch.Tensor([1,2,3,4,5,6,7,8,9]).view(1, 1, 3, 3) # 构造卷积核 # (O I W H)
+conv_layer.weight.data = kernel.data
+output = conv_layer(input)
+print(output)
+</code></pre>
+<figure data-type="image" tabindex="19"><img src="https://article.biliimg.com/bfs/article/5e9d93cce8a669b044868d5614e30ebb86293cac.png" alt="padding=1" loading="lazy"></figure>
+<p><code>stride</code> 卷积步长</p>
+<p><code>MaxPooling</code> 最大池化层:默认：stride=2</p>
+<figure data-type="image" tabindex="20"><img src="https://article.biliimg.com/bfs/article/98197f929812c18861300006c6e3f8692037061c.png" alt="" loading="lazy"></figure>
+<p>可以理解为： <code>给图像打马赛克</code></p>
+<figure data-type="image" tabindex="21"><img src="https://article.biliimg.com/bfs/article/457475798b3b37855b4e3e257a20929ec4f2b671.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hexo个人博客搭建]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/Hexo个人博客搭建/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/Hexo个人博客搭建/">
+        </link>
+        <updated>2023-03-14T02:19:08.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<p>title: Hexo个人博客搭建</p>
+<hr>
+<ol>
+<li>
+<p>安装nodejs、git</p>
+</li>
+<li>
+<p>在文件夹中右击 <code>Git Bash Here</code></p>
+</li>
+<li>
+<p>使用npm命令安装Hexo，输入：</p>
+<pre><code class="language-python">npm install -g hexo-cli
+hexo init
+hexo new 我的新博客
+hexo g #生成
+hexo s #启动服务预览
+hexo d #部署
+# 打开浏览器输入地址
+localhost:4000
+hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令
+</code></pre>
+</li>
+<li>
+<p>配置网站</p>
+</li>
+</ol>
+<p>进入根目录里的themes文件夹，里面也有个<code>_config.yml</code>文件</p>
+<pre><code class="language-python">deploy:
+  type: git
+  repo: git@github.com:仓库名/仓库名.github.io.git
+  branch: main 
+</code></pre>
+<ul>
+<li>安装Git部署插件</li>
+</ul>
+<pre><code class="language-python">npm install hexo-deployer-git --save # 安装上传文件
+hexo clean 
+hexo g 
+hexo d
+</code></pre>
+<pre><code class="language-python">ssh-keygen -t rsa -f  ~/.ssh/wbupt -C &quot;2934785957@qq.com&quot;
+ssh -T [2934785957@qq.com protected]
+ssh -T git@wbupt.github.com #新的ssh_key验证
+
+
+</code></pre>
+<p>(git新设置）分别进入两个Hexo博客.git目录下执行以下命令单独设置用户名/邮箱</p>
+<pre><code class="language-python">git config user.name &quot;beiyoudaxue&quot;
+git config user.email &quot;wxyfyz@163.com&quot;
+git config user.name &quot;wbupt&quot;
+git config user.email &quot;2934785957@qq.com&quot;
+</code></pre>
+<ol>
+<li></li>
+<li></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://github.com/wbupt/wbupt.github.io/post/hello-gridea/</id>
+        <link href="https://github.com/wbupt/wbupt.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
