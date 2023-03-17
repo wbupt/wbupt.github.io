@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta charset="UTF-8">
+    <title>HTML表单示例</title>
+  </head>
+  <body>
+    <h1>HTML表单示例</h1>
+
+	<form action="submit.php" method="post">
+	  <label for="name">Name:</label>
+	  <input type="text" id="name" name="name">
+
+	  <label for="gender">Gender:</label>
+	  <input type="radio" id="gender-male" name="gender" value="male">
+	  <label for="gender-male">Male</label>
+	  <input type="radio" id="gender-female" name="gender" value="female">
+	  <label for="gender-female">Female</label>
+
+	  <label for="interests">Interests:</label>
+	  <input type="checkbox" id="interests-sports" name="interests[]" value="Sports">
+	  <label for="interests-sports">Sports</label>
+	  <input type="checkbox" id="interests-music" name="interests[]" value="Music">
+	  <label for="interests-music">Music</label>
+	  <input type="checkbox" id="interests-movies" name="interests[]" value="Movies">
+	  <label for="interests-movies">Movies</label>
+
+	  <input type="submit" value="Submit">
+	</form>
+
+	<script>
+		function validateForm() {
+		  var name = document.getElementById("name").value;
+		  var genderMale = document.getElementById("gender-male").checked;
+		  var genderFemale = document.getElementById("gender-female").checked;
+
+		  if (name == "") {
+			alert("Please enter your name");
+			return false;
+		  }
+
+		  if (!genderMale && !genderFemale) {
+			alert("Please select your gender");
+			return false;
+		  }
+
+		  return true;
+		}
+	</script>
+
+
+<button onclick="myFunction()">点击我</button>
+
+<script>
+function myFunction() {
+  alert("Hello world!");
+}
+</script>
+
+
+  </body>
+</html>

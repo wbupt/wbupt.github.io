@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<style>
+    .cd3 {
+        background-color: #a4e7cb;
+        left: 75px;         top: 478px;
+        width: 100px;       height: 45px;}
+    .dropbtn {
+        background-color: #4CAF50; color: white;
+        padding: 16px; font-size: 16px; border:none; cursor: pointer;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #3e8e41;    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;    }
+
+    .dropdown-content {
+        /*display: unset;*/
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;    }
+    .dropdown-content a:hover {background-color: #eefbe8}
+    /* 2 */
+
+    .show {display:block;}
+</style>
+
+</head>
+<body>
+<div class="dropdown">
+    <button id="Spring_frame" class="dropbtn">按钮</button>
+    <div id="myDropdown" class="dropdown-content">
+    <a class="cd3">选项1</a>
+    <a class="cd3">选项2</a>
+    <a class="cd3">选项3</a>
+    </div>
+</div>
+
+<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+
+<div class="dropdown1">
+    <button id="Spring_frame1" class="dropbtn">按钮</button>
+    <div id="myDropdown1" class="dropdown-content">
+    <a>选项3</a>
+    <a>选项4</a>
+    <a>选项5</a>
+    </div>
+</div>
+<button onclick="myFunction()">点击我</button>
+
+<script>
+function myFunction() {
+  alert("Hello world!");
+}
+</script>
+
+<script>
+    document.getElementById("Spring_frame").onclick = function() {myFunction()};
+    function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+    }
+    document.getElementById("Spring_frame1").onclick = function() {myFunction1()};
+    function myFunction1() {
+          document.getElementById("myDropdown1").classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>
