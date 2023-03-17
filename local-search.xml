@@ -96,25 +96,6 @@
   
   <entry>
     <title>FDTD 相关</title>
-    <link href="/2023/03/14/FDTD%20%E7%9B%B8%E5%85%B3/"/>
-    <url>/2023/03/14/FDTD%20%E7%9B%B8%E5%85%B3/</url>
-    
-    <content type="html"><![CDATA[<h2 id="常用代码"><a href="#常用代码" class="headerlink" title="常用代码"></a>常用代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#mesh1</span><br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;x&#x27;</span>,<span class="hljs-number">0</span>);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;x span&#x27;</span>,y2);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;y&#x27;</span>,<span class="hljs-number">0</span>);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;y span&#x27;</span>,y2);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;z max&#x27;</span>,<span class="hljs-number">0</span>-h_1);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;z min&#x27;</span>,-h1-h2-h3-h_1);<br><br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;dx&#x27;</span>,mesh_a);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;dy&#x27;</span>,mesh_a);<br>setnamed(<span class="hljs-string">&#x27;mesh1&#x27;</span>,<span class="hljs-string">&#x27;dz&#x27;</span>,mesh_z);<br><br><span class="hljs-comment">#mesh2</span><br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;x&#x27;</span>,<span class="hljs-number">0</span>);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;x span&#x27;</span>,w);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;y&#x27;</span>,<span class="hljs-number">0</span>);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;y span&#x27;</span>,w);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;z min&#x27;</span>,-t_sub+h_2);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;z max&#x27;</span>,-t_sub+h6+h5+h4+h_2);<br><br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;dx&#x27;</span>,mesh_a);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;dy&#x27;</span>,mesh_a);<br>setnamed(<span class="hljs-string">&#x27;mesh2&#x27;</span>,<span class="hljs-string">&#x27;dz&#x27;</span>,mesh_z);<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>FDTD</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>FDTD 相关</title>
     <link href="/2023/03/14/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/"/>
     <url>/2023/03/14/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/</url>
     
