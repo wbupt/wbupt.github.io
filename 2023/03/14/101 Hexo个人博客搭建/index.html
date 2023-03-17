@@ -16,23 +16,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="title: Hexo个人博客搭建   安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --globa">
+    <meta name="description" content="Hexo个人博客搭建  安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --global user.n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo个人博客搭建">
+<meta property="og:title" content="101 Hexo个人博客搭建">
 <meta property="og:url" content="http://example.com/2023/03/14/101%20Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: Hexo个人博客搭建   安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --globa">
+<meta property="og:description" content="Hexo个人博客搭建  安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --global user.n">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-14T02:19:08.000Z">
-<meta property="article:modified_time" content="2023-03-16T15:29:52.524Z">
+<meta property="article:modified_time" content="2023-03-17T02:58:03.131Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo个人博客搭建 - Hexo</title>
+  <title>101 Hexo个人博客搭建 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hexo个人博客搭建</span>
+            <span id="subtitle">101 Hexo个人博客搭建</span>
           
         </div>
 
@@ -306,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo个人博客搭建</h1>
+            <h1 style="display: none">101 Hexo个人博客搭建</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：6 分钟前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -320,8 +322,7 @@
               <div class="markdown-body">
                 
                 <hr>
-<p>title: Hexo个人博客搭建</p>
-<hr>
+<h1 id="Hexo个人博客搭建"><a href="#Hexo个人博客搭建" class="headerlink" title="Hexo个人博客搭建"></a>Hexo个人博客搭建</h1><hr>
 <ol>
 <li><p>安装nodejs、git</p>
 </li>
@@ -332,8 +333,7 @@
 
 <p>隐藏文章地址<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangstar/articles/16690342.html">https://www.cnblogs.com/yangstar/articles/16690342.html</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">$ ssh-keygen -t rsa -C <span class="hljs-string">&quot;34@qq.com&quot;</span><br><span class="hljs-comment"># 创建一个 ssh key, 用准备好的email作为标签</span><br>Generating public/private rsa key pair.<br>Enter file <span class="hljs-keyword">in</span> which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]<br><br><br></code></pre></td></tr></table></figure></li>
-<li><p>配置网站</p>
-</li>
+<li><h2 id="配置网站"><a href="#配置网站" class="headerlink" title="配置网站"></a>配置网站</h2></li>
 </ol>
 <p>进入根目录里的themes文件夹，里面也有个<code>_config.yml</code>文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: git@github.com:仓库名/仓库名.github.io.git<br>  branch: main <br></code></pre></td></tr></table></figure>
@@ -356,6 +356,15 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+        <a href="/tags/github/">#github</a>
+      
+    </div>
+  
 </div>
 
 
@@ -364,7 +373,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo个人博客搭建</div>
+      <div>101 Hexo个人博客搭建</div>
       <div>http://example.com/2023/03/14/101 Hexo个人博客搭建/</div>
     </div>
     <div class="license-meta">
@@ -383,7 +392,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月16日</div>
+          <div>2023年3月17日</div>
         </div>
       
       
@@ -423,12 +432,6 @@
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2013/07/13/100%20Hello%20World%2012/" title="Hello World 12">
-                        <span class="hidden-mobile">Hello World 12</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
