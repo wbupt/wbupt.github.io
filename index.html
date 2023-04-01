@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" >
+<html lang="zh-CN" data-default-color-scheme=light>
 
 
 
@@ -51,6 +51,8 @@
 
   <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
 
 
 
@@ -99,7 +101,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>个人博客</strong>
+      <strong>wbupt</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -181,6 +183,12 @@
           
         
         
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -229,15 +237,17 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/999%20%E5%AD%A6%E6%A0%A1%E5%9C%B0%E5%9B%BE/" target="_self">
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/2023/04/01/bupt_map/" target="_self">
           北邮地图
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/999%20%E5%AD%A6%E6%A0%A1%E5%9C%B0%E5%9B%BE/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/01/bupt_map/" target="_self">
         <div>
-          北邮地图                 :root {                --sushe-color: #d2a8ef;                --sushe1-color: #d2a8ef;                --luse-color: #62be9d;                --luse: #62b
+          北邮地图                 :root {                --sushe-color: #d2a8ef;                --lvse-color: #62be9d;                --color-jiao_xue_lou: #cae270;                --colo
         </div>
       </a>
 
@@ -245,12 +255,19 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-17 21:10" pubdate>
-              2023-03-17
+            <time datetime="2023-04-01 11:13" pubdate>
+              2023-04-01
             </time>
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8C%97%E9%82%AE%E5%9C%B0%E5%9B%BE/">#北邮地图</a>
+            
+          </div>
         
       </div>
     </article>
@@ -264,13 +281,13 @@
         
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
-        <a href="/Hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
-          101 Hexo个人博客搭建
+        <a href="/2023/03/14/Hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
+          Hexo个人博客搭建
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/14/Hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
         <div>
           Hexo个人博客搭建  安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --global user.n
         </div>
@@ -327,15 +344,17 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/MATLAB/MATLAB%E4%BB%A3%E7%A0%81/" target="_self">
-          MATLAB代码
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/2023/03/14/Python/%E6%B2%B3%E5%B7%A5%E5%A4%A7-Python%E5%85%89%E9%80%9F%E5%85%A5%E9%97%A8/" target="_self">
+          河工大-Python光速入门
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/MATLAB/MATLAB%E4%BB%A3%E7%A0%81/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/14/Python/%E6%B2%B3%E5%B7%A5%E5%A4%A7-Python%E5%85%89%E9%80%9F%E5%85%A5%E9%97%A8/" target="_self">
         <div>
-          MATLAB代码Comsol 数据导出成矩阵112345678clear M;a=0:2:86;b=486;M=[];for i=1:length(a)    x=df(((i-1)*b+1:(i-1)*b+486),2);    M=[M x];end  Comsol 数据导出成矩阵21234567891011121314151617wave=400:20:1300;a=load(&#x27;C
+          【合集】Python光速入门01 环境配置123a_xy(inx,1:2) = axy;a_xy(inx,3) = [(axy(1)-1/3)^2+(axy(2)-1/3)^2]^0.5; %%%半径求解a_xy(inx,3) = [(axy(1)-0.3260)^2+(axy(2)-0.3353)^2]^0.5; %%% 5800K  123456&lt;button class=&quot;
         </div>
       </a>
 
@@ -343,17 +362,38 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-17 21:10" pubdate>
-              2023-03-17
+            <time datetime="2023-03-14 10:19" pubdate>
+              2023-03-14
             </time>
           </div>
         
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/">#博客图片</a>
+              <a href="/tags/Python/">#Python</a>
             
           </div>
         
@@ -367,13 +407,46 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/%E5%9C%9F%E5%A0%86/%E5%9C%9F%E5%A0%86%E4%BB%A3%E7%A0%81/" target="_self">
+        <a href="/2023/03/17/999%20%E5%AD%A6%E6%A0%A1%E5%9C%B0%E5%9B%BE/" target="_self">
+          北邮地图
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/17/999%20%E5%AD%A6%E6%A0%A1%E5%9C%B0%E5%9B%BE/" target="_self">
+        <div>
+          北邮地图                 :root {                --sushe-color: #d2a8ef;                --lvse-color: #62be9d;                --color-jiao_xue_lou: #cae270;                --colo
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-17 22:18" pubdate>
+              2023-03-17
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/17/%E5%9C%9F%E5%A0%86/%E5%9C%9F%E5%A0%86%E4%BB%A3%E7%A0%81/" target="_self">
           土堆代码
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/%E5%9C%9F%E5%A0%86/%E5%9C%9F%E5%A0%86%E4%BB%A3%E7%A0%81/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/17/%E5%9C%9F%E5%A0%86/%E5%9C%9F%E5%A0%86%E4%BB%A3%E7%A0%81/" target="_self">
         <div>
           土堆代码代码1 Sequential123456789101112131415161718192021222324252627282930313233343536373839# -*- coding: utf-8 -*-# 作者：小土堆# 公众号：土堆碎念import torchfrom torch import nnfrom torch.nn import Conv2d, MaxPool2d,
         </div>
@@ -383,7 +456,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-17 21:10" pubdate>
+            <time datetime="2023-03-17 15:53" pubdate>
               2023-03-17
             </time>
           </div>
@@ -407,15 +480,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/1%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%872088/" target="_self">
-          博客图片使用的图片
+        <a href="/2023/03/17/MATLAB/MATLAB%E4%BB%A3%E7%A0%81/" target="_self">
+          MATLAB代码
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/1%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%872088/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/17/MATLAB/MATLAB%E4%BB%A3%E7%A0%81/" target="_self">
         <div>
-          https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/stalks-7723029_19201.jpghttps://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/spider-web-76724202.jpghttps://cdn.staticaly.com/gh/yangmula
+          MATLAB代码Comsol 数据导出成矩阵112345678clear M;a=0:2:86;b=486;M=[];for i=1:length(a)    x=df(((i-1)*b+1:(i-1)*b+486),2);    M=[M x];end  Comsol 数据导出成矩阵21234567891011121314151617wave=400:20:1300;a=load(&#x27;C
         </div>
       </a>
 
@@ -423,7 +496,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-17 21:10" pubdate>
+            <time datetime="2023-03-17 15:45" pubdate>
               2023-03-17
             </time>
           </div>
@@ -447,13 +520,53 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/Typora%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" target="_self">
+        <a href="/2023/03/17/1%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%872088/" target="_self">
+          博客图片使用的图片1
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/17/1%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%872088/" target="_self">
+        <div>
+          https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/stalks-7723029_19201.jpghttps://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/spider-web-76724202.jpghttps://cdn.staticaly.com/gh/yangmula
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-17 15:27" pubdate>
+              2023-03-17
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/">#博客图片</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/14/Typora%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" target="_self">
           Typora 相关设置
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Typora%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/14/Typora%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" target="_self">
         <div>
           Typora更新问题 2022.7.16 更新今天又不行了，只能安装一个老版本试试4：下载地址【提取密码：c1se】 2022.7.24 更新经网友评论提醒，又提供了一个新方案。 方案四：修改 Typora 相应注册表的权限56 (详细步骤见参考博文，作为旧版本失效后的一种补充)：打开注册表：按Windows+R打开运行窗口，输入 regedit。进入路径计算机\HKEY_CURRENT_USER
         </div>
@@ -489,13 +602,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/" target="_self">
+        <a href="/2023/03/14/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/" target="_self">
           FDTD 相关
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/14/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/" target="_self">
         <div>
           常用代码1234567891011121314151617181920212223#	mesh1setnamed(&#x27;mesh1&#x27;,&#x27;x&#x27;,0);setnamed(&#x27;mesh1&#x27;,&#x27;x span&#x27;,y2);setnamed(&#x27;mesh1&#x27;,&#x27;y&#x27;,0);setnamed(&#x27
         </div>
@@ -529,99 +642,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" target="_self">
-          李沐动手学深度学习
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/%E6%9D%8E%E6%B2%90%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" target="_self">
-        <div>
-          P 1从0开始学习线性回归。$$\mathbf{\hat{y}}=Xw+b$$
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-14 10:22" pubdate>
-              2023-03-14
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Python/">#Python</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" target="_self">
-          深度学习总结
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" target="_self">
-        <div>
-          I:\PyTorch深度学习实践  经典代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-14 10:22" pubdate>
-              2023-03-14
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Python/">#Python</a>
-            
-              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">#深度学习</a>
-            
-              <a href="/tags/%E6%80%BB%E7%BB%93/">#总结</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Pytorch%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/" target="_self">
+        <a href="/2023/03/14/2%20Pytorch%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/" target="_self">
           Pytorch实践学习
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/Pytorch%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/14/2%20Pytorch%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/" target="_self">
         <div>
-          I:\PyTorch深度学习实践 《PyTorch深度学习实践》完结合集 P 1 Overview 链式法则 Deep learning is not too difficult basic algebra probability python There are lots of deep learning framework  starting from scratch do not be re
+          P 1 Overview Knowledge bases涉及泵及涂布装置.提供一种耐久性优异,可排出高粘度液体的泵及涂装置.泵包括:壳体;挠性部件,与壳体同轴地配置在壳体内,收容液体;工作缸部,收容工作流体;柱塞,可相对于工作缸部往返移动地插入于工作缸部,向壳体与挠性部件的间隙供给工作流体而使液体从挠性部件排出;第一密封部件及第二密封部件,配置在$$a$$$工作缸部中的柱塞的插入部,与柱塞滑动接触
         </div>
       </a>
 
@@ -640,6 +669,8 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Python/">#Python</a>
+            
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
             
           </div>
         
