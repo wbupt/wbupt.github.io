@@ -24,7 +24,7 @@
 <meta property="og:description" content="Hexo个人博客搭建  安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 12345678910111213141516npm install -g hexo-cli # 安装hexo可略过hexo inithexo new 我的新博客hexo g #生成hexo s #启动服务预览git config --global user.n">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-14T02:19:08.000Z">
-<meta property="article:modified_time" content="2023-03-18T13:42:00.964Z">
+<meta property="article:modified_time" content="2023-04-01T03:39:30.492Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="github">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.7k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          17 分钟
+          23 分钟
         
       </span>
     
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：14 天前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -353,8 +353,12 @@
 
 
 
+<h2 id="Hexo-GithubDesktop配置"><a href="#Hexo-GithubDesktop配置" class="headerlink" title="Hexo GithubDesktop配置"></a>Hexo GithubDesktop配置</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML">主要参考内容：<br>使用 GitHub + Hexo 建立个人博客<br>https://genehub.wordpress.com/<br>github desktop Authentication failed. Some common reasons include 错误解决方式<br>https://www.jianshu.com/p/81c17c8d262c<br></code></pre></td></tr></table></figure>
 
-
+<p>目前我们达到的效果只是能够在本地局域网内访问，我们当然更希望我们的博客文章可以在任意外网环境都可以访问。要达到这个目的的办法其实有很多，不过本文是以免费为目的的。所以稍微有些成本的方法就不探讨了，直接使用Github Pages这个免费的空间部署我们的博客。先删除之前在Hexo工程下生成的public目录。打开GitHub Desktop这个软件，将我们之前在github已经创建好的个人博客工程clone下来。注意将目的文件夹选择为Hexo工程下的public目录。</p>
+<p>克隆到本地之后，在git软件界面“hexo generate”，回到GitHub Desktop可以看到有很多修改过的文件加入了待提交列表，如下图所示。填写一下Git Message，并选择提交到当前分支。</p>
+<p>然后按下Push origin，即将更新的文件推送到了GitHub仓库。</p>
+<h3 id="连接错误"><a href="#连接错误" class="headerlink" title="连接错误"></a>连接错误</h3><h1 id="github-desktop-Authentication-failed-Some-common-reasons-include-错误解决方式"><a href="#github-desktop-Authentication-failed-Some-common-reasons-include-错误解决方式" class="headerlink" title="github desktop Authentication failed. Some common reasons include 错误解决方式"></a>github desktop Authentication failed. Some common reasons include 错误解决方式</h1><p>今天下载了 github desktop 版本，结果无法和 github 同步，显示</p>
 
                 
               </div>
@@ -421,7 +425,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月18日</div>
+          <div>2023年4月1日</div>
         </div>
       
       
