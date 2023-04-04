@@ -41,9 +41,9 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114142966.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114513426.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114608659.png">
-<meta property="og:image" content="i:/web/Gridea/md_picture/image-20230314114425455.png">
+<meta property="og:image" content="i:\web\Gridea\md_picture\image-20230314114425455.png">
 <meta property="article:published_time" content="2023-03-14T02:22:34.000Z">
-<meta property="article:modified_time" content="2023-03-17T02:52:32.981Z">
+<meta property="article:modified_time" content="2023-03-17T13:10:36.365Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="学习笔记">
@@ -124,7 +124,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -273,7 +273,7 @@
         
         
         
-          106 分钟
+          107 分钟
         
       </span>
     
@@ -337,7 +337,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：17 天前
+                    本文最后更新于：18 天前
                   
                 
               </p>
@@ -368,7 +368,7 @@
 <ul>
 <li>theano</li>
 <li>Caffe</li>
-<li>Torch / Pytorch.</li>
+<li>Torch &#x2F; Pytorch.</li>
 </ul>
 <p>Dynamical graph</p>
 <p>More flexible </p>
@@ -383,7 +383,7 @@
 <p>training数据：平时练习题；</p>
 <p>validating数据：诊断；</p>
 <p>test数据：考试题</p>
-<p>overfit 过拟合    泛化</p>
+<p>overfit 过拟合	泛化</p>
 <p>What would be the best model for the data?</p>
 <p>Linear model?</p>
 <p>Training Loss (Error)</p>
@@ -394,16 +394,16 @@
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306164833614.png" srcset="/img/loading.gif" lazyload alt="image-20230306164833614"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306170357312.png" srcset="/img/loading.gif" lazyload alt="image-20230306170357312"></p>
 <h2 id="03-梯度下降算法"><a href="#03-梯度下降算法" class="headerlink" title="03 梯度下降算法"></a>03 梯度下降算法</h2><p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230306171118394.png" srcset="/img/loading.gif" lazyload alt="image-20230306171118394"></p>
-<p>$$<br>cost(\omega)=\dfrac{1}{N}\sum_{n=1}^N(\hat y_n-y_n)^2<br>$$</p>
+<p>$$<br>cost(\omega)&#x3D;\dfrac{1}{N}\sum_{n&#x3D;1}^N(\hat y_n-y_n)^2<br>$$</p>
 <ul>
 <li>注意：只能实现算法的局部最优</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230307165249276.png" srcset="/img/loading.gif" lazyload alt="image-20230307165249276"></p>
 <p>鞍点：梯度为0的点$a$</p>
-<p>Do the update<br>$$<br>\omega=\omega-\alpha\dfrac{\partial{cost}}{\partial\omega}<br>$$<br>公式更新$$a+b$$公式</p>
-<p>Update weight by every grad of sample of train_set.$w=w-a{w}/{3}$接口</p>
-<h2 id="04-反向传播"><a href="#04-反向传播" class="headerlink" title="04 反向传播"></a>04 反向传播</h2><p>Linear Model $\hat{y}=x*\omega$</p>
-<p>Stochastic Gradient Descent $\omega=\omega-\alpha\dfrac{\partial loss}{\partial\omega}$</p>
+<p>Do the update<br>$$<br>\omega&#x3D;\omega-\alpha\dfrac{\partial{cost}}{\partial\omega}<br>$$<br>公式更新$$a+b$$公式</p>
+<p>Update weight by every grad of sample of train_set.$w&#x3D;w-a{w}&#x2F;{3}$接口</p>
+<h2 id="04-反向传播"><a href="#04-反向传播" class="headerlink" title="04 反向传播"></a>04 反向传播</h2><p>Linear Model $\hat{y}&#x3D;x*\omega$</p>
+<p>Stochastic Gradient Descent $\omega&#x3D;\omega-\alpha\dfrac{\partial loss}{\partial\omega}$</p>
 <img src="../../../AppData/Roaming/Typora/typora-user-images/image-20230307173428700.png" srcset="/img/loading.gif" lazyload alt="image-20230307173428700" style="zoom:50%;" />
 
 <p>In PyTorch, Tensor is the important component in constructing dynamic computational graph.</p>
@@ -416,11 +416,11 @@
 
 
 
-<p>t1=clock;</p>
-<p>t2=clock;tc(t2,t1);</p>
+<p>t1&#x3D;clock;</p>
+<p>t2&#x3D;clock;tc(t2,t1);</p>
 <h2 id="P6-逻辑斯蒂回归-Logistic-Regression–分类问题"><a href="#P6-逻辑斯蒂回归-Logistic-Regression–分类问题" class="headerlink" title="P6 逻辑斯蒂回归 Logistic Regression–分类问题"></a>P6 逻辑斯蒂回归 Logistic Regression–分类问题</h2><p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310104957472.png" srcset="/img/loading.gif" lazyload alt="image-20230310104957472"></p>
 <p><strong>In classification, the output of model is the probability of input belongs to the exact clss.</strong></p>
-<p>Logistic function: $\sigma(x)=\dfrac{1}{1+e^{-x}}$</p>
+<p>Logistic function: $\sigma(x)&#x3D;\dfrac{1}{1+e^{-x}}$</p>
 <p>在[-00, +00]区间的函数关系</p>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310105326421.png" srcset="/img/loading.gif" lazyload alt="image-20230310105326421"></p>
 <p>Logistic function</p>
@@ -428,7 +428,7 @@
 
 <img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310110316830.png" srcset="/img/loading.gif" lazyload alt="image-20230310110316830" style="zoom: 50%;" />
 
-<p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111136283.png" srcset="/img/loading.gif" lazyload alt="image-20230310111136283"><br>$$<br>loss=-(y\log\hat y+(1-y)\log(1-\hat y))<br>$$<br><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111303257.png" srcset="/img/loading.gif" lazyload alt="image-20230310111303257"><br>$$<br>loss=-\dfrac{1}{N}\sum_{n=1}^N y_n\log\hat y_n+(1-y_n)\log(1-\hat y_n)<br>$$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111136283.png" srcset="/img/loading.gif" lazyload alt="image-20230310111136283"><br>$$<br>loss&#x3D;-(y\log\hat y+(1-y)\log(1-\hat y))<br>$$<br><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310111303257.png" srcset="/img/loading.gif" lazyload alt="image-20230310111303257"><br>$$<br>loss&#x3D;-\dfrac{1}{N}\sum_{n&#x3D;1}^N y_n\log\hat y_n+(1-y_n)\log(1-\hat y_n)<br>$$</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">criterion</span> <span class="hljs-operator">=</span> torch.nn.BCELoss(size_average<span class="hljs-operator">=</span>False)<br></code></pre></td></tr></table></figure>
 
 <ol>
@@ -440,13 +440,13 @@
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-meta"># Prepare dataset</span><br><span class="hljs-title">x_data</span> = torch.<span class="hljs-type">Tensor</span>([[<span class="hljs-number">1.0</span>], [<span class="hljs-number">2.0</span>], [<span class="hljs-number">3.0</span>]])<br><span class="hljs-title">y_data</span> = torch.<span class="hljs-type">Tensor</span>([[<span class="hljs-number">0</span>], [<span class="hljs-number">0</span>], [<span class="hljs-number">1</span>]])<br><span class="hljs-meta"># Design model using Class</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">LogisticRegressionModel</span>(<span class="hljs-title">torch</span>.<span class="hljs-title">nn</span>.<span class="hljs-type">Module</span>):</span><br><span class="hljs-class">    def __init__(<span class="hljs-title">self</span>):</span><br><span class="hljs-class">        super(<span class="hljs-type">LogisticRegressionModel</span>, <span class="hljs-title">self</span>).__init__()</span><br><span class="hljs-class">        self.linear = torch.nn.<span class="hljs-type">Linear</span>(1, 1)</span><br><span class="hljs-class"></span><br><span class="hljs-class">    def forward(<span class="hljs-title">self</span>, <span class="hljs-title">x</span>):</span><br><span class="hljs-class">        y_pred = <span class="hljs-type">F</span>.sigmoid(<span class="hljs-title">self</span>.<span class="hljs-title">linear</span>(<span class="hljs-title">x</span>))</span><br><span class="hljs-class">        return y_pred</span><br><span class="hljs-class">model = <span class="hljs-type">LogisticRegressionModel</span>()</span><br><span class="hljs-class"></span><br><span class="hljs-class"># <span class="hljs-type">Construct</span> loss and optimizer using <span class="hljs-type">PyTorch</span> <span class="hljs-type">API</span></span><br><span class="hljs-class">criterion = torch.nn.<span class="hljs-type">BCELoss</span>(<span class="hljs-title">size_average</span>=<span class="hljs-type">False</span>)</span><br><span class="hljs-class">optimizer = torch.optim.<span class="hljs-type">SGD</span>(<span class="hljs-title">model</span>.<span class="hljs-title">parameters</span>(), lr=0.01)</span><br><span class="hljs-class"># <span class="hljs-type">Training</span> cycle</span><br><span class="hljs-class">for epoch in range(1000):</span><br><span class="hljs-class">    y_pred = model(<span class="hljs-title">x_data</span>)</span><br><span class="hljs-class">    loss = criterion(<span class="hljs-title">y_pred</span>, <span class="hljs-title">y_data</span>)</span><br><span class="hljs-class">    print(&#x27;<span class="hljs-title">epoch</span>=&#123;&#125;, <span class="hljs-title">loss</span>=&#123;&#125;&#x27;.<span class="hljs-title">format</span>(<span class="hljs-title">epoch</span>, <span class="hljs-title">loss</span>.<span class="hljs-title">data</span>))</span><br><span class="hljs-class">    optimizer.zero_grad()</span><br><span class="hljs-class">    loss.backward()</span><br><span class="hljs-class">    optimizer.step()</span><br><span class="hljs-class"></span><br><span class="hljs-class">x = np.linspace(0, 10, 200)</span><br><span class="hljs-class">x_t = torch.<span class="hljs-type">Tensor</span>(<span class="hljs-title">x</span>).view((200, 1))</span><br><span class="hljs-class">y_t = model(<span class="hljs-title">x_t</span>)</span><br><span class="hljs-class">y = y_t.data.numpy()</span><br><span class="hljs-class">plt.plot(<span class="hljs-title">x</span>, <span class="hljs-title">y</span>)</span><br><span class="hljs-class">plt.plot([0, 10], [0.5, 0.5], <span class="hljs-title">c</span>=&#x27;<span class="hljs-title">r&#x27;</span>)</span><br><span class="hljs-class">plt.xlabel(&#x27;<span class="hljs-type">Hours</span>&#x27;)</span><br><span class="hljs-class">plt.ylabel(&#x27;<span class="hljs-type">Probability</span> <span class="hljs-title">of</span> <span class="hljs-type">Pass</span>&#x27;)</span><br><span class="hljs-class">plt.grid()</span><br><span class="hljs-class">plt.show()</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112103083.png" srcset="/img/loading.gif" lazyload alt="image-20230310112103083"></p>
-<h2 id="P-7-处理多维特征的输入"><a href="#P-7-处理多维特征的输入" class="headerlink" title="P 7  处理多维特征的输入"></a>P 7  处理多维特征的输入</h2><p>Logistic regression model$\hat{y}^{(i)}=\sigma(x^{(i)}*\omega+b)$</p>
-<p>Logistic regression model$\hat{y}^{(i)}=\sigma(\sum\limits_{n=1}^{8}x_n^{(i)}\cdot\omega_n+b)$<br>$$<br>\sum\limits_{n=1}^8x_n^{(i)}\cdot\omega_n=\begin{bmatrix}x_1^{(i)}&amp;…&amp;x_8^{(i)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}<br>$$<br>Logistic regression Model</p>
+<h2 id="P-7-处理多维特征的输入"><a href="#P-7-处理多维特征的输入" class="headerlink" title="P 7  处理多维特征的输入"></a>P 7  处理多维特征的输入</h2><p>Logistic regression model$\hat{y}^{(i)}&#x3D;\sigma(x^{(i)}*\omega+b)$</p>
+<p>Logistic regression model$\hat{y}^{(i)}&#x3D;\sigma(\sum\limits_{n&#x3D;1}^{8}x_n^{(i)}\cdot\omega_n+b)$<br>$$<br>\sum\limits_{n&#x3D;1}^8x_n^{(i)}\cdot\omega_n&#x3D;\begin{bmatrix}x_1^{(i)}&amp;…&amp;x_8^{(i)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}<br>$$<br>Logistic regression Model</p>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112846700.png" srcset="/img/loading.gif" lazyload alt="image-20230310112846700"></p>
-<p>Sigmoid function is in an element-wise fashion.<br>$$<br>\begin{bmatrix}\hat{y}^{(1)}\ \vdots\ \hat{y}^{(N)}\end{bmatrix}=\begin{bmatrix}\sigma\bigl(z^{(1)}\bigr)\ \vdots\ \sigma\bigl(z^{(N)}\bigr)\end{bmatrix}=\sigma\bigl(\begin{bmatrix}z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}\bigr)<br>$$</p>
-<p>$$<br>z^{(1)}=\begin{bmatrix}x_1^{(1)}&amp;\cdots&amp;x_8^{(1)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
-<p>$$<br>z^{(N)}=\begin{bmatrix}&amp;\vdots\ x_1^{(N)}&amp;\cdots&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
-<p>$$<br>\begin{bmatrix}Z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}=\begin{bmatrix}x_1^{(1)}&amp;…&amp;x_8^{(1)}\ \vdots&amp;\ddots&amp;\vdots\ x_1^{(N)}&amp;…&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+\begin{bmatrix}b\ \vdots\ b\end{bmatrix}<br>$$</p>
+<p>Sigmoid function is in an element-wise fashion.<br>$$<br>\begin{bmatrix}\hat{y}^{(1)}\ \vdots\ \hat{y}^{(N)}\end{bmatrix}&#x3D;\begin{bmatrix}\sigma\bigl(z^{(1)}\bigr)\ \vdots\ \sigma\bigl(z^{(N)}\bigr)\end{bmatrix}&#x3D;\sigma\bigl(\begin{bmatrix}z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}\bigr)<br>$$</p>
+<p>$$<br>z^{(1)}&#x3D;\begin{bmatrix}x_1^{(1)}&amp;\cdots&amp;x_8^{(1)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
+<p>$$<br>z^{(N)}&#x3D;\begin{bmatrix}&amp;\vdots\ x_1^{(N)}&amp;\cdots&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
+<p>$$<br>\begin{bmatrix}Z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}&#x3D;\begin{bmatrix}x_1^{(1)}&amp;…&amp;x_8^{(1)}\ \vdots&amp;\ddots&amp;\vdots\ x_1^{(N)}&amp;…&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+\begin{bmatrix}b\ \vdots\ b\end{bmatrix}<br>$$</p>
 <p>矩阵化 向量化 便于运行</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">self<span class="hljs-selector-class">.linear</span> = torch<span class="hljs-selector-class">.nn</span><span class="hljs-selector-class">.Linear</span>(<span class="hljs-number">8</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 
@@ -540,7 +540,7 @@
 <p><code>==a==</code></p>
 <p><img src="I:\web\Gridea\md_picture\image-20230314114425455.png" srcset="/img/loading.gif" lazyload alt="image-20230314114425455"></p>
 <p><code>标红</code></p>
-<p>==其他色==</p>
+<p>&#x3D;&#x3D;其他色&#x3D;&#x3D;</p>
 <p><font color='orange'>橙色</font></p>
 <p><font color='red'>红色</font></p>
 <p><font color='cornflowerblue'>浅蓝色</font></p>
@@ -626,18 +626,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/14/FDTD/FDTD%20%E7%9B%B8%E5%85%B3/" title="FDTD 相关">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">FDTD 相关</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" title="深度学习总结">
-                        <span class="hidden-mobile">深度学习总结</span>
+                      <a href="/2023/03/14/Pytorch%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/" title="Pytorch实践学习">
+                        <span class="hidden-mobile">Pytorch实践学习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
