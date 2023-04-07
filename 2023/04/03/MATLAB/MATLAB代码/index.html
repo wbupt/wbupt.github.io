@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230405220929573.png">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230405173146881.png">
 <meta property="article:published_time" content="2023-04-03T15:18:16.303Z">
-<meta property="article:modified_time" content="2023-04-05T14:10:10.511Z">
+<meta property="article:modified_time" content="2023-04-07T03:22:53.240Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="博客图片">
 <meta name="twitter:card" content="summary_large_image">
@@ -256,7 +256,7 @@
         
         
         
-          497 分钟
+          498 分钟
         
       </span>
     
@@ -360,7 +360,11 @@
 
 <h2 id="picture函数导出透明图片"><a href="#picture函数导出透明图片" class="headerlink" title="picture函数导出透明图片"></a>picture函数导出透明图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">img = imread(<span class="hljs-string">&#x27;mypicture.png&#x27;</span>);<br>min_x = <span class="hljs-number">0</span>;max_x = <span class="hljs-number">0.8</span>;min_y = <span class="hljs-number">0</span>;max_y = <span class="hljs-number">0.9</span>;<br>imagesc([min_x max_x], [min_y max_y], flipdim(img,<span class="hljs-number">1</span>)); <br><span class="hljs-built_in">set</span>(gca,<span class="hljs-string">&#x27;ydir&#x27;</span>,<span class="hljs-string">&#x27;normal&#x27;</span>);<br>hold on;<br>plot(<span class="hljs-number">0.3333</span>,<span class="hljs-number">0.3333</span>,<span class="hljs-string">&#x27;r*&#x27;</span>);<br></code></pre></td></tr></table></figure>
 
-<h2 id="时间计算函数-time-calculate"><a href="#时间计算函数-time-calculate" class="headerlink" title="时间计算函数 time_calculate"></a>时间计算函数 time_calculate</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">function [ Frame_Name ] = time_calculate( time_distance )<br>%TIME 此处显示有关此函数的摘要<br>%   此处显示详细说明<br>    <span class="hljs-keyword">if</span> time_distance&lt;=<span class="hljs-number">60</span><br>        Frame_Name=[ num2str(time_distance) <span class="hljs-string">&#x27; s&#x27;</span> ]<br>        time_distance=time_distance/<span class="hljs-number">60</span>;<br>    end<br>    <br>    <span class="hljs-keyword">if</span> (time_distance&gt;<span class="hljs-number">60</span>)&amp;&amp;(time_distance&lt;<span class="hljs-number">60</span>*<span class="hljs-number">60</span>)<br>        Frame_Name=[ num2str(time_distance/<span class="hljs-number">60</span>) <span class="hljs-string">&#x27; min&#x27;</span> ]<br>    end<br>    <span class="hljs-keyword">if</span> time_distance&gt;=<span class="hljs-number">60</span>*<span class="hljs-number">60</span><br>        Frame_Name=[ num2str(time_distance/<span class="hljs-number">60</span>/<span class="hljs-number">60</span>) <span class="hljs-string">&#x27; h&#x27;</span> ]<br>    end<br>end<br></code></pre></td></tr></table></figure>
+<h2 id="时间计算-tc-m"><a href="#时间计算-tc-m" class="headerlink" title="时间计算 tc.m"></a>时间计算 tc.m</h2><p>用法：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">t1 = clock;<br><span class="hljs-comment">% 程序</span><br>t2 = clock;<br>tc(t2, t1);<br></code></pre></td></tr></table></figure>
+
+<p>函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[Frame_Name]</span>= <span class="hljs-title">tc</span><span class="hljs-params">(t2,t1)</span></span><br>    time_distance = etime(t2,t1);<br>    <span class="hljs-comment">% 保留小数点后两位</span><br>    <span class="hljs-keyword">if</span> time_distance &lt;= <span class="hljs-number">60</span><br>        Frame_Name = [ num2str(<span class="hljs-built_in">round</span>(time_distance,<span class="hljs-number">2</span>)) <span class="hljs-string">&#x27;s&#x27;</span>]<br>        time_distance = time_distance/<span class="hljs-number">60</span>;<br>    <span class="hljs-keyword">end</span><br><br>    <span class="hljs-keyword">if</span>(time_distance &gt;<span class="hljs-number">60</span> )&amp;&amp;(time_distance &lt;<span class="hljs-number">60</span>*<span class="hljs-number">60</span>)<br>        Frame_Name = [ num2str(<span class="hljs-built_in">round</span>(time_distance/<span class="hljs-number">60</span>,<span class="hljs-number">2</span>)) <span class="hljs-string">&#x27;min&#x27;</span>]<br>    <span class="hljs-keyword">end</span><br><br>    <span class="hljs-keyword">if</span> time_distance &gt;= <span class="hljs-number">60</span>*<span class="hljs-number">60</span><br>        Frame_Name = [ num2str(<span class="hljs-built_in">round</span>(time_distance/<span class="hljs-number">60</span>/<span class="hljs-number">60</span>,<span class="hljs-number">2</span>)) <span class="hljs-string">&#x27;h&#x27;</span>]<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -459,7 +463,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月5日</div>
+          <div>2023年4月7日</div>
         </div>
       
       
