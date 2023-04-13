@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=light>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="RCWA程序RCWA 一维程序12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RCWA 程序">
+<meta property="og:url" content="http://example.com/2023/04/13/RCWA/RCWA%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="RCWA程序RCWA 一维程序12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-13T14:43:46.058Z">
+<meta property="article:modified_time" content="2023-04-13T14:47:33.407Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="RCWA">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>RCWA 程序 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>wbupt</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">RCWA 程序</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-13 22:43" pubdate>
+          2023年4月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          14k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          113 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">RCWA 程序</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="RCWA程序"><a href="#RCWA程序" class="headerlink" title="RCWA程序"></a>RCWA程序</h1><h2 id="RCWA-一维程序"><a href="#RCWA-一维程序" class="headerlink" title="RCWA 一维程序"></a>RCWA 一维程序</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">% 不同厚度仿真 exemple2_1D</span><br><br><br>clc;clear;close all;<br>addpath(<span class="hljs-string">&#x27;reticolo_allege_v9&#x27;</span>); addpath(<span class="hljs-string">&#x27;shuju&#x27;</span>);addpath(<span class="hljs-string">&#x27;script&#x27;</span>);addpath(<span class="hljs-string">&#x27;RCWA&#x27;</span>);<br>t1 = clock;<br>incident_angle = <span class="hljs-number">0</span>;<br>wavelength_range(:,<span class="hljs-number">1</span>) = <span class="hljs-number">0.4</span>:<span class="hljs-number">0.001</span>:<span class="hljs-number">2</span>; <span class="hljs-comment">% 波长范围</span><br><br>grating_period = <span class="hljs-number">1</span>; <span class="hljs-comment">% 光栅周期</span><br>incident_refractive_index = <span class="hljs-number">1</span>; <span class="hljs-comment">% 入射介质的折射率</span><br>k_parallel = incident_refractive_index * <span class="hljs-built_in">sin</span>(incident_angle * <span class="hljs-built_in">pi</span> / <span class="hljs-number">180</span>); <span class="hljs-comment">% 入射角的相位角</span><br>polarization = <span class="hljs-number">-1</span>; <span class="hljs-comment">% -1:TM   1:TE   </span><br>parm = res0(polarization); parm.not_io = <span class="hljs-number">1</span>; <span class="hljs-comment">% 初始化参数</span><br><span class="hljs-comment">% parm.sym.x = 1; % 利用对称性</span><br>fourier_series_M = <span class="hljs-number">41</span>; <span class="hljs-comment">% Fourier series</span><br>fourier_series = <span class="hljs-number">20</span>; <br><br><span class="hljs-comment">% 1  MgF2     % 11 W       % 21 VO2-hot</span><br><span class="hljs-comment">% 2  SiO2     % 12 Ti      % 22 VO2-cool</span><br><span class="hljs-comment">% 3  Al2O3    % 13 Fe      % 23 VO2-hot</span><br><span class="hljs-comment">% 4  Si3N4    % 14 Cr      % 24 DAST-Voltage</span><br><span class="hljs-comment">% 5  Si3N41直 % 15 Mo*     % 25 ALON</span><br><span class="hljs-comment">% 6  TiO2     % 16 Au      % 26 ITO</span><br><span class="hljs-comment">% 7  SiN      % 17 Cu      % 27 Ag*</span><br><span class="hljs-comment">% 8  Ge       % 18 Al</span><br><span class="hljs-comment">% 9  PMMA     % 19 Ag </span><br><span class="hljs-comment">% 10 SiO2     % 20 VO2-cool</span><br>nk_Martix = <span class="hljs-built_in">conj</span>(nk_data(wavelength_range*<span class="hljs-number">1000</span>));<br><span class="hljs-comment">%% 结构尺寸和折射率</span><br>struct.period = <span class="hljs-number">1</span>; <br>struct.height(:,<span class="hljs-number">1</span>) =  [<span class="hljs-number">1.00</span>   <span class="hljs-number">1.00</span>   <span class="hljs-number">1</span>]; <span class="hljs-comment">% h1 h2 ...</span><br>struct.width(:,<span class="hljs-number">1</span>) =  [<span class="hljs-number">0.4</span>    <span class="hljs-number">0.6</span>    <span class="hljs-number">0.8</span>];   <span class="hljs-comment">% w1 w2 ...</span><br>struct.nkindex(:,<span class="hljs-number">1</span>) = [<span class="hljs-number">19</span>   <span class="hljs-number">12</span>      <span class="hljs-number">19</span>];<br><span class="hljs-comment">% FDTD</span><br>struct.unit = <span class="hljs-number">1e-6</span>; <span class="hljs-comment">% 1e-6 μm; 1e-9 nm</span><br>struct.mesh = <span class="hljs-number">0.02</span>; <span class="hljs-comment">% mesh </span><br>struct.mesh_M = <span class="hljs-number">0.01</span>;<br>struct.wave_start = <span class="hljs-built_in">min</span>(wavelength_range);<br>struct.wave_stop = <span class="hljs-built_in">max</span>(wavelength_range);<br>struct.wave_step = wavelength_range(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)-wavelength_range(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br><br><span class="hljs-comment">%% 结构纹理 textures</span><br>x_bloack = <span class="hljs-number">51</span>;<br><span class="hljs-keyword">for</span> iz = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(struct.height)<br>    textures&#123;iz&#125;(<span class="hljs-number">1</span>) = &#123;[-struct.width(iz,<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>,struct.width(iz,<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>]&#125;; <span class="hljs-comment">% 设置结构宽度</span><br>    struct.nk(:,iz) = nk_Martix(:,struct.nkindex(iz,<span class="hljs-number">1</span>)); <span class="hljs-comment">% 设置结构折射率</span><br><span class="hljs-keyword">end</span><br><br>scale_one = grating_period / x_bloack;<br><span class="hljs-keyword">for</span> io = <span class="hljs-number">1</span>:x_bloack<br>    x_coordinate(io) = scale_one * (io - <span class="hljs-number">1</span>) - grating_period/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">end</span><br>textures&#123;<span class="hljs-number">3</span>&#125;(<span class="hljs-number">1</span>) = &#123;x_coordinate&#125;;<br>textures&#123;iz+<span class="hljs-number">1</span>&#125; = <span class="hljs-number">1</span>;<br><br><br><span class="hljs-keyword">for</span> method = <span class="hljs-number">1</span>:<span class="hljs-number">1</span>  <span class="hljs-comment">% 1: RCWA 2:FDTD</span><br><span class="hljs-keyword">switch</span> method<br>    <span class="hljs-comment">%% 1 RCWA</span><br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> ix = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(fourier_series_M)<br>            fourier_series = fourier_series_M(ix);<br>            R = <span class="hljs-built_in">zeros</span>(<span class="hljs-built_in">length</span>(wavelength_range), <span class="hljs-number">1</span>); T = R; A = R; <br>            textures_local = textures; aa_save = &#123;&#125;; profil_save = &#123;&#125;; textures_save = &#123;<span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(wavelength_range)&#125;;<br>            <span class="hljs-keyword">parfor</span> wave_num = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(wavelength_range)                 <br>                textures = textures_local;<br>                <span class="hljs-keyword">for</span> izz = <span class="hljs-number">1</span>:iz;textures&#123;izz&#125;(<span class="hljs-number">2</span>) = &#123;[<span class="hljs-number">1</span>, struct.nk(wave_num,izz)]&#125;;<span class="hljs-keyword">end</span>;<br>                b_ix = <span class="hljs-built_in">ones</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">length</span>(textures&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>&#125;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>&#125;));<br>                <span class="hljs-keyword">for</span> ia = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(textures&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>&#125;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>&#125;)<br>                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">rem</span>(ia, <span class="hljs-number">2</span>) == <span class="hljs-number">0</span><br>                        b_ix(ia) = <span class="hljs-number">2</span>;<br>                    <span class="hljs-keyword">end</span><br>                <span class="hljs-keyword">end</span><br>                textures&#123;<span class="hljs-number">3</span>&#125;(<span class="hljs-number">2</span>) = &#123;b_ix&#125;;<br><br>                aa = res1(wavelength_range(wave_num), struct.period, textures, fourier_series, k_parallel, parm);<br>                profile = &#123;[<span class="hljs-number">0</span>,  struct.height&#x27;, <span class="hljs-number">0</span>], [<span class="hljs-built_in">length</span>(textures), <span class="hljs-number">1</span>:(<span class="hljs-built_in">numel</span>(textures)<span class="hljs-number">-1</span>), <span class="hljs-built_in">length</span>(textures)]&#125;;<br>                <span class="hljs-comment">% 计算</span><br>                ef = res2(aa, profile);<br>                R(wave_num,<span class="hljs-number">1</span>) = sum(ef.inc_top_reflected.efficiency);<br>                T(wave_num,<span class="hljs-number">1</span>) = sum(ef.inc_top_transmitted.efficiency);<br>                A(wave_num,<span class="hljs-number">1</span>) = <span class="hljs-number">1</span> - sum(ef.inc_top_reflected.efficiency) - sum(ef.inc_top_transmitted.efficiency);<br>                textures_save&#123;wave_num&#125; = textures; aa_save&#123;wave_num&#125; = aa; profil_save&#123;wave_num&#125; = profile;<br>            <span class="hljs-keyword">end</span><br>            RCWA.R(:,ix) = R; RCWA.T(:,ix) = T; RCWA.A(:,ix) = A;<br>            t2 = clock; tc(t2,t1);<br>            RCWA.T_matrix(:,ix) = T;<br>        <span class="hljs-keyword">end</span><br>        RCWA.RTA = [R T A]; RCWA.R = R; RCWA.T = T; RCWA.A = A; <br><br>        textures = textures_save&#123;<span class="hljs-number">1</span>&#125;; aa = aa_save&#123;<span class="hljs-number">1</span>&#125;;<br>        profile = profil_save&#123;<span class="hljs-number">1</span>&#125;; profile&#123;<span class="hljs-number">1</span>&#125;(<span class="hljs-number">1</span>) = <span class="hljs-number">2</span>; profile&#123;<span class="hljs-number">1</span>&#125;(<span class="hljs-keyword">end</span>) = <span class="hljs-number">2</span>;<br>        x = <span class="hljs-built_in">linspace</span>(-struct.period/<span class="hljs-number">2</span>, struct.period/<span class="hljs-number">2</span>, <span class="hljs-built_in">max</span>(x_bloack*<span class="hljs-number">2</span>, <span class="hljs-number">100</span>));<br>        [tab1, z, o] = res3(x, aa, profile, <span class="hljs-number">1</span>, parm);         <br>        plot_func(<span class="hljs-number">3</span>,[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>],x,z,<span class="hljs-built_in">real</span>(o),<span class="hljs-number">25</span>, <span class="hljs-number">1.5</span>, <span class="hljs-number">-1000</span>,<span class="hljs-number">500</span>,<span class="hljs-number">900</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;X label range (μm)&#x27;</span>,<span class="hljs-string">&#x27;Z label (μm)&#x27;</span>,<span class="hljs-string">&#x27;截面折射率&#x27;</span>);      <br>        <span class="hljs-comment">%% 绘制透射谱</span><br>        plot_func(<span class="hljs-number">2</span>,[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span>],wavelength_range,RCWA.T_matrix,<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;Transmission&#x27;</span>,<span class="hljs-string">&#x27;RCWA 透射&#x27;</span>);<br>        t2 = clock; tc(t2,t1);<br><br>    <span class="hljs-comment">%% 2 FDTD</span><br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span><br>        <span class="hljs-keyword">for</span> mesh_num = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(struct.mesh_M)<br>            struct.mesh = struct.mesh_M(mesh_num)<br>            FDTD = fun_1D(struct); <span class="hljs-comment">% main function</span><br>            t2 = clock; tc(t2,t1);<br>        <span class="hljs-keyword">end</span><br>        plot_func(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>,FDTD.wave,FDTD.T,<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;R/T/A&#x27;</span>,<span class="hljs-string">&#x27;FDTD 透射&#x27;</span>);<br><span class="hljs-keyword">end</span>;<span class="hljs-keyword">end</span><br><span class="hljs-comment">%% 绘制折射率</span><br><span class="hljs-comment">% plot_func(2,wavelength_range,RTA.T,  0,25,1.5,  500,500,500,400,&#x27;Wavelength (μm)&#x27;,&#x27;Transmission&#x27;,&#x27;透射率与阶数的关系&#x27;);</span><br><span class="hljs-comment">% plot_func(2,wavelength_range,RTA.R,  0,25,1.5,  1000,500,500,400,&#x27;Wavelength (μm)&#x27;,&#x27;Transmission&#x27;,&#x27;透射率与阶数的关系&#x27;);</span><br><span class="hljs-comment">% plot_func(2, FDTD.wave,[RCWA.T FDTD.T],0, 25,1.5,  -500,500,500,400,&#x27;Wavelength (μm)&#x27;,&#x27;R/T/A&#x27;,&#x27;RCWA/FDTD 透射&#x27;);</span><br><br><br><br><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="RCWA-二维程序"><a href="#RCWA-二维程序" class="headerlink" title="RCWA 二维程序"></a>RCWA 二维程序</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%   2  D    exemple_general_2Dres0</span><br><span class="hljs-comment">% 所有长度必须以与波长角以度为单位的相同单位表示</span><br><br><br>clc; clear; close all;<br>addpath(<span class="hljs-string">&#x27;reticolo_allege_v9&#x27;</span>); addpath(<span class="hljs-string">&#x27;shuju&#x27;</span>);addpath(<span class="hljs-string">&#x27;script&#x27;</span>);addpath(<span class="hljs-string">&#x27;RCWA&#x27;</span>);<br>t1 = clock;<br><span class="hljs-comment">% 常规设置 % 技术参数</span><br>wavelength_range(:,<span class="hljs-number">1</span>) = <span class="hljs-number">0.41</span>:<span class="hljs-number">0.05</span>:<span class="hljs-number">2.5</span>; <span class="hljs-comment">% 波长范围</span><br>incident_wavelength = <span class="hljs-number">2</span>;<br>incident_angle = <span class="hljs-number">0</span>;<br>incident_refractive_index = <span class="hljs-number">1</span>; <span class="hljs-comment">% 入射介质的折射率</span><br>k_parallel = incident_refractive_index * <span class="hljs-built_in">sin</span>(incident_angle * <span class="hljs-built_in">pi</span> / <span class="hljs-number">180</span>);<br>angle_delta = <span class="hljs-number">0</span>; <span class="hljs-comment">%  射平面的角度</span><br>fourier_series_M = <span class="hljs-number">20</span>;<br>fourier_series = [<span class="hljs-number">20</span>, <span class="hljs-number">20</span>]; <span class="hljs-comment">% fourier ordres</span><br><br><span class="hljs-comment">% 纹理描述，包括基材和上层以及均质介质</span><br><span class="hljs-comment">%% 结构尺寸和折射率</span><br>struct.period_x = <span class="hljs-number">2</span>;<br>struct.period_y = <span class="hljs-number">2</span>; <br>period = [struct.period_x struct.period_y];<br>struct.height(:,<span class="hljs-number">1</span>) =  [<span class="hljs-number">0.6</span>  <span class="hljs-number">0.0</span>     <span class="hljs-number">0</span>]; <span class="hljs-comment">% h1 h2 ...</span><br>struct.width(:,<span class="hljs-number">1</span>) =  [<span class="hljs-number">1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>];   <span class="hljs-comment">% w1 w2 ...</span><br>struct.nkindex(:,<span class="hljs-number">1</span>) = [<span class="hljs-number">19</span>   <span class="hljs-number">13</span>      <span class="hljs-number">11</span>];<br><span class="hljs-comment">% FDTD</span><br>struct.unit = <span class="hljs-number">1e-6</span>; <span class="hljs-comment">% 1e-6 μm; 1e-9 nm</span><br>struct.mesh_xy = <span class="hljs-number">0.05</span>; <span class="hljs-comment">% mesh </span><br>struct.mesh_z = <span class="hljs-number">0.1</span>;<br>struct.wave_start = <span class="hljs-built_in">min</span>(wavelength_range);<br>struct.wave_stop = <span class="hljs-built_in">max</span>(wavelength_range);<br>struct.wave_step = wavelength_range(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)-wavelength_range(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br><br><span class="hljs-comment">% 1  MgF2     % 11 W       % 21 VO2-hot</span><br><span class="hljs-comment">% 2  SiO2     % 12 Ti      % 22 VO2-cool</span><br><span class="hljs-comment">% 3  Al2O3    % 13 Fe      % 23 VO2-hot</span><br><span class="hljs-comment">% 4  Si3N4    % 14 Cr      % 24 DAST-Voltage</span><br><span class="hljs-comment">% 5  Si3N41直 % 15 Mo*     % 25 ALON</span><br><span class="hljs-comment">% 6  TiO2     % 16 Au      % 26 ITO</span><br><span class="hljs-comment">% 7  SiN      % 17 Cu      % 27 Ag*</span><br><span class="hljs-comment">% 8  Ge       % 18 Al</span><br><span class="hljs-comment">% 9  PMMA     % 19 Ag </span><br><span class="hljs-comment">% 10 SiO2     % 20 VO2-cool</span><br>nk_Martix = <span class="hljs-built_in">conj</span>(nk_data(wavelength_range*<span class="hljs-number">1000</span>));<br><br>parm = res0; parm.not_io = <span class="hljs-number">1</span>; <span class="hljs-comment">% 初始化默认参数</span><br>parm.sym.x = <span class="hljs-number">0</span>; <span class="hljs-comment">% x=x0 :plan de symetrie seulement si beta0(1)=0    par defaut parm.sym.x=[]  pas de symetrie en x</span><br>parm.sym.y = <span class="hljs-number">0</span>; <span class="hljs-comment">% y=y0 :plan de symetrie seulement si beta0(2)=0   par defaut parm.sym.y=[]  pas de symetrie en y</span><br>parm.sym.pol = <span class="hljs-number">-1</span>; <span class="hljs-comment">% 1 TE  -1:TM </span><br>parm.res1.trace = <span class="hljs-number">0</span>; <span class="hljs-comment">% 绘制纹理 –period/2 to period/2</span><br>parm.res1.champ = <span class="hljs-number">1</span>; <span class="hljs-comment">% 精确计算电磁场</span><br><br><br><span class="hljs-keyword">for</span> method = <span class="hljs-number">1</span>:<span class="hljs-number">2</span>  <span class="hljs-comment">% 1: RCWA 2:FDTD</span><br>    <span class="hljs-keyword">switch</span> method<br>        <span class="hljs-comment">%% 1 RCWA</span><br>        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span><br>            <span class="hljs-keyword">for</span> ix = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(fourier_series_M)<br>                fourier_series = [<span class="hljs-number">1</span> <span class="hljs-number">1</span>] * fourier_series_M(ix);<br><br>                R = <span class="hljs-built_in">zeros</span>(<span class="hljs-built_in">length</span>(wavelength_range), <span class="hljs-number">1</span>); T = <span class="hljs-built_in">zeros</span>(<span class="hljs-built_in">length</span>(wavelength_range), <span class="hljs-number">1</span>); A = <span class="hljs-built_in">zeros</span>(<span class="hljs-built_in">length</span>(wavelength_range), <span class="hljs-number">1</span>);<br>                parm_local = parm; struct_local = struct;<br>                <span class="hljs-keyword">for</span> wave_num = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(wavelength_range)<br>                    parm = parm_local;  struct = struct_local; textures=[];<br>                    incident_wavelength = wavelength_range(wave_num);<br>                    <span class="hljs-comment">%%</span><br>                    <span class="hljs-keyword">for</span> iz = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(struct.height)<br>                        struct.nk(:,iz) = nk_Martix(:,struct.nkindex(iz,<span class="hljs-number">1</span>)); <span class="hljs-comment">% 设置结构折射率</span><br>                        textures&#123;iz&#125; = &#123;<span class="hljs-number">1</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, struct.width(iz,<span class="hljs-number">1</span>), struct.width(iz,<span class="hljs-number">1</span>), struct.nk(wave_num,iz), <span class="hljs-number">1</span>]&#125;;<br>                    <span class="hljs-keyword">end</span><br>                    textures&#123;iz+<span class="hljs-number">1</span>&#125; = <span class="hljs-number">1</span>;<br><br><br>                    profile = &#123;[<span class="hljs-number">1</span>, struct.height&#x27;, <span class="hljs-number">1</span>], [<span class="hljs-built_in">length</span>(textures), <span class="hljs-number">1</span>:(<span class="hljs-built_in">numel</span>(textures)<span class="hljs-number">-1</span>), <span class="hljs-built_in">length</span>(textures)]&#125;; <span class="hljs-comment">% 厚度 / 折射率索引</span><br>                    [aa, nef] = res1(incident_wavelength, period, textures, fourier_series, k_parallel, angle_delta, parm);<br>                    ef = res2(aa, profile);<br>                    R(wave_num,<span class="hljs-number">1</span>) = sum(ef.TMinc_top_reflected.efficiency);<br>                    T(wave_num,<span class="hljs-number">1</span>) = sum(ef.TMinc_bottom_transmitted.efficiency);<br>                    A(wave_num,<span class="hljs-number">1</span>) = <span class="hljs-number">1</span> - sum(ef.TMinc_top_reflected.efficiency) - sum(ef.TMinc_bottom_transmitted.efficiency);<br>                    t2 = clock; tc(t2,t1);<br>                <span class="hljs-keyword">end</span> <span class="hljs-comment">%  wavelength_range</span><br><br>                RCWA.R(:,ix) = R; RCWA.T(:,ix) = T; RCWA.A(:,ix) = A; RCWA.T_matrix(:,ix) = T;<br>                t2 = clock; tc(t2,t1);<br><br>            <span class="hljs-keyword">end</span><br>            RCWA.RTA = [R T A]; RCWA.R = R; RCWA.T = T; RCWA.A = A; <br>            plot_func(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>, wavelength_range,RCWA.T,<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;R/T/A&#x27;</span>,<span class="hljs-string">&#x27;RCWA 透射&#x27;</span>);<br>            <br>        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span><br>            FDTD = fun_2D(struct);<br>            plot_func(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>, FDTD.wave,[RCWA.T FDTD.T],<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;R/T/A&#x27;</span>,<span class="hljs-string">&#x27;FDTD 透射&#x27;</span>);<br>            t2 = clock; tc(t2,t1);<br>    <span class="hljs-keyword">end</span>;<span class="hljs-keyword">end</span><br><br><br>t2 = clock; tc(t2,t1);<br>plot_func(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>, wavelength_range,RCWA.T_matrix  ,<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;R/T/A&#x27;</span>,<span class="hljs-string">&#x27;RCWA 透射&#x27;</span>);<br><br><br><span class="hljs-comment">%% 绘制 XY 面纹理</span><br><span class="hljs-keyword">for</span> iz = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(struct.height)<br>    struct.nk(:,iz) = nk_Martix(:,struct.nkindex(iz,<span class="hljs-number">1</span>)); <span class="hljs-comment">% 设置结构折射率</span><br>    textures&#123;iz&#125; = &#123;<span class="hljs-number">1</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, struct.width(iz,<span class="hljs-number">1</span>), struct.width(iz,<span class="hljs-number">1</span>), struct.nk(<span class="hljs-number">1</span>,iz), <span class="hljs-number">1</span>]&#125;;<br><span class="hljs-keyword">end</span><br>textures&#123;iz+<span class="hljs-number">1</span>&#125; = <span class="hljs-number">1</span>;<br>parm.res1.trace = <span class="hljs-number">1</span>; <span class="hljs-comment">% 绘制纹理</span><br>[aa, nef] = res1(incident_wavelength, period, textures, fourier_series, k_parallel, angle_delta, parm); axis tight;<br><span class="hljs-comment">%% 绘制XZ面纹理</span><br>parm.res3.trace = <span class="hljs-number">1</span>;<br>x = <span class="hljs-built_in">linspace</span>(-period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, <span class="hljs-number">51</span>); y = <span class="hljs-number">0</span>;<br>[tab1, z, o] = res3(x, y, aa, profile, [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], parm); <span class="hljs-comment">% profil1</span><br><span class="hljs-comment">%% 绘制YZ面纹理</span><br>parm.res3.trace = <span class="hljs-number">1</span>;<br>y = <span class="hljs-built_in">linspace</span>(-period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, <span class="hljs-number">51</span>); x = <span class="hljs-number">0</span>;<br>[tab1, z, o] = res3(x, y, aa, profile, [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], parm); <span class="hljs-comment">% profil1</span><br><span class="hljs-comment">%% 绘制 Z = 固定值 XY面场</span><br><span class="hljs-comment">%&#123; 1</span><br>x = <span class="hljs-built_in">linspace</span>(-period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, period(<span class="hljs-number">1</span>) / <span class="hljs-number">2</span>, <span class="hljs-number">51</span>);<br>y = <span class="hljs-built_in">linspace</span>(-period(<span class="hljs-number">2</span>) / <span class="hljs-number">2</span>, period(<span class="hljs-number">2</span>) / <span class="hljs-number">2</span>, <span class="hljs-number">51</span>); z0 = <span class="hljs-number">1.5</span>;<br>parm.res3.npts = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]; <span class="hljs-comment">% 每片的点数</span><br>parm.res3.champs = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]; <span class="hljs-comment">% 带有对象轮廓的 Ex Hx 自动追踪</span><br>[e, z, o] = res3(x, y, aa, profile, [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], parm);<br><span class="hljs-comment">%&#125;</span><br><br><br><br><span class="hljs-comment">%% 计算 研究光栅入射的平面波的衍射</span><br><span class="hljs-comment">% ef = res2(aa, profil1);</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"></span><br><span class="hljs-comment">%&#123; </span><br><span class="hljs-comment">enerh = sum(ef.TEinc_top_reflected.efficiency); enerb = sum(ef.TEinc_top_transmitted.efficiency);</span><br><span class="hljs-comment">disp([&#x27;TE incident du haut : energie en haut  &#x27;, num2str(enerh), &#x27; energie en bas &#x27;, num2str(enerb), &#x27; pertes &#x27;, num2str(1 - enerh - enerb)]);</span><br><span class="hljs-comment">enerh = sum(ef.TEinc_bottom_reflected.efficiency); enerb = sum(ef.TEinc_bottom_transmitted.efficiency);</span><br><span class="hljs-comment">disp([&#x27;TE incident du bas : energie en haut  &#x27;, num2str(enerh), &#x27; energie en bas &#x27;, num2str(enerb), &#x27; pertes &#x27;, num2str(1 - enerh - enerb)]);</span><br><span class="hljs-comment">enerh = sum(ef.TMinc_top_reflected.efficiency); enerb = sum(ef.TMinc_top_transmitted.efficiency);</span><br><span class="hljs-comment">disp([&#x27;TM incident du haut : energie en haut  &#x27;, num2str(enerh), &#x27; energie en bas &#x27;, num2str(enerb), &#x27; pertes &#x27;, num2str(1 - enerh - enerb)]);</span><br><span class="hljs-comment">enerh = sum(ef.TMinc_bottom_reflected.efficiency); enerb = sum(ef.TMinc_bottom_transmitted.efficiency);</span><br><span class="hljs-comment">disp([&#x27;TM incident du bas : energie en haut  &#x27;, num2str(enerh), &#x27; energie en bas &#x27;, num2str(enerb), &#x27; pertes &#x27;, num2str(1 - enerh - enerb)]);</span><br><span class="hljs-comment">%&#125;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">% 绘制 Y = 固定值 XZ面场</span><br><span class="hljs-comment">%&#123; </span><br><span class="hljs-comment">x = linspace(-period(1) / 2, period(1) / 2, 51); y = 0; % 网格的x,y坐标在x和y中（z中的坐标由计算确定）</span><br><span class="hljs-comment">einc = [1, 1]; %  u v 框架中入射 e 场的分量默认情况下入射场来自顶部</span><br><span class="hljs-comment">parm = res0; parm.not_io = 1; % 默认设置</span><br><span class="hljs-comment">parm.res3.trace = 1; % 绘制图形</span><br><span class="hljs-comment">[e, z, o] = res3(x, y, aa, profil1, einc, parm);</span><br><span class="hljs-comment">%&#125;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"></span><br><span class="hljs-comment">%% 绘制 X = 固定值 XZ面场</span><br><span class="hljs-comment">%&#123; </span><br><span class="hljs-comment">x = 0; y = linspace(-period(2) / 2, period(2) / 2, 51); einc = [1, 1];</span><br><span class="hljs-comment">parm = res0; parm.not_io = 1; %parametres par defaut</span><br><span class="hljs-comment">parm.res3.npts = 5; % nombre de points par tranche</span><br><span class="hljs-comment">parm.res3.sens = 0; % champ incident de dessous</span><br><span class="hljs-comment">parm.res3.trace = 1; % 自动绘图</span><br><span class="hljs-comment">parm.res3.champs = [1, 1, i];</span><br><span class="hljs-comment">[e, z, o] = res3(x, y, aa, profil1, einc, parm);</span><br><span class="hljs-comment">%&#125;</span><br><span class="hljs-comment"></span><br>t2 = clock; tc(t2,t1);<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="画图程序"><a href="#画图程序" class="headerlink" title="画图程序"></a>画图程序</h2><p>使用：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">plot_func(<span class="hljs-number">2</span>,[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span>],wavelength_range,RCWA.T_matrix,<span class="hljs-number">0</span>, <span class="hljs-number">25</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">-500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;Wavelength (μm)&#x27;</span>,<span class="hljs-string">&#x27;Transmission&#x27;</span>,<span class="hljs-string">&#x27;RCWA 透射&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Y</span> = <span class="hljs-title">plot_func</span><span class="hljs-params">(dimension,matrix,x, y, z,  fontsize, linewidth, x_dis, y_dis, width, height, x_label, y_label, title1)</span></span><br><br><span class="hljs-comment">%% 绘制单个图形</span><br><span class="hljs-keyword">if</span> matrix(<span class="hljs-number">1</span>) == <span class="hljs-number">0</span><br>    <span class="hljs-keyword">if</span> dimension == <span class="hljs-number">2</span><br>        <span class="hljs-built_in">figure</span>(<span class="hljs-string">&#x27;color&#x27;</span>,[<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>], <span class="hljs-string">&#x27;position&#x27;</span>, [x_dis, y_dis, width, height]); <span class="hljs-comment">% [位置横纵 宽 高]</span><br>        <span class="hljs-built_in">plot</span>([<span class="hljs-number">0</span> <span class="hljs-number">0</span>],[<span class="hljs-number">0</span> <span class="hljs-number">0</span>],<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;LineWidth&#x27;</span>,<span class="hljs-number">1.5</span>);<span class="hljs-built_in">hold</span> on;<br>        set(gca,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>, <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<br>        xlabel(x_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        ylabel(y_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        title(title1,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Monospaced&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        axis tight;<br>        <span class="hljs-keyword">for</span> ix = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(y(<span class="hljs-number">1</span>,:))<br>            <span class="hljs-built_in">plot</span>(x, y(:,ix),  <span class="hljs-string">&#x27;Color&#x27;</span>, <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>), <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<span class="hljs-built_in">hold</span> on;<br>        <span class="hljs-keyword">end</span><br>        xlim([<span class="hljs-built_in">min</span>(x), <span class="hljs-built_in">max</span>(x)]);<br>        <br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> dimension == <span class="hljs-number">3</span><br>        <span class="hljs-built_in">figure</span>(<span class="hljs-string">&#x27;color&#x27;</span>,[<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>], <span class="hljs-string">&#x27;position&#x27;</span>, [x_dis, y_dis, width, height]); <span class="hljs-comment">% [位置横纵 宽 高]</span><br>        h = pcolor(x, y, z); <span class="hljs-comment">% 绘制图像，并返回句柄</span><br>        set(h, <span class="hljs-string">&#x27;EdgeColor&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>);<br>        axis tight; <span class="hljs-comment">% 自动调整坐标轴的范围，使其紧贴着数据的最小值和最大值</span><br>        colorbar;colormap jet;<br>        set(gca, <span class="hljs-string">&#x27;TickDir&#x27;</span>, <span class="hljs-string">&#x27;in&#x27;</span>, <span class="hljs-string">&#x27;Box&#x27;</span>, <span class="hljs-string">&#x27;off&#x27;</span>, <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<br>        set(gca,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize); <span class="hljs-comment">% Times New Roman</span><br>        xlabel(x_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        ylabel(y_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        title(title1,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Monospaced&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br><br><br><span class="hljs-comment">%% 一图绘制多个图形</span><br><span class="hljs-keyword">if</span> matrix(<span class="hljs-number">1</span>) ~= <span class="hljs-number">0</span><br>    <span class="hljs-keyword">if</span> matrix(<span class="hljs-number">4</span>) == <span class="hljs-number">1</span><br>        <span class="hljs-built_in">figure</span>(<span class="hljs-string">&#x27;color&#x27;</span>,[<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>], <span class="hljs-string">&#x27;position&#x27;</span>, [x_dis, y_dis, width, height]);<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> dimension == <span class="hljs-number">2</span><br>    subplot(matrix(<span class="hljs-number">1</span>),matrix(<span class="hljs-number">2</span>),matrix(<span class="hljs-number">3</span>));<br>        <span class="hljs-built_in">plot</span>([<span class="hljs-number">0</span> <span class="hljs-number">0</span>],[<span class="hljs-number">0</span> <span class="hljs-number">0</span>],<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;LineWidth&#x27;</span>,<span class="hljs-number">1.5</span>);<span class="hljs-built_in">hold</span> on;<br>        set(gca,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>, <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<br>        xlabel(x_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        ylabel(y_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        title(title1,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Monospaced&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>        axis tight;<br>        <span class="hljs-keyword">for</span> ix = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(y(<span class="hljs-number">1</span>,:))<br>            <span class="hljs-built_in">plot</span>(x, y(:,ix),  <span class="hljs-string">&#x27;Color&#x27;</span>, <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>), <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<span class="hljs-built_in">hold</span> on;<br>        <span class="hljs-keyword">end</span><br>        xlim([<span class="hljs-built_in">min</span>(x), <span class="hljs-built_in">max</span>(x)]);<span class="hljs-built_in">hold</span> on;<br>    <span class="hljs-keyword">end</span><br><br>    <span class="hljs-keyword">if</span> dimension == <span class="hljs-number">3</span><br>        subplot(matrix(<span class="hljs-number">1</span>),matrix(<span class="hljs-number">2</span>),matrix(<span class="hljs-number">3</span>));<br><span class="hljs-comment">%     figure(&#x27;color&#x27;,[1 1 1], &#x27;position&#x27;, [x_dis, y_dis, width, height]); % [位置横纵 宽 高]</span><br>    h = pcolor(x, y, z); <span class="hljs-comment">% 绘制图像，并返回句柄</span><br>    set(h, <span class="hljs-string">&#x27;EdgeColor&#x27;</span>, <span class="hljs-string">&#x27;none&#x27;</span>);<br>    axis tight; <span class="hljs-comment">% 自动调整坐标轴的范围，使其紧贴着数据的最小值和最大值</span><br>    colorbar;colormap jet;<br>    set(gca, <span class="hljs-string">&#x27;TickDir&#x27;</span>, <span class="hljs-string">&#x27;in&#x27;</span>, <span class="hljs-string">&#x27;Box&#x27;</span>, <span class="hljs-string">&#x27;off&#x27;</span>, <span class="hljs-string">&#x27;LineWidth&#x27;</span>, linewidth);<br>    set(gca,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize); <span class="hljs-comment">% Times New Roman</span><br>    xlabel(x_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>    ylabel(y_label,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Times New Roman&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>    title(title1,<span class="hljs-string">&#x27;FontName&#x27;</span>,<span class="hljs-string">&#x27;Monospaced&#x27;</span>,<span class="hljs-string">&#x27;FontSize&#x27;</span>,fontsize);<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">end</span><br><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/RCWA/">#RCWA</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>RCWA 程序</div>
+      <div>http://example.com/2023/04/13/RCWA/RCWA程序/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月13日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年4月13日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/04/03/RCWA/RCWA%E7%9B%B8%E5%85%B3/" title="RCWA 相关1">
+                        <span class="hidden-mobile">RCWA 相关1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
