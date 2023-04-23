@@ -16,24 +16,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo个人博客搭建$a$   安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 123456789101112131415161718   npm install -g hexo-cli # 安装hexo可略过   hexo init   hexo new 我的新博客   hexo g #生成   hexo s #启动服务预览">
+    <meta name="description" content="time_cal.py时间计算使用： 1234567import timefrom time_cal import *  # 自定义模块，计算代码运行时间end_time &#x3D; time.time()  # calculate timetime_calculation(start_time, time.time())    代码： 123456789import timedef time_calc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo个人博客搭建">
-<meta property="og:url" content="http://example.com/2023/04/03/Hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="Python常用">
+<meta property="og:url" content="http://example.com/2023/04/22/Python/Python%E5%B8%B8%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo个人博客搭建$a$   安装nodejs、git  在文件夹中右击 Git Bash Here   使用npm命令安装Hexo，输入： 123456789101112131415161718   npm install -g hexo-cli # 安装hexo可略过   hexo init   hexo new 我的新博客   hexo g #生成   hexo s #启动服务预览">
+<meta property="og:description" content="time_cal.py时间计算使用： 1234567import timefrom time_cal import *  # 自定义模块，计算代码运行时间end_time &#x3D; time.time()  # calculate timetime_calculation(start_time, time.time())    代码： 123456789import timedef time_calc">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-03T15:18:16.303Z">
-<meta property="article:modified_time" content="2023-04-03T07:55:19.345Z">
+<meta property="article:published_time" content="2023-04-22T15:21:18.564Z">
+<meta property="article:modified_time" content="2023-04-22T15:24:35.905Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="重要">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo个人博客搭建 - Hexo</title>
+  <title>Python常用 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hexo个人博客搭建</span>
+            <span id="subtitle">Python常用</span>
           
         </div>
 
@@ -229,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-03 23:18" pubdate>
-          2023年4月3日 晚上
+        <time datetime="2023-04-22 23:21" pubdate>
+          2023年4月22日 晚上
         </time>
       </span>
     
@@ -241,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          530 字
         
       </span>
     
@@ -252,7 +253,7 @@
         
         
         
-          15 分钟
+          5 分钟
         
       </span>
     
@@ -311,12 +312,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo个人博客搭建</h1>
+            <h1 style="display: none">Python常用</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：20 天前
+                    本文最后更新于：13 小时前
                   
                 
               </p>
@@ -325,43 +326,13 @@
               <div class="markdown-body">
                 
                 <hr>
-<h1 id="Hexo个人博客搭建"><a href="#Hexo个人博客搭建" class="headerlink" title="Hexo个人博客搭建"></a>Hexo个人博客搭建</h1><p>$a$</p>
-<hr>
-<ol>
-<li><p>安装nodejs、git</p>
-</li>
-<li><p>在文件夹中右击 <code>Git Bash Here</code> </p>
-</li>
-<li><p>使用npm命令安装Hexo，输入：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">   npm install -g hexo-cli <span class="hljs-comment"># 安装hexo可略过</span><br>   hexo init<br>   hexo new 我的新博客<br>   hexo g <span class="hljs-comment">#生成</span><br>   hexo s <span class="hljs-comment">#启动服务预览</span><br>   git config --<span class="hljs-keyword">global</span> user.name <span class="hljs-string">&quot;wbupt&quot;</span><br>   git config --<span class="hljs-keyword">global</span> user.email <span class="hljs-string">&quot;34@qq.com&quot;</span><br>   npm install hexo-deployer-git --save <span class="hljs-comment"># 安装上传文件</span><br>   npm install hexo-renderer-pug hexo-renderer-stylus <span class="hljs-comment"># 安装 butterfly插件</span><br>   npm install hexo-generator-index-pin-top --save <span class="hljs-comment"># 文章置顶插件</span><br>   npm install hexo-hide-posts --save <span class="hljs-comment"># 隐藏文章</span><br>   npm install hexo-math --save <span class="hljs-comment"># 安装公式</span><br>   npm i hexo-renderer-pandoc<br>   hexo s -p  <span class="hljs-number">5000</span> <span class="hljs-comment"># 更改localhost值</span><br>   hexo d <span class="hljs-comment">#部署</span><br>   <span class="hljs-comment"># 打开浏览器输入地址</span><br>   localhost:<span class="hljs-number">4000</span><br>hexo clean <span class="hljs-comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span><br></code></pre></td></tr></table></figure>
-
-<p>隐藏文章地址<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangstar/articles/16690342.html">https://www.cnblogs.com/yangstar/articles/16690342.html</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">ssh-keygen -t rsa -C <span class="hljs-string">&quot;34@qq.com&quot;</span><br><span class="hljs-comment"># 创建一个 ssh key, 用准备好的email作为标签</span><br>Generating public/private rsa key pair.<br>Enter file <span class="hljs-keyword">in</span> which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]<br><br></code></pre></td></tr></table></figure>
+<h2 id="time-cal-py时间计算"><a href="#time-cal-py时间计算" class="headerlink" title="time_cal.py时间计算"></a>time_cal.py时间计算</h2><p>使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> time_cal <span class="hljs-keyword">import</span> *  <span class="hljs-comment"># 自定义模块，计算代码运行时间</span><br><br><br><br>end_time = time.time()  <span class="hljs-comment"># calculate time</span><br>time_calculation(start_time, time.time())<br></code></pre></td></tr></table></figure>
 
 
-</li>
-<li><h2 id="配置网站"><a href="#配置网站" class="headerlink" title="配置网站"></a>配置网站</h2></li>
-</ol>
-<p>进入根目录里的themes文件夹，里面也有个<code>_config.yml</code>文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: git@github.com:仓库名/仓库名.github.io.git<br>  branch: main <br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>安装Git部署插件</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">npm install hexo-deployer-git --save <span class="hljs-comment"># 安装上传文件</span><br>hexo clean <br>hexo g <br>hexo d<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">ssh-keygen -t rsa -f  ~/.ssh/wbupt -C <span class="hljs-string">&quot;34@qq.com&quot;</span><br>ssh -T [<span class="hljs-number">34</span>@qq.com protected]<br>ssh -T git@wbupt.github.com <span class="hljs-comment">#新的ssh_key验证</span><br><br>git config --<span class="hljs-keyword">global</span> user.name Github_name<br>git config --<span class="hljs-keyword">global</span> user.email ww@<span class="hljs-number">163.</span>com<br>ssh-keygen -t rsa -C wz@<span class="hljs-number">163.</span>com<br></code></pre></td></tr></table></figure>
-
-<h2 id="配置文件设置："><a href="#配置文件设置：" class="headerlink" title="配置文件设置："></a>配置文件设置：</h2><p><code>_config.yml</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">skip_render: <span class="hljs-comment">#跳过文件</span><br>  - <span class="hljs-string">&quot;HTML/*&quot;</span><br>  - <span class="hljs-string">&quot;about/*&quot;</span><br>banner_img: <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">---<br>title: Hexo个人博客搭建<br>tags: [Gridea,Hexo,Python] <span class="hljs-comment"># 标题</span><br>published: true<br>hideInList: false<br>isTop: true<br>abbrlink: <span class="hljs-number">20929</span><br>date: <span class="hljs-number">2023</span>-03-<span class="hljs-number">14</span> <span class="hljs-number">10</span>:<span class="hljs-number">19</span>:08<br>feature:<br>sticky: <span class="hljs-number">101</span><br>top: <span class="hljs-number">101</span><br>---<br></code></pre></td></tr></table></figure>
-
-<h2 id="跳过文件"><a href="#跳过文件" class="headerlink" title="跳过文件"></a>跳过文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">skip_render: <br>  - <span class="hljs-string">&quot;HTML/*&quot;</span><br>  - <span class="hljs-string">&quot;about/*&quot;</span><br>banner_img: <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="Hexo-顶面配置"><a href="#Hexo-顶面配置" class="headerlink" title="Hexo 顶面配置"></a>Hexo 顶面配置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">title: Hexo个人博客搭建<br>tags: [Gridea,Hexo,Python] <span class="hljs-comment"># 标签</span><br>published: true <span class="hljs-comment"># 未知</span><br>hidden: false<br>hide: false<br>isTop: true <span class="hljs-comment"># ?</span><br>abbrlink: <span class="hljs-number">20929</span> <span class="hljs-comment"># ?</span><br>date: <span class="hljs-number">2023</span>-03-<span class="hljs-number">14</span> <span class="hljs-number">10</span>:<span class="hljs-number">19</span>:08 <span class="hljs-comment"># time</span><br>feature:<br>sticky: <span class="hljs-number">101</span><br>top: <span class="hljs-number">101</span><br>category: Hexo <span class="hljs-comment"># 分类 category</span><br></code></pre></td></tr></table></figure>
-
-
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">time_calculation</span>(<span class="hljs-params">start_time, end_time</span>):<br>    end_time = time.time()  <span class="hljs-comment"># calculate time</span><br>    <span class="hljs-keyword">if</span> end_time - start_time &gt;= <span class="hljs-number">3600</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;&#125; h&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">round</span>((end_time - start_time) / <span class="hljs-number">3600</span>, <span class="hljs-number">2</span>)))<br>    <span class="hljs-keyword">elif</span> end_time - start_time &gt;= <span class="hljs-number">60</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;&#125; min&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">round</span>((end_time - start_time) / <span class="hljs-number">60</span>, <span class="hljs-number">2</span>)))<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;&#125; s&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">round</span>((end_time - start_time), <span class="hljs-number">1</span>)))<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -371,32 +342,13 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/%E9%87%8D%E8%A6%81/">#重要</a>
+      
+        <a href="/tags/python/">#python</a>
       
     </div>
   
@@ -408,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo个人博客搭建</div>
-      <div>http://example.com/2023/04/03/Hexo 个人博客搭建/</div>
+      <div>Python常用</div>
+      <div>http://example.com/2023/04/22/Python/Python常用/</div>
     </div>
     <div class="license-meta">
       
@@ -421,13 +373,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月3日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月3日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
@@ -458,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/03/RCWA/RCWA%E7%9B%B8%E5%85%B3/" title="RCWA 相关1">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">RCWA 相关1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/03/match/" title="match">
-                        <span class="hidden-mobile">match</span>
+                      <a href="/2023/04/18/%E7%BD%91%E7%AB%99/%E7%BD%91%E7%AB%99%E4%BB%A3%E7%A0%81/" title="网站代码">
+                        <span class="hidden-mobile">网站代码</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

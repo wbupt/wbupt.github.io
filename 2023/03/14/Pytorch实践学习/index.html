@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114142966.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114513426.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114608659.png">
-<meta property="og:image" content="i:\web\Gridea\md_picture\image-20230314114425455.png">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230422205932775.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314165217313.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314171723480.png">
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/5e9d93cce8a669b044868d5614e30ebb86293cac.png">
@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/c75a0e3af7884d288f5dd2d22175cd2e42febcb3.png">
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/d8386091e74f74280cfd0fef5dfc4d204bd6065e.png">
 <meta property="article:published_time" content="2023-03-14T02:22:34.000Z">
-<meta property="article:modified_time" content="2023-03-17T13:10:36.365Z">
+<meta property="article:modified_time" content="2023-04-22T13:17:12.868Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
@@ -288,7 +288,7 @@
         
         
         
-          168 分钟
+          171 分钟
         
       </span>
     
@@ -352,7 +352,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 个月前
+                    本文最后更新于：15 小时前
                   
                 
               </p>
@@ -545,7 +545,7 @@
 </ol>
 <p><code>图像可以表示为像素</code>–RGB栅格图像 <code>P10-12:00</code></p>
 <p><code>==a==</code></p>
-<p><img src="I:\web\Gridea\md_picture\image-20230314114425455.png" srcset="/img/loading.gif" lazyload alt="image-20230314114425455"></p>
+<p><img src="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230422205932775.png" srcset="/img/loading.gif" lazyload alt="image-20230422205932775"></p>
 <ol>
 <li>Input</li>
 <li>Kernel</li>
@@ -560,16 +560,22 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br>in_channels, out_channels= <span class="hljs-number">5</span>, <span class="hljs-number">10</span><br>width, height = <span class="hljs-number">100</span>, <span class="hljs-number">100</span><br>kernel_size = <span class="hljs-number">3</span><br>batch_size = <span class="hljs-number">1</span><br><span class="hljs-built_in">input</span> = torch.randn(batch_size, <span class="hljs-comment"># ba</span><br>                    in_channels, <span class="hljs-comment"># n</span><br>                    width,<span class="hljs-comment"># W</span><br>                    height) <span class="hljs-comment"># H</span><br>conv_layer = torch.nn.Conv2d(in_channels, <span class="hljs-comment"># n</span><br>                             out_channels, <span class="hljs-comment"># m</span><br>                             kernel_size=kernel_size) <span class="hljs-comment"># (5,3)</span><br>output = conv_layer(<span class="hljs-built_in">input</span>) <span class="hljs-comment"># 卷积层</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">input</span>.shape)<br><span class="hljs-built_in">print</span>(output.shape)<br><span class="hljs-built_in">print</span>(conv_layer.weight.shape)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/wbupt/blog1/image-20230314171723480.png" srcset="/img/loading.gif" lazyload alt="image-20230314171723480"></p>
-<p><code>padding</code>：填充。一般(3*3)</p>
+<h3 id="padding"><a href="#padding" class="headerlink" title="padding"></a><code>padding</code></h3><p>补零 填充。一般(3*3)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-built_in">input</span> = [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<br>         <span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">2</span>,<br>         <span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">4</span>,<br>         <span class="hljs-number">9</span>,<span class="hljs-number">7</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<br>         <span class="hljs-number">3</span>,<span class="hljs-number">7</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>]<br><span class="hljs-built_in">input</span> = torch.Tensor(<span class="hljs-built_in">input</span>).view(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>)<br>conv_layer = torch.nn.Conv2d(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, kernel_size=<span class="hljs-number">3</span>, padding=<span class="hljs-number">1</span>, bias=<span class="hljs-literal">False</span>)<br>kernel = torch.Tensor([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]).view(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>) <span class="hljs-comment"># 构造卷积核 # (O I W H)</span><br>conv_layer.weight.data = kernel.data<br>output = conv_layer(<span class="hljs-built_in">input</span>)<br><span class="hljs-built_in">print</span>(output)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://article.biliimg.com/bfs/article/5e9d93cce8a669b044868d5614e30ebb86293cac.png" srcset="/img/loading.gif" lazyload alt="padding=1"></p>
-<p><code>stride</code> 卷积步长</p>
-<p><code>MaxPooling</code> 最大池化层:默认：stride&#x3D;2</p>
+<h3 id="stride"><a href="#stride" class="headerlink" title="stride"></a><code>stride</code></h3><p>卷积步长</p>
+<h3 id="MaxPooling"><a href="#MaxPooling" class="headerlink" title="MaxPooling"></a><code>MaxPooling</code></h3><p>下采样：<code>最大</code>池化层:默认：stride&#x3D;2</p>
 <p><img src="https://article.biliimg.com/bfs/article/98197f929812c18861300006c6e3f8692037061c.png" srcset="/img/loading.gif" lazyload></p>
 <p>可以理解为： <code>给图像打马赛克</code></p>
 <p><img src="https://article.biliimg.com/bfs/article/457475798b3b37855b4e3e257a20929ec4f2b671.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://article.biliimg.com/bfs/article/01145c6d488594cc0a0bedf8f4228a956921566f.png" srcset="/img/loading.gif" lazyload></p>
+<p>sdf</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br>in_channels, out_channels= <span class="hljs-number">5</span>, <span class="hljs-number">10</span><br>width, height = <span class="hljs-number">100</span>, <span class="hljs-number">100</span><br>kernel_size = <span class="hljs-number">3</span><br>batch_size = <span class="hljs-number">1</span><br><span class="hljs-built_in">input</span> = torch.randn(batch_size,<br>                    in_channels,<br>                    width,<br>                    height)<br>conv_layer = torch.nn.Conv2d(in_channels,<br>                             out_channels,<br>                             kernel_size=kernel_size)<br>output = conv_layer(<span class="hljs-built_in">input</span>)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">input</span>.shape)<br><span class="hljs-built_in">print</span>(output.shape)<br><span class="hljs-built_in">print</span>(conv_layer.weight.shape)<br></code></pre></td></tr></table></figure>
+
+
+
+<p>df</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Net</span>(torch.nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(Net, self).__init__()<br>        self.conv1 = torch.nn.Conv2d(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, kernel_size=<span class="hljs-number">5</span>)<br>        self.conv2 = torch.nn.Conv2d(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, kernel_size=<span class="hljs-number">5</span>)<br>        self.pooling = torch.nn.MaxPool2d(<span class="hljs-number">2</span>)<br>        self.fc = torch.nn.Linear(<span class="hljs-number">320</span>, <span class="hljs-number">10</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-comment"># Flatten data from (n, 1, 28, 28) to (n, 784)</span><br>        batch_size = x.size(<span class="hljs-number">0</span>)<br>        x = F.relu(self.pooling(self.conv1(x)))<br>        x = F.relu(self.pooling(self.conv2(x)))<br>        x = x.view(batch_size, -<span class="hljs-number">1</span>) <span class="hljs-comment"># flatten</span><br>        x = self.fc(x)<br>        <span class="hljs-keyword">return</span> x<br><br>model = Net()<br>device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)<br>model.to(device)<br></code></pre></td></tr></table></figure>
 
 <p><code>Input Layer</code> .<code>Conv2d Layer </code>.<code>ReLU layer. ``Pooling Layer</code> .<code>Linear Layer </code>.<code>Output Layer </code>.</p>
@@ -704,7 +710,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月17日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
