@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/c75a0e3af7884d288f5dd2d22175cd2e42febcb3.png">
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/d8386091e74f74280cfd0fef5dfc4d204bd6065e.png">
 <meta property="article:published_time" content="2023-03-14T02:22:34.000Z">
-<meta property="article:modified_time" content="2023-04-22T13:17:12.868Z">
+<meta property="article:modified_time" content="2023-04-24T02:58:30.800Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          20k 字
+          21k 字
         
       </span>
     
@@ -352,7 +352,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：7 小时前
                   
                 
               </p>
@@ -667,6 +667,12 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Net</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(Net, self).__init__()<br>        self.conv1 = nn.Conv2d(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, kernel_size=<span class="hljs-number">5</span>)<br>        self.conv2 = nn.Conv2d(<span class="hljs-number">88</span>, <span class="hljs-number">20</span>, kernel_size=<span class="hljs-number">5</span>)<br>        self.incep1 = InceptionA(in_channels=<span class="hljs-number">10</span>)<br>        self.incep2 = InceptionA(in_channels=<span class="hljs-number">20</span>)<br>        self.mp = nn.MaxPool2d(<span class="hljs-number">2</span>)<br>        self.fc = nn.Linear(<span class="hljs-number">1408</span>, <span class="hljs-number">10</span>)<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>        in_size = x.size(<span class="hljs-number">0</span>)<br>        x = F.relu(self.mp(self.conv1(x)))<br>        x = self.incep1(x)<br>        x = F.relu(self.mp(self.conv2(x)))<br>        x = self.incep2(x)<br>        x = x.view(in_size, -<span class="hljs-number">1</span>)<br>        x = self.fc(x)<br>        <span class="hljs-keyword">return</span> x<br></code></pre></td></tr></table></figure>
 
+<h3 id="更上一层楼"><a href="#更上一层楼" class="headerlink" title="更上一层楼"></a>更上一层楼</h3><ol>
+<li>理论角度 《程度学习 花书》</li>
+<li>阅读PyTorch文档（通读文档）</li>
+<li>复现经典工作（读代码，写代码）</li>
+<li>扩充视野</li>
+</ol>
 
                 
               </div>
@@ -710,7 +716,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月22日</div>
+          <div>2023年4月24日</div>
         </div>
       
       
