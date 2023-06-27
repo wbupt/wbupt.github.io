@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230403230539759.png">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230419103659141.png">
 <meta property="article:published_time" content="2023-04-03T15:21:20.567Z">
-<meta property="article:modified_time" content="2023-04-19T02:38:29.135Z">
+<meta property="article:modified_time" content="2023-06-27T02:26:51.575Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="RCWA">
 <meta name="twitter:card" content="summary_large_image">
@@ -325,7 +325,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：17 天前
+                    本文最后更新于：6 分钟前
                   
                 
               </p>
@@ -378,8 +378,8 @@
 <h2 id="1-Generality-概述"><a href="#1-Generality-概述" class="headerlink" title="1. Generality 概述"></a>1. Generality 概述</h2><p>它可以计算由层状结构组成的光栅的衍射效率和衍射幅度。它包含用于计算和可视化光栅内部和外部的电磁场的例程。在此版本中，无法分析二维周期性的（交叉的）光栅。</p>
 <p>RETICOLO is a code written in the language MATLAB 9.0. It computes the diffraction efficiencies and the diffracted amplitudes of gratings composed of stacks of lamellar structures. It incorporates routines for the calculation and visualisation of the electromagnetic fields inside and outside the grating. With this version, 2D periodic (crossed) gratings cannot be analysed.</p>
 <p>RETICOLO是用MATLAB 9.0编写的代码。它计算由层状结构组成的光栅的衍射效率和衍射振幅。它包括计算和可视化光栅内外电磁场的例程。这个版本中，无法分析二维周期性（交叉）光栅。</p>
-<p>As free alternative to MATLAB, RETICOLO can also be run in GNU Octave with minimal code changes. For further information, please contact <a href="mailto:&#x74;&#x69;&#110;&#97;&#46;&#109;&#105;&#116;&#116;&#101;&#x72;&#97;&#109;&#115;&#107;&#111;&#x67;&#108;&#101;&#114;&#64;&#112;&#x72;&#111;&#x66;&#97;&#99;&#116;&#111;&#114;&#46;&#97;&#116;">&#x74;&#x69;&#110;&#97;&#46;&#109;&#105;&#116;&#116;&#101;&#x72;&#97;&#109;&#115;&#107;&#111;&#x67;&#108;&#101;&#114;&#64;&#112;&#x72;&#111;&#x66;&#97;&#99;&#116;&#111;&#114;&#46;&#97;&#116;</a>.</p>
-<p>作为MATLAB的免费替代品，RETICOLO也可以在GNU Octave中运行，只需进行最小程度的代码更改。欲了解更多信息，请联系<a href="mailto:&#116;&#105;&#110;&#97;&#46;&#x6d;&#105;&#116;&#x74;&#101;&#114;&#x61;&#x6d;&#115;&#107;&#x6f;&#103;&#x6c;&#x65;&#114;&#x40;&#x70;&#114;&#111;&#102;&#97;&#99;&#x74;&#111;&#x72;&#46;&#97;&#x74;">&#116;&#105;&#110;&#97;&#46;&#x6d;&#105;&#116;&#x74;&#101;&#114;&#x61;&#x6d;&#115;&#107;&#x6f;&#103;&#x6c;&#x65;&#114;&#x40;&#x70;&#114;&#111;&#102;&#97;&#99;&#x74;&#111;&#x72;&#46;&#97;&#x74;</a>。</p>
+<p>As free alternative to MATLAB, RETICOLO can also be run in GNU Octave with minimal code changes. For further information, please contact <a href="mailto:&#116;&#105;&#110;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#101;&#x72;&#97;&#x6d;&#x73;&#107;&#111;&#103;&#108;&#x65;&#x72;&#64;&#x70;&#x72;&#x6f;&#102;&#97;&#99;&#x74;&#111;&#114;&#46;&#x61;&#x74;">&#116;&#105;&#110;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#101;&#x72;&#97;&#x6d;&#x73;&#107;&#111;&#103;&#108;&#x65;&#x72;&#64;&#x70;&#x72;&#x6f;&#102;&#97;&#99;&#x74;&#111;&#114;&#46;&#x61;&#x74;</a>.</p>
+<p>作为MATLAB的免费替代品，RETICOLO也可以在GNU Octave中运行，只需进行最小程度的代码更改。欲了解更多信息，请联系<a href="mailto:&#x74;&#105;&#x6e;&#97;&#x2e;&#109;&#x69;&#x74;&#x74;&#101;&#114;&#97;&#109;&#115;&#107;&#111;&#x67;&#x6c;&#x65;&#x72;&#64;&#x70;&#x72;&#x6f;&#102;&#97;&#99;&#116;&#x6f;&#114;&#46;&#x61;&#x74;">&#x74;&#105;&#x6e;&#97;&#x2e;&#109;&#x69;&#x74;&#x74;&#101;&#114;&#97;&#109;&#115;&#107;&#111;&#x67;&#x6c;&#x65;&#x72;&#64;&#x70;&#x72;&#x6f;&#102;&#97;&#99;&#116;&#x6f;&#114;&#46;&#x61;&#x74;</a>。</p>
 <p>In brief, RETICOLO implements a frequency-domain modal method (known as the Rigorous Coupled wave Analysis&#x2F;RCWA). To get an overview of the RCWA, the interested readers may refer to the following articles:</p>
 <p>简而言之，RETICOLO 实现了一种频域模态方法(称为严格耦合波分析&#x2F;RCWA)。为了得到 RCWA 的概述，感兴趣的读者可以参考以下文章:</p>
 <p><code>1D-classical and conical diffraction</code> 1d-经典和圆锥衍射</p>
@@ -551,19 +551,40 @@
 <h3 id="Solving-the-eigenmode-problem-for-every-texture"><a href="#Solving-the-eigenmode-problem-for-every-texture" class="headerlink" title="Solving the eigenmode problem for every texture"></a>Solving the eigenmode problem for every texture</h3><p>求解每个纹理的特征模态问题</p>
 <p>The first computation with the RCWA consists in calculating the eigenmodes associated to all textures. This is done by the subroutine “res1.m”, following the instruction:</p>
 <p>RCWA 的第一个计算包括计算与所有纹理相关的特征模式。这是由子程序“ res1.m”按照指令完成的:</p>
+<h3 id="res1程序"><a href="#res1程序" class="headerlink" title="res1程序"></a>res1程序</h3><p><code>计算纹理</code></p>
 <p> aa &#x3D; res1(wavelength,period,textures,nn,k_parallel,parm);  </p>
 <p>This subroutine has 6 input arguments: the wavelength “<strong>wavelength</strong>”, the period of the grating “<strong>period</strong>”, the “<strong>textures</strong>” variable, the number of Fourier harmonics “<strong>nn</strong>”, the normalized parallel incident wave vector “<strong>k_parallel</strong>, and the “<strong>parm</strong>” variable containing the values of all parameters used by the code and the selected the polarisation. If one has to study the diffraction by different gratings composed of the same textures, one needs to compute only once the eigenmodes. It is possible to save the “aa” variable in a “.mat” file and to reload it for the computation of the diffracted waves, see an example in Annex 10.3.</p>
-<p>这个子程序有6个输入参数：波长“wavelength”，光栅周期“period”，“textures”变量，傅里叶谐波的数量“nn”，规范化的平行入射波矢“k_parallel”，以及包含代码使用的所有参数值和所选偏振的“parm”变量。如果需要研究由同一纹理组成的不同光栅的衍射，则只需计算一次特征模式。可以将“aa”变量保存在一个“.mat”文件中，并重新加载以计算衍射波，见附录10.3中的示例。</p>
-<h2 id="Computing-the-diffracted-waves"><a href="#Computing-the-diffracted-waves" class="headerlink" title="Computing the diffracted waves"></a>Computing the diffracted waves</h2><p>计算衍射波</p>
+<p>这个子程序有6个输入参数：</p>
+<ol>
+<li>波长“wavelength”，</li>
+<li>光栅周期“period”，</li>
+<li>“textures”变量，</li>
+<li>傅里叶谐波的数量“nn”，</li>
+<li>归一化的平行入射波矢“k_parallel”，</li>
+<li>以及包含代码使用的所有参数值和所选偏振的“parm”变量。</li>
+</ol>
+<p>如果需要研究由同一纹理组成的不同光栅的衍射，则只需计算一次特征模式。可以将“aa”变量保存在一个“.mat”文件中，并重新加载以计算衍射波，见附录10.3中的示例。</p>
+<h2 id="Computing-the-diffracted-waves"><a href="#Computing-the-diffracted-waves" class="headerlink" title="Computing the diffracted waves"></a>Computing the diffracted waves</h2><h3 id="res2程序"><a href="#res2程序" class="headerlink" title="res2程序"></a>res2程序</h3><p><code>计算衍射波</code> </p>
 <p>This is the second step of the computation. This is done by the subroutine “res2.m”, following the instruction:</p>
 <p>这是计算的第二步。这是通过子程序“res2.m”完成的，按照以下指示进行：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">result = res2(aa, Profile);<br></code></pre></td></tr></table></figure>
 
 <p>This subroutine has 2 input arguments: the output “<strong>aa</strong>” of the subroutine “res1.m” and the “<strong>Profile</strong>” variable. The output argument “<strong>result</strong>” contains all the information on the diffracted fields. “<strong>result</strong>” is an object of class ‘reticolo’ that can be indexed as an usual structure with parentheses, or with the labels of the considered orders between curly braces. Examples will be given in the following.</p>
-<p>这个子程序有两个输入参数：子程序“res1.m”的输出“aa”和“Profile”变量。输出参数“result”包含所有关于衍射场的信息。“result”是一个‘reticolo’类的对象，可以像普通结构体一样用括号进行索引，或使用大括号中的考虑阶级别的标签进行索引。示例将在接下来给出。</p>
+<p>这个子程序有两个<code>输入</code>参数：</p>
+<ol>
+<li>子程序“res1.m”的输出“aa”</li>
+<li>“Profile”变量。</li>
+</ol>
+<p>输出参数“result”包含所有关于衍射场的信息。“result”是一个‘reticolo’类的对象，可以像普通结构体一样用括号进行索引，或使用大括号中的考虑阶级别的标签进行索引。示例将在接下来给出。</p>
 <p>This information is divided into the following sub-structures fields :</p>
-<p>这些信息分为以下子结构字段:</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">- “result. inc_top”<br>- “result. inc_top_reflected”<br>- “result. inc_top_transmitted”<br>- “result. inc_bottom”<br>- “result.inc_bottom_reflected”<br>- “result. inc_bottom_transmitted”<br></code></pre></td></tr></table></figure>
+<p>这些信息分为以下子程序结构<code>输出</code>6个字段:</p>
+<p>从<code>上方</code>入射</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">- “result. inc_top”<br>- “result. inc_top_reflected”<br>- “result. inc_top_transmitted”<br></code></pre></td></tr></table></figure>
+
+<p>从<code>下方</code>入射</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">- “result. inc_bottom”<br>- “result.inc_bottom_reflected”<br>- “result. inc_bottom_transmitted”<br></code></pre></td></tr></table></figure>
+
+
 
 <p>The sub-structure “<strong>result.inc_top_reflected</strong>” contains all the information concerning the propagative <em>reflected</em> waves <em>for an incident wave from the top layer</em> of the grating. The incident wave is described in the sub-structure “<strong>result.inc_top”</strong>.</p>
 <p>子结构“result.inc_top_reflected”包含有关来自光栅顶层的入射波的传播反射波的所有信息。 入射波在子结构“result.inc_top”中描述。</p>
@@ -698,17 +719,36 @@
 <p>当光栅在x &#x3D; x0平面处具有某些镜像对称性时，可以定义“parm.sym.x &#x3D; x0”。然后，当k_parallel &#x3D; 0时，代码将使用对称性属性加快计算速度。</p>
 <p>Note that the code does not verify if the symmetries of the grating defined by the user are in agreement with the “textures” parameters. It is up to the user to define carefully the parameters parm.sym.x. All textures used in the calculation must possess the same symmetry.</p>
 <p>请注意，代码不验证用户定义的光栅的对称性是否与“textures”参数一致。用户必须仔细定义参数parm.sym.x。计算中使用的所有纹理必须具有相同的对称性。</p>
-<h2 id="Plotting-the-electromagnetic-field-and-calculating-the-absorption-loss"><a href="#Plotting-the-electromagnetic-field-and-calculating-the-absorption-loss" class="headerlink" title="Plotting the electromagnetic field and calculating the absorption loss"></a>Plotting the electromagnetic field and calculating the absorption loss</h2><p><code>绘制电磁场并计算吸收损耗</code></p>
-<h3 id="Computation-of-the-electromagnetic-fields-计算电磁场"><a href="#Computation-of-the-electromagnetic-fields-计算电磁场" class="headerlink" title="Computation of the electromagnetic fields 计算电磁场"></a>Computation of the electromagnetic fields 计算电磁场</h3><p>Once the eigenmodes associated to all textures are known, the calculation of the electromagnetic fields everywhere in the grating can be performed. This calculation is done by the function “<strong>res3.m</strong>”, following the instruction:</p>
+<h2 id="Plotting-the-electromagnetic-field-and-calculating-the-absorption-loss"><a href="#Plotting-the-electromagnetic-field-and-calculating-the-absorption-loss" class="headerlink" title="Plotting the electromagnetic field and calculating the absorption loss"></a>Plotting the electromagnetic field and calculating the absorption loss</h2><h3 id="res3程序"><a href="#res3程序" class="headerlink" title="res3程序"></a>res3程序</h3><p><code>绘制电磁场并计算吸收损耗</code></p>
+<p>Computation of the electromagnetic fields 计算电磁场</p>
+<p>Once the eigenmodes associated to all textures are known, the calculation of the electromagnetic fields everywhere in the grating can be performed. This calculation is done by the function “<strong>res3.m</strong>”, following the instruction:</p>
 <p>一旦知道了所有纹理的本征模式，就可以计算光栅中各处的电磁场。这个计算是由函数“ res3.m”按照指令完成的:</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">[e,z,index] = res3(x,aa,Profile, inc,parm);<br></code></pre></td></tr></table></figure>
 
 <p>The function“res3.m” can be called without calling “res2.m”. This subroutine has 5 input arguments:<br>-the “x” variable is a vector containing the locations where the fields will be calculated in the x-direction [for<br>instance we may set x &#x3D; linspace(-period_x&#x2F;2, period_x&#x2F;2, 51); for allocating 51 sampling points in the xdirection],<br>the “aa” variable contains all the information on the eigenmodes of all textures and is computed by the subroutine<br>res1.m,<br>-the variable “Profile” is defined in Section 4.2; note that it can be redefined,<br>-the variable “inc” defines the y component of the complex amplitude of the incident electric (in TE polarisation)<br>or magnetic field (in TM polarisation) field at O_top or O_bottom .<br>For illuminating the grating exactly by the TE-polarized incident PW defined above, one should set:<br>einc&#x3D; result.inc_top PlaneWave_E(2) for TE polarisation; einc&#x3D; result.inc_top PlaneWave_H(2) for TM<br>polarisation.<br>-the “parm” variable, already mentioned is discussed in the following.<br>There are three possible output arguments for the subroutine “res3.m”. The variable “e” contains all the<br>electromagnetic field quantities:  </p>
-<p>函数“res3.m”可以在不调用“res2.m”的情况下调用。该子程序具有5个输入参数： - “x”变量是一个向量，其中包含在x方向上计算场的位置[例如，我们可以将x &#x3D; linspace（- period_x &#x2F; 2，period_x &#x2F; 2，51）;分配51个采样点以在x方向进行采样]， - “aa”变量包含所有纹理的特征模式信息，并由子程序res1.m计算， - 变量“Profile”在第4.2节中定义。请注意，它可以重新定义， - 变量“inc”定义入射电场的复振幅的y分量（在TE偏振中）或磁场（在TM偏振中）在O_top或O_bottom处。 为了精确地用上述TE偏振入射PW照明光栅，应设置： 对于TE偏振，einc &#x3D; result.inc_top PlaneWave_E（2）;对于TM偏振，einc &#x3D; result.inc_top PlaneWave_H（2）。 - “parm”变量是已经提到的，在下面进行了讨论。 子程序“res3.m”有三个可能的输出变量。“e”变量包含所有电磁场量：</p>
+<p>函数“res3.m”可以在不调用“res2.m”的情况下调用。该子程序具有<code>5个输入</code>参数： </p>
+<ol>
+<li><p>“x”变量是一个向量，其中包含在x方向上计算场的位置[例如，我们可以将x &#x3D; linspace（- period_x &#x2F; 2，period_x &#x2F; 2，51）;分配51个采样点以在x方向进行采样]，</p>
+</li>
+<li><p>“aa”变量包含所有纹理的特征模式信息，并由子程序res1.m计算</p>
+</li>
+<li><p>变量“Profile”在第4.2节中定义。请注意，它可以重新定义</p>
+</li>
+<li><p>变量“inc”定义入射电场的复振幅的y分量（在TE偏振中）或磁场（在TM偏振中）在O_top或O_bottom处。 为了精确地用上述TE偏振入射PW照明光栅，应设置： 对于TE偏振，einc &#x3D; result.inc_top PlaneWave_E（2）;对于TM偏振，einc &#x3D; result.inc_top PlaneWave_H（2）。 </p>
+</li>
+<li><p>“parm”变量是已经提到的，在下面进行了讨论。</p>
+</li>
+</ol>
+<p>子程序“res3.m”有<code>三个</code>输出变量。</p>
+<ul>
+<li>“e”变量包含所有电磁场量：</li>
+</ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">Ey=e(:,:,<span class="hljs-number">1</span>); Hx=e(:,:,<span class="hljs-number">2</span>); Hz=e(:,:,<span class="hljs-number">3</span>); in TE polarization.<br>Hy=e(:,:,<span class="hljs-number">1</span>); Ex=e(:,:,<span class="hljs-number">2</span>); Ez=e(:,:,<span class="hljs-number">3</span>); in TM polarization.<br></code></pre></td></tr></table></figure>
 
 <p>The second variable “z” is the vector containing the z-coordinate of the sampling points. Note that in the matrix Ex&#x3D;e(:,:,1), the first index refer to the z coordinate, and the second to the x-coordinate. Thus Ex(i,j) is the Ex field component at the location {z(i), x(j)}. The third variable “index” is the complex refractive index of the considered grating. index(i,j) is the refractive index at the location {z(i), x(j)}. It can be useful to test the profile of the grating.</p>
-<p>第二个变量“z”是包含采样点z坐标的向量。请注意，在矩阵Ex &#x3D; e（：，：，1）中，第一个索引是z坐标，第二个是x坐标。 因此，Ex（i，j）是位于{z（i），x（j）}位置处的Ex场分量。第三个变量“index”是所考虑光栅的复折射率。 index（i，j）是在{z（i），x（j）}位置处的折射率。它可以用于测试光栅的轮廓。</p>
+<ul>
+<li>第二个变量“z”是包含采样点z坐标的向量。请注意，在矩阵Ex &#x3D; e（：，：，1）中，第一个索引是z坐标，第二个是x坐标。 因此，Ex（i，j）是位于{z（i），x（j）}位置处的Ex场分量。第三个变量“index”是所考虑光栅的复折射率。 index（i，j）是在{z（i），x（j）}位置处的折射率。它可以用于测试光栅的轮廓。</li>
+</ul>
 <p>Some <strong>important</strong> comments on the <strong>parm</strong>” variable : 关于“parm”变量的一些重要注释：</p>
 <ol>
 <li>For calculating precisely the electromagnetics fields, one has to set : ”<strong>parm.res1.champ&#x3D;1”</strong> before calling <strong>res1.m.</strong> This increases the calculation time and memory load, but it is highly recommended. If not, the computation of the field will be correct only in homogenous textures (for example in the top layer and in the bottom layer). 1.为了精确计算电磁场，必须在调用res1.m之前设置：“parm.res1.champ&#x3D;1”。这会增加计算时间和内存负荷，但强烈建议这样做。否则，在均匀纹理（例如在顶层和底层）中才能正确计算场。</li>
@@ -740,7 +780,7 @@
 <p>loss_of_Z_X(Z,X) &#x3D; π&#x2F;λ Im(index(Z,X).^2) |e(Z,X,1)|2 in TE polarization </p>
 <p>loss_of_Z_X(Z,X) &#x3D; π&#x2F;λ Im(index(Z,X).^2) ( e(Z,X,2)|2+|e(Z,X,3)|2) in TM polarization </p>
 <p>index: index(i,j) is the complex refractive index at the location {z(i), x(j)}.</p>
-<p><strong>每层损耗: 由 Profile 定义的每层损耗，每层损耗(1)是顶层损耗，每层损耗(2)是第2层损耗，… 每层损耗(末端)是底层损耗(z) : 吸收损耗密度(在 x 上积分)与 z 的函数关系(如 x，取样点 z 不等距)。您可以将这个损失密度绘制如下: 绘图(z，_ z 的损失) ，xlabel (‘ z’) ，ylabel (‘吸收’) _ z _ x (z，x)的损失 _ &#x3D; π&#x2F;λim (指数(z，x)。_ z _ x (z，x) &#x3D; π&#x2F;λim (index (z，x)的 TE 偏振损耗 _ 中的 ^ 2) | e (z，x，1) | 2。TM 偏振指数中的 ^ 2)(e (z，x，2) | 2 + | e (z，x，3) | 2) : 指数(i，j)是{ z (i) ，x (j)}处的复折射率。</strong></p>
+<p>每层损耗: 由 Profile 定义的每层损耗，每层损耗(1)是顶层损耗，每层损耗(2)是第2层损耗，… 每层损耗(末端)是底层损耗(z) : 吸收损耗密度(在 x 上积分)与 z 的函数关系(如 x，取样点 z 不等距)。您可以将这个损失密度绘制如下: 绘图(z，_ z 的损失) ，xlabel (‘ z’) ，ylabel (‘吸收’) _ z _ x (z，x)的损失 _ &#x3D; π&#x2F;λim (指数(z，x)。_ z _ x (z，x) &#x3D; π&#x2F;λim (index (z，x)的 TE 偏振损耗 _ 中的 ^ 2) | e (z，x，1) | 2。TM 偏振指数中的 ^ 2)(e (z，x，2) | 2 + | e (z，x，3) | 2) : 指数(i，j)是{ z (i) ，x (j)}处的复折射率。</p>
 <p>Second approach based on Poynting theorem (always valid, even for homogeneous layers with non-diagonal anisotropy):</p>
 <p>基于 Poynting 定理的第二种方法(总是有效的，即使对于非对角各向异性的均匀层) :</p>
 <p>An alternative approach to compute the losses in the layers consists in calculating the difference in the flux of the incoming and outgoing Poynting vectors. This approach is faster, but in some cases, the computation of the integral can be more accurate. In homogeneous layers with non-diagonal anisotropy, only this approach is possible.</p>
@@ -849,8 +889,8 @@
 <p>Reticolo 代码1d-锥是一个免费的软件，用于分析一维光栅在经典和锥形安装。它在 Matlab 下运行。要安装它，复制伴随文件夹“ reticolo _ allege”，并将该文件夹添加到 Matlab 路径中。该代码也可用于分析均质和各向异性材料的薄膜堆栈，参见第3.1节的结尾。</p>
 <h2 id="Outline-大纲"><a href="#Outline-大纲" class="headerlink" title="Outline 大纲"></a>Outline 大纲</h2><h2 id="Generality-概括"><a href="#Generality-概括" class="headerlink" title="Generality 概括"></a>Generality 概括</h2><p>RETICOLO is a code written in the language MATLAB 9.0. It computes the diffraction efficiencies and the diffracted amplitudes of gratings composed of stacks of lamellar structures. It incorporates routines for the calculation and visualisation of the electromagnetic fields inside and outside the grating. With this version, 2D periodic (crossed) gratings cannot be analysed.</p>
 <p>RETICOLO 是用 MATLAB 9.0语言编写的代码。它计算由层状结构堆叠组成的光栅的衍射效率和衍射振幅。它包含了用于计算和可视化光栅内外电磁场的例程。有了这个版本，二维周期(交叉)光栅不能被分析。</p>
-<p>As free alternative to MATLAB, RETICOLO can also be run in GNU Octave with minimal code changes. For further information, please contact <a href="mailto:&#116;&#105;&#110;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#x65;&#114;&#97;&#109;&#115;&#107;&#x6f;&#103;&#x6c;&#101;&#114;&#x40;&#112;&#x72;&#111;&#102;&#97;&#99;&#x74;&#x6f;&#114;&#x2e;&#97;&#x74;">&#116;&#105;&#110;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#x65;&#114;&#97;&#109;&#115;&#107;&#x6f;&#103;&#x6c;&#101;&#114;&#x40;&#112;&#x72;&#111;&#102;&#97;&#99;&#x74;&#x6f;&#114;&#x2e;&#97;&#x74;</a>.</p>
-<p>作为 MATLAB 的免费替代品，RETICOLO 也可以在 GNU Octave 中运行，代码变化很小。欲了解更多信息，请联系 <a href="mailto:&#x74;&#105;&#x6e;&#x61;&#x2e;&#109;&#105;&#116;&#116;&#x65;&#x72;&#x61;&#109;&#115;&#107;&#x6f;&#x67;&#108;&#x65;&#x72;&#x40;&#112;&#114;&#111;&#102;&#97;&#x63;&#116;&#x6f;&#x72;&#x2e;&#x61;&#x74;">&#x74;&#105;&#x6e;&#x61;&#x2e;&#109;&#105;&#116;&#116;&#x65;&#x72;&#x61;&#109;&#115;&#107;&#x6f;&#x67;&#108;&#x65;&#x72;&#x40;&#112;&#114;&#111;&#102;&#97;&#x63;&#116;&#x6f;&#x72;&#x2e;&#x61;&#x74;</a>。</p>
+<p>As free alternative to MATLAB, RETICOLO can also be run in GNU Octave with minimal code changes. For further information, please contact <a href="mailto:&#x74;&#x69;&#x6e;&#97;&#x2e;&#109;&#x69;&#x74;&#116;&#101;&#114;&#x61;&#109;&#x73;&#x6b;&#x6f;&#103;&#x6c;&#101;&#114;&#64;&#112;&#x72;&#111;&#x66;&#97;&#99;&#116;&#x6f;&#114;&#46;&#x61;&#x74;">&#x74;&#x69;&#x6e;&#97;&#x2e;&#109;&#x69;&#x74;&#116;&#101;&#114;&#x61;&#109;&#x73;&#x6b;&#x6f;&#103;&#x6c;&#101;&#114;&#64;&#112;&#x72;&#111;&#x66;&#97;&#99;&#116;&#x6f;&#114;&#46;&#x61;&#x74;</a>.</p>
+<p>作为 MATLAB 的免费替代品，RETICOLO 也可以在 GNU Octave 中运行，代码变化很小。欲了解更多信息，请联系 <a href="mailto:&#116;&#x69;&#x6e;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#101;&#x72;&#x61;&#109;&#x73;&#107;&#111;&#103;&#108;&#x65;&#x72;&#64;&#x70;&#114;&#111;&#x66;&#97;&#99;&#x74;&#111;&#x72;&#x2e;&#97;&#116;">&#116;&#x69;&#x6e;&#x61;&#46;&#109;&#105;&#x74;&#x74;&#101;&#x72;&#x61;&#109;&#x73;&#107;&#111;&#103;&#108;&#x65;&#x72;&#64;&#x70;&#114;&#111;&#x66;&#97;&#99;&#x74;&#111;&#x72;&#x2e;&#97;&#116;</a>。</p>
 <p>In brief, RETICOLO implements a frequency-domain modal method (known as the Rigorous Coupled wave Analysis&#x2F;RCWA). To get an overview of the RCWA, the interested readers may refer to the following articles:</p>
 <p>简而言之，RETICOLO 实现了一种频域模态方法(称为严格耦合波分析&#x2F;RCWA)。为了得到 RCWA 的概述，感兴趣的读者可以参考以下文章:</p>
 <p>1D-classical and conical diffraction</p>
@@ -954,7 +994,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月19日</div>
+          <div>2023年6月27日</div>
         </div>
       
       

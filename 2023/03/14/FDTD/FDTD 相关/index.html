@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230506110907422.png">
 <meta property="article:published_time" content="2023-03-14T02:35:23.000Z">
-<meta property="article:modified_time" content="2023-05-06T03:09:19.953Z">
+<meta property="article:modified_time" content="2023-05-16T03:17:41.535Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="FDTD">
 <meta name="twitter:card" content="summary_large_image">
@@ -243,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2k 字
         
       </span>
     
@@ -254,7 +254,7 @@
         
         
         
-          15 分钟
+          17 分钟
         
       </span>
     
@@ -318,7 +318,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：几秒前
+                    本文最后更新于：1 个月前
                   
                 
               </p>
@@ -333,6 +333,8 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs matlab">deleteall;<br>addrect;<br>set(<span class="hljs-string">&quot;x&quot;</span>,<span class="hljs-number">0</span>);<br>set(<span class="hljs-string">&quot;x span&quot;</span>,(h1) * <span class="hljs-number">2</span>* scale);<br>set(<span class="hljs-string">&quot;y max&quot;</span>,<span class="hljs-number">0</span>); # y<br>set(<span class="hljs-string">&quot;y min&quot;</span>, -thick); <br>set(<span class="hljs-string">&quot;material&quot;</span>, material); set(<span class="hljs-string">&quot;index&quot;</span>, nk);<br><br>w = [<span class="hljs-number">50</span>,    <span class="hljs-number">14</span>,    <span class="hljs-number">12</span>,    <span class="hljs-number">68</span>,    <span class="hljs-number">38</span>,    <span class="hljs-number">74</span>,    <span class="hljs-number">20</span>,    <span class="hljs-number">52</span>,    <span class="hljs-number">32</span>,    <span class="hljs-number">38</span>,     <span class="hljs-number">2</span>]*<span class="hljs-number">1e-9</span>;<br><br><span class="hljs-keyword">for</span> ( <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">4</span> )<br>&#123;<br>    addrect;    <br>    set(<span class="hljs-string">&quot;x&quot;</span>,(sum(w(<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>))+w(<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)*scale);<br>    set(<span class="hljs-string">&quot;x span&quot;</span>,w(<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>)*scale);<br>    set(<span class="hljs-string">&quot;y max&quot;</span>,<span class="hljs-number">0</span>); set(<span class="hljs-string">&quot;y min&quot;</span>, -thick); <br>    set(<span class="hljs-string">&quot;material&quot;</span>, material); set(<span class="hljs-string">&quot;index&quot;</span>, nk);<br>    #set(<span class="hljs-string">&quot;x&quot;</span>,(h1+h2+h3/<span class="hljs-number">2</span>)*scale);     <br>    addrect;<br>    set(<span class="hljs-string">&quot;x&quot;</span>,-(sum(w(<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>))+w(<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)*scale);<br>    set(<span class="hljs-string">&quot;x span&quot;</span>,w(<span class="hljs-number">2</span>*<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>)*scale);<br>    set(<span class="hljs-string">&quot;y max&quot;</span>,<span class="hljs-number">0</span>); set(<span class="hljs-string">&quot;y min&quot;</span>, -thick); <br>    set(<span class="hljs-string">&quot;material&quot;</span>, material); set(<span class="hljs-string">&quot;index&quot;</span>, nk);  <br>    &#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/image-20230506110907422.png" srcset="/img/loading.gif" lazyload alt="image-20230506110907422"></p>
+<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">plot_func(<span class="hljs-number">3</span>,[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span>],  <span class="hljs-number">1</span>:length(field(<span class="hljs-number">1</span>,:)),<span class="hljs-number">1</span>:length(field(:,<span class="hljs-number">1</span>)), field, <span class="hljs-number">15</span>,<span class="hljs-number">1.5</span>,  <span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1000</span>,<span class="hljs-number">400</span>,<span class="hljs-string">&#x27;X&#x27;</span>,<span class="hljs-string">&#x27;Z&#x27;</span>,<span class="hljs-string">&#x27;|Ez|^2 &amp; FOM&#x27;</span>);<br><span class="hljs-built_in">set</span>(gca, <span class="hljs-string">&#x27;YDir&#x27;</span>, <span class="hljs-string">&#x27;reverse&#x27;</span>); <br>title(sprintf(<span class="hljs-string">&#x27;|Ez|^2 &amp; FOM = %4f&#x27;</span>, -FOM ));<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -376,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年5月6日</div>
+          <div>2023年5月16日</div>
         </div>
       
       
