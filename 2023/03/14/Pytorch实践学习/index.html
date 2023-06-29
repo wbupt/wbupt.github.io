@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/c75a0e3af7884d288f5dd2d22175cd2e42febcb3.png">
 <meta property="og:image" content="https://article.biliimg.com/bfs/article/d8386091e74f74280cfd0fef5dfc4d204bd6065e.png">
 <meta property="article:published_time" content="2023-03-14T02:22:34.000Z">
-<meta property="article:modified_time" content="2023-04-24T02:58:30.800Z">
+<meta property="article:modified_time" content="2023-06-29T03:18:20.015Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
@@ -288,7 +288,7 @@
         
         
         
-          171 分钟
+          172 分钟
         
       </span>
     
@@ -352,7 +352,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 个月前
+                    本文最后更新于：5 小时前
                   
                 
               </p>
@@ -448,15 +448,17 @@
 
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112103083.png" srcset="/img/loading.gif" lazyload alt="image-20230310112103083"></p>
 <h2 id="P-7-处理多维特征的输入"><a href="#P-7-处理多维特征的输入" class="headerlink" title="P 7  处理多维特征的输入"></a>P 7  处理多维特征的输入</h2><p>Logistic regression model$\hat{y}^{(i)}&#x3D;\sigma(x^{(i)}*\omega+b)$</p>
-<p>Logistic regression model$\hat{y}^{(i)}&#x3D;\sigma(\sum\limits_{n&#x3D;1}^{8}x_n^{(i)}\cdot\omega_n+b)$<br>$$<br>\sum\limits_{n&#x3D;1}^8x_n^{(i)}\cdot\omega_n&#x3D;\begin{bmatrix}x_1^{(i)}&amp;…&amp;x_8^{(i)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}<br>$$<br>Logistic regression Model</p>
+<p>Logistic regression model$\hat{y}^{(i)}&#x3D;\sigma(\sum\limits_{n&#x3D;1}^{8}x_n^{(i)}\cdot\omega_n+b)$<br>$$<br>\sum\limits_{n&#x3D;1}^8x_n^{(i)}\cdot\omega_n&#x3D;\begin{bmatrix}x_1^{(i)}&amp;…&amp;x_8^{(i)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}<br>$$<br>Logistic regression Model 广播机制</p>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310112846700.png" srcset="/img/loading.gif" lazyload alt="image-20230310112846700"></p>
 <p>Sigmoid function is in an element-wise fashion.<br>$$<br>\begin{bmatrix}\hat{y}^{(1)}\ \vdots\ \hat{y}^{(N)}\end{bmatrix}&#x3D;\begin{bmatrix}\sigma\bigl(z^{(1)}\bigr)\ \vdots\ \sigma\bigl(z^{(N)}\bigr)\end{bmatrix}&#x3D;\sigma\bigl(\begin{bmatrix}z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}\bigr)<br>$$</p>
 <p>$$<br>z^{(1)}&#x3D;\begin{bmatrix}x_1^{(1)}&amp;\cdots&amp;x_8^{(1)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
 <p>$$<br>z^{(N)}&#x3D;\begin{bmatrix}&amp;\vdots\ x_1^{(N)}&amp;\cdots&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+b<br>$$</p>
 <p>$$<br>\begin{bmatrix}Z^{(1)}\ \vdots\ Z^{(N)}\end{bmatrix}&#x3D;\begin{bmatrix}x_1^{(1)}&amp;…&amp;x_8^{(1)}\ \vdots&amp;\ddots&amp;\vdots\ x_1^{(N)}&amp;…&amp;x_8^{(N)}\end{bmatrix}\begin{bmatrix}\omega_1\ \vdots\ \omega_8\end{bmatrix}+\begin{bmatrix}b\ \vdots\ b\end{bmatrix}<br>$$</p>
 <p>矩阵化 向量化 便于运行</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">self<span class="hljs-selector-class">.linear</span> = torch<span class="hljs-selector-class">.nn</span><span class="hljs-selector-class">.Linear</span>(<span class="hljs-number">8</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">self.linear = torch.nn.Linear(<span class="hljs-number">8</span>,<span class="hljs-number">2</span>)<br><span class="hljs-comment"># 从8维空间 - 映射到 2维空间</span><br>8D - 24D - 12D 超参数搜索<br></code></pre></td></tr></table></figure>
 
+<p><code>矩阵</code> 从n维空间映射到m维空间 </p>
+<p>空间变换的函数</p>
 <p><img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310113341902.png" srcset="/img/loading.gif" lazyload alt="image-20230310113341902"></p>
 <img src="https://cdn.jsdelivr.net/gh/yangmulao/aya/image-20230310114142966.png" srcset="/img/loading.gif" lazyload alt="image-20230310114142966" style="zoom: 80%;" />
 
@@ -716,7 +718,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月24日</div>
+          <div>2023年6月29日</div>
         </div>
       
       
