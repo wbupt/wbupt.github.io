@@ -16,15 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="time_cal.py时间计算使用： 1234567import timefrom time_cal import *  # 自定义模块，计算代码运行时间end_time &#x3D; time.time()  # calculate timetime_calculation(start_time, time.time())    代码： 123456789import timedef time_calc">
+    <meta name="description" content="导入数据导入csv文件  123xy1 &#x3D; pd.read_csv(&amp;#x27;diabetes.csv&amp;#x27;, delimiter&#x3D;&amp;#x27;,&amp;#x27;, dtype&#x3D;np.float32, header&#x3D;None)x_data &#x3D; torch.tensor(xy1.iloc[:, :-1].values)y_data &#x3D; torch.tensor(xy1.iloc[:, [-1]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python常用">
 <meta property="og:url" content="http://example.com/2023/04/22/Python/Python%E5%B8%B8%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="time_cal.py时间计算使用： 1234567import timefrom time_cal import *  # 自定义模块，计算代码运行时间end_time &#x3D; time.time()  # calculate timetime_calculation(start_time, time.time())    代码： 123456789import timedef time_calc">
+<meta property="og:description" content="导入数据导入csv文件  123xy1 &#x3D; pd.read_csv(&amp;#x27;diabetes.csv&amp;#x27;, delimiter&#x3D;&amp;#x27;,&amp;#x27;, dtype&#x3D;np.float32, header&#x3D;None)x_data &#x3D; torch.tensor(xy1.iloc[:, :-1].values)y_data &#x3D; torch.tensor(xy1.iloc[:, [-1]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-22T15:21:18.564Z">
-<meta property="article:modified_time" content="2023-04-24T09:45:18.382Z">
+<meta property="article:modified_time" content="2023-07-05T08:33:05.412Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="重要">
 <meta property="article:tag" content="python">
@@ -253,7 +253,7 @@
         
         
         
-          102 分钟
+          103 分钟
         
       </span>
     
@@ -317,7 +317,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 个月前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -326,6 +326,11 @@
               <div class="markdown-body">
                 
                 <hr>
+<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><p><code>导入csv文件</code> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">xy1 = pd.read_csv(<span class="hljs-string">&#x27;diabetes.csv&#x27;</span>, delimiter=<span class="hljs-string">&#x27;,&#x27;</span>, dtype=np.float32, header=<span class="hljs-literal">None</span>)<br>x_data = torch.tensor(xy1.iloc[:, :-<span class="hljs-number">1</span>].values)<br>y_data = torch.tensor(xy1.iloc[:, [-<span class="hljs-number">1</span>]].values)<br></code></pre></td></tr></table></figure>
+
+
+
 <h2 id="time-cal-py时间计算"><a href="#time-cal-py时间计算" class="headerlink" title="time_cal.py时间计算"></a>time_cal.py时间计算</h2><p>使用：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">from</span> time_cal <span class="hljs-keyword">import</span> *  <span class="hljs-comment"># 自定义模块，计算代码运行时间</span><br><br><br><br>end_time = time.time()  <span class="hljs-comment"># calculate time</span><br>time_calculation(start_time, time.time())<br></code></pre></td></tr></table></figure>
 
@@ -388,7 +393,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月24日</div>
+          <div>2023年7月5日</div>
         </div>
       
       
