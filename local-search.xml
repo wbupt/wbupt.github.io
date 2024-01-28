@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>latex相关</title>
+    <link href="/2024/01/28/Latex%E7%9B%B8%E5%85%B3/"/>
+    <url>/2024/01/28/Latex%E7%9B%B8%E5%85%B3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="latex相关"><a href="#latex相关" class="headerlink" title="latex相关"></a>latex相关</h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">\begin&#123;figure&#125;[H]<br>  \centering<br>  \includegraphics[height=2cm]&#123;图片文件名&#125;<br>  \caption&#123;图的注释&#125;<br>  \label&#123;图的标签&#125;<br>\end&#123;figure&#125;<br></code></pre></td></tr></table></figure><p>引用图片</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">~\ref&#123;fig:2_TMM_2&#125;~<br></code></pre></td></tr></table></figure><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>快捷键：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">\begin&#123;equation&#125;<br>\label&#123;公式标签&#125;<br>a+b=c<br>\end&#123;equation&#125;<br></code></pre></td></tr></table></figure><p>引用公式：</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>电脑环境配置</title>
     <link href="/2023/11/10/%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3/"/>
     <url>/2023/11/10/%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3/</url>
