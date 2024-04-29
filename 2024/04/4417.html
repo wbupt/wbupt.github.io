@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Transformer学习笔记二：Self-Attention（自注意力机制） | 我的网站</title><meta name="author" content="-.-"><meta name="copyright" content="-.-"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Transformer学习笔记二：Self-Attention（自注意力机制）一、笔记架构 Transformer中的三处Attention 关于Transformer的系列笔记，预计出如下几篇：  Positional Encoding （位置编码），点击跳转 Self-attention（自注意力机制） Batch Norm &amp; Layer Norm（批量标准化&#x2F;层标准化），">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transformer学习笔记二：Self-Attention（自注意力机制）">
+<meta property="og:url" content="http://example.com/2024/04/4417.html">
+<meta property="og:site_name" content="我的网站">
+<meta property="og:description" content="Transformer学习笔记二：Self-Attention（自注意力机制）一、笔记架构 Transformer中的三处Attention 关于Transformer的系列笔记，预计出如下几篇：  Positional Encoding （位置编码），点击跳转 Self-attention（自注意力机制） Batch Norm &amp; Layer Norm（批量标准化&#x2F;层标准化），">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-04-28T15:17:31.417Z">
+<meta property="article:modified_time" content="2024-04-28T15:44:56.169Z">
+<meta property="article:author" content="-.-">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/04/4417.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Transformer学习笔记二：Self-Attention（自注意力机制）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-28 23:44:56'
+}</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="我的网站"></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Transformer学习笔记二：Self-Attention（自注意力机制）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-28T15:17:31.417Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-28T15:44:56.169Z" title="更新于 2024-04-28 23:44:56">2024-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Transformer学习笔记二：Self-Attention（自注意力机制）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Transformer学习笔记二：Self-Attention（自注意力机制）"><a href="#Transformer学习笔记二：Self-Attention（自注意力机制）" class="headerlink" title="Transformer学习笔记二：Self-Attention（自注意力机制）"></a>Transformer学习笔记二：Self-Attention（自注意力机制）</h1><h2 id="一、笔记架构"><a href="#一、笔记架构" class="headerlink" title="一、笔记架构"></a>一、笔记架构</h2><p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241116401.png" alt="image-20240424111606353"></p>
+<p>Transformer中的三处Attention</p>
+<p>关于Transformer的系列笔记，预计出如下几篇：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/454482273">Positional Encoding （位置编码），点击跳转</a></li>
+<li>Self-attention（自注意力机制）</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/456863215">Batch Norm &amp; Layer Norm（批量标准化&#x2F;层标准化），点击跳转</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/459065530">ResNet（残差网络），点击跳转</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/460678461">Subword Tokenization（子词分词法），点击跳转</a></li>
+<li>组装：Transformer</li>
+</ol>
+<p>笔记持续更新中～希望和各位小伙伴们一起学习～</p>
+<p>在Transformer中，一共涉及到三个Attention零件。这篇笔记将基于这三个零件，对attention机制进行探讨，主要内容包括：</p>
+<p>（1）Attention机制的基本框架<br>（2）Attention Score的计算方法<br>- Dot product<br>- Additive product<br>- Scaled dot product (Transformer论文使用的方法，这里将探讨乘上因子$1&#x2F;\sqrt{d}_k$的意义）<br>（3）Masked Attention<br>（4）Multihead Attention实现方式及可视化（多头的意义）<br>（5）Attention代码实践</p>
+<h2 id="二、Attention构造"><a href="#二、Attention构造" class="headerlink" title="二、Attention构造"></a>二、Attention构造</h2><h3 id="2-1-Attention的基本运作方式"><a href="#2-1-Attention的基本运作方式" class="headerlink" title="2.1 Attention的基本运作方式"></a>2.1 Attention的基本运作方式</h3><p>首先，来看RNN这样一个用于处理序列数据的经典模型。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241117259.webp" alt="img"></p>
+<p>图1: 传统RNN</p>
+<p>在RNN当中，tokens是一个一个被喂给模型的。比如在a3的位置，模型要等a1和a2的信息都处理完成后，才可以生成a3。这样的作用机制，使得RNN存在以下几个问题：<br><strong>(1) Sequential operations的复杂度随着序列长度的增加而增加。</strong><br>这是指模型下一步计算的等待时间，在RNN中为O(N)。该复杂度越大，模型并行计算的能力越差，反之则反。<br><strong>(2) Maximum Path length的复杂度随着序列长度的增加而增加。</strong><br>这是指信息从一个数据点传送到另一个数据点所需要的距离，在RNN中同样为O(N)，距离越大，则在传送的过程中越容易出现信息缺失的情况，即数据点对于远距离处的信息，是很难“看见”的。</p>
+<p>那么，在处理序列化数据的时候，是否有办法，在提升模型的并行运算能力的同时，对于序列中的每个token，也能让它不损失信息地看见序列里的其他tokens呢？</p>
+<p>Attention就作为一种很好的改进办法出现了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241118414.webp" alt="img"></p>
+<p>图2: Self-attention</p>
+<p>如图，蓝色方框为一个attention模型。在每个位置，例如在a2处产生b2时，attention将会同时看过a1到a4的每个token。此外，每个token生成其对应的输出的过程是同时进行的，计算不需要等待。下面来看attention内部具体的运算过程。</p>
+<h3 id="2-2-Attention的计算过程图解"><a href="#2-2-Attention的计算过程图解" class="headerlink" title="2.2 Attention的计算过程图解"></a>2.2 Attention的计算过程图解</h3><p><strong>2.2.1 Self-attention</strong></p>
+<p><strong>（1）计算框架</strong></p>
+<p>Self-attention的意思是，我们给Attention的输入都来自同一个序列，其计算方式如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241118843.webp" alt="img"></p>
+<p>图3: self-attention计算框架 （图片来自李宏毅老师PPT）</p>
+<p>这张图所表示的大致运算过程是：<br>对于每个token，先产生三个向量query，key，value：</p>
+<ul>
+<li>query向量类比于<strong>询问</strong>。某个token问：“其余的token都和我有多大程度的相关呀？”</li>
+<li>key向量类比于<strong>索引</strong>。某个token说：“我把每个询问内容的回答都压缩了下装在我的key里”</li>
+<li>value向量类比于<strong>回答</strong>。某个token说：“我把我自身涵盖的信息又抽取了一层装在我的value里”</li>
+</ul>
+<p>以图中的token a2为例：</p>
+<ul>
+<li>它产生一个query，每个query都去和别的token的key做“<strong>某种方式</strong>”的计算，得到的结果我们称为attention score（即为图中的$$\alpha $$）。则一共得到四个attention score。（attention score又可以被称为attention weight）。</li>
+<li>将这四个score分别乘上每个token的value，我们会得到四个抽取信息完毕的向量。</li>
+<li>将这四个向量相加，就是最终a2过attention模型后所产生的结果b2。</li>
+</ul>
+<p><strong>（2）产生query，key和value</strong></p>
+<p>下图描述了产生query(q)，key(k)和value(v)的过程：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241120795.webp" alt="img"></p>
+<p>图4: 产生query， key和value</p>
+<p>假设batch_size&#x3D;1，输入序列X的形状为(seq_len &#x3D; 4, d_model &#x3D; 6)，则对于这串序列，我们产生三个参数矩阵： $W^Q,W^K,W^V$。通过上述的矩阵乘法，我们可以得到最终的结果Q，K，V。</p>
+<p>一般来说， $W^Q$$和$$W^K$都同样使用k_dim， $𝑊^𝑉 $使用v_dim。k_dim和v_dim不一定要相等，但在transformer的原始论文中，采用的策略是，设num_heads为self-attention的头数，则:<br>𝑘_𝑑𝑖𝑚&#x3D;𝑣_𝑑𝑖𝑚&#x3D;𝑑_𝑚𝑜𝑑𝑒𝑙&#x2F;&#x2F;𝑛𝑢𝑚_ℎ𝑒𝑎𝑑𝑠</p>
+<p>上图所绘是num_heads &#x3D; 1的情况。关于num_heads的概念，在本文的后面会详细解释。</p>
+<p><strong>（3）计算attention score</strong></p>
+<p>总结一下，到目前为止，对于某条输入序列X，我们有：</p>
+<p>​                         $Q&#x3D;XW^Q$  $K&#x3D;XW^K$ $V&#x3D;XW^V$ </p>
+<p>现在，我们做两件事：</p>
+<ul>
+<li>利用Q和K，计算出attention score矩阵，这个矩阵由图3中的$\alpha$组成。</li>
+<li>利用V和attention score矩阵，计算出Attention层最终的输出结果矩阵，这个矩阵由图3中的b组成。</li>
+</ul>
+<p>记最终的输出结果为$Attention(Q,K,V)$，则有：</p>
+<p>$$Attention(Q,K,V)&#x3D;softmax(\frac{QK^T}{\sqrt{d_k}})V$$</p>
+<p>这个$d_k$就是k_dim，而$softmax(\frac{QK^T}{\sqrt{d_k}})$就是Attention Score矩阵，我们来详细看下这个矩阵的计算过程。</p>
+<p>如图5，计算attention score的主流方式有两种，在transformer的论文中，采用的是dot-product（因为不需要额外再去训练一个W矩阵，运算量更小），因此我们来重点关注一下dot-product。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241127133.webp" alt="img">图5: 计算attention score的两种方式</p>
+<p>更确切地说，论文中所采用的是scaled dot-product，因为乘上了因子$1&#x2F;\sqrt{d_k}$。在softmax之后，attention score矩阵的每一行表示一个token，每一列表示该token和对应位置token的$\alpha$值，因为进行了softmax，每一行的 𝛼$\alpha$值相加等于1。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241128985.webp" alt="img"></p>
+<p>图6: scaled-dot-product</p>
+<p><strong>（勘误：紫色方框中的下标应该是 $\alpha_{11}$,$\alpha_{12}$,$\alpha_{13}$,$\alpha_{14}$, )</strong></p>
+<p><strong>之所以进行scaling，是为了使得在softmax的过程中，梯度下降得更加稳定，避免因为梯度过小而造成模型参数更新的停滞</strong>。下面我们通过数学证明，来解释这个结论。为了表达方便（也为了和论文的标识保持一致），我们把k_dim写成 $d_k$，同理v_dim写成$d_v$ ，S表示softmax函数，假设在做softmax之前，紫色矩阵里的每一个值为$\alpha_{ij}^*$，则有：</p>
+<p>$\alpha_{ij}&#x3D;S(\alpha_{ij}^*)&#x3D;\frac{e^{\alpha_{ij}^*}}{\sum_{j&#x3D;1}^{d_k}e^{\alpha_{ij}^*}}$</p>
+<p>聚焦到紫色矩阵的某一行，对于其中某个$j^{\prime}$，我们有：</p>
+<p>$$\begin{aligned}&amp;\frac{\partial S(\alpha_{ij^{\prime}}^*)}{\partial\alpha_{ij^{\prime}}^*}&#x3D;S(\alpha_{ij^{\prime}}^*)(1-S(\alpha_{ij^{\prime}}^*))\&amp;\frac{\partial S(\alpha_{ij^{\prime}}^*)}{\partial\alpha_{ij}^*}&#x3D;-S(\alpha_{ij^{\prime}}^*)S(\alpha_{ij}^*),&amp;j\neq j^{\prime}\end{aligned}$$</p>
+<p>从上面可以看出：</p>
+<ul>
+<li>当$\alpha_{ij^{\prime}}^*$相对于同一行其他的$\alpha_{ij}^*$ 更大的时候，$S(\alpha_{ij^{\prime}}^*)$趋近于1，$S(\alpha_{ij}^*)$趋近于0，此时以上的两个结果都趋近于0。</li>
+<li>当$\alpha_{ij^{\prime}}^*$相对于同一行其他的$\alpha_{ij}^*$ 更小的时候，$S(\alpha_{ij^{\prime}}^*)$趋近于0，$S(\alpha_{ij}^*)$趋近于1，此时以上的两个结果都趋近于0。</li>
+</ul>
+<p><strong>总结起来，即当</strong>$\alpha_{ij^{\prime}}^*$<strong>相对于其他结果过大或者过小时，都会造成softmax函数的偏导趋近于0（梯度过低）。</strong>在这种情况下，整个模型在backprop的过程中，经过softmax之后，就无法继续传播到softmax之前的函数上，造成模型参数无法更新，影响了模型的训练效率。</p>
+<p>那么$\alpha_{ij}^*$是怎么计算来的呢？通过前面的讲解可以知道：<br>$$\alpha_{ij}^*&#x3D;qk^T&#x3D;\sum_{j&#x3D;1}^{d_k}q_{ij}k_{ji}$$<br>假设向量q和k中的每一个元素都是相互独立，均值为0，方差为1的随机变量，那么易知$\alpha_{ij}^*$的均值也为0，方差为$d_k$。$d_k$较大，意味着不同$\alpha_{ij}^*$间值的差距也很大，这就导致了上面所说的梯度消失的问题。</p>
+<h3 id="2-3-Masked-Attention"><a href="#2-3-Masked-Attention" class="headerlink" title="2.3 Masked Attention"></a>2.3 Masked Attention</h3><p>有时候，我们并不想在做attention的时候，让一个token看到整个序列，我们只想让它看见它左边的序列，而要把右边的序列遮蔽（Mask）起来。例如在transformer的decoder层中，我们就用到了masked attention，这样的操作可以理解为模型为了防止decoder在解码encoder层输出时“作弊”，提前看到了剩下的答案，因此需要强迫模型根据输入序列左边的结果进行attention。</p>
+<p>Masked的实现机制其实很简单，如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241136935.webp" alt="img"></p>
+<p>图7: Masked Attention</p>
+<p>首先，我们按照前文所说，正常算attention score，然后我们用一个MASK矩阵去处理它（这里的+号并不是表示相加，只是表示提供了位置覆盖的信息）。在MASK矩阵标1的地方，也就是需要遮蔽的地方，我们把原来的值替换为一个很小的值（比如-1e09），而在MASK矩阵标0的地方，我们保留原始的值。这样，在进softmax的时候，那些被替换的值由于太小，就可以自动忽略不计，从而起到遮蔽的效果。</p>
+<p>举例来说明MASK矩阵的含义，每一行表示对应位置的token。例如在第一行第一个位置是0，其余位置是1，这表示第一个token在attention时，只看到它自己，它右边的tokens是看不到的。以此类推。</p>
+<h3 id="2-4-Multihead-Attention"><a href="#2-4-Multihead-Attention" class="headerlink" title="2.4 Multihead Attention"></a>2.4 Multihead Attention</h3><p>在图像中，我们知道有不同的channel，每一个channel可以用来识别一种模式。如果我们对一张图采用attention，比如把这张图的像素格子拉平成一列，那么我们可以对每个像素格子训练不同的head，每个head就类比于一个channel，用于识别不同的模式。</p>
+<p>而在NLP中，这种模式识别同样重要。比如第一个head用来识别词语间的指代关系(某个句子里有一个单词it，这个it具体指什么呢），第二个head用于识别词语间的时态关系（看见yesterday就要用过去式）等等。</p>
+<p>图8展示了multihead attention的运作方式。设头的数量为num_heads，那么本质上，就是训练num_heads个 $W^Q$，$ W^K$,$W^V$个矩阵，用于生成num_heads个 𝑄,𝐾,𝑉 结果。每个结果的计算方式和单头的attention的计算方式一致。最终将生成的b连接起来生成最后的结果。图9详细展示了8个head的矩阵化的运算过程，由于拆分成了多头，则此时有</p>
+<p>$$k_dim&#x3D;v_dim&#x3D;d_model&#x2F;&#x2F;num_heads$$也就是说$W^Q$，$ W^K$,$W^V$的维度变为 ($d_model,d_model&#x2F;&#x2F;num_heads$)。按照这个规则拆分后，多头的运算量和原来单头的运算量一样。同时在图9中，在输出部分出现了一个$W^O$矩阵，这个矩阵用于将拼接起来的多头输出转换为最终总输出</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241142279.webp" alt="img"></p>
+<p>图8: Multihead Attention</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241142973.webp" alt="img"></p>
+<p>图9: 8头Attention矩阵化计算过程</p>
+<p>将每个head上的attention score分数打出，可以具象化地感受每个head的关注点，以入句子”The animal didn’t cross the streest because it was too tired”为例，可视化代码可<a href="https://link.zhihu.com/?target=https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb%23scrollTo=OJKU36QAfqOC">点此</a>（存在Google colab上，需要翻墙）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241144601.webp" alt="img"></p>
+<p>图10: 单头attention可视化</p>
+<p>如图10，颜色越深表示attention score越大，我们构造并连接五层的attention模块，可以发现it和animal，street关系密切。现在我们把8个头全部加上去，参见图11。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241144562.webp" alt="img"></p>
+<p>图11: 8头attention</p>
+<h2 id="三、Attention代码实践"><a href="#三、Attention代码实践" class="headerlink" title="三、Attention代码实践"></a>三、Attention代码实践</h2><p>这里提供一个Mutihead Attention的python实现方法，它可以快速帮助我们了解一个attention层的计算过程，同时可以很方便地打出中间步骤。Tensorflow和Pytorch的源码里有更为工业化的实现方式，包加速运算、引入bias，自定义维度等等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> Tensor</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span>, <span class="type">Any</span>, <span class="type">Union</span>, <span class="type">Callable</span></span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">import</span> math, copy, time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MultiHeadedAttention</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, </span></span><br><span class="line"><span class="params">                num_heads: <span class="built_in">int</span>, </span></span><br><span class="line"><span class="params">                d_model: <span class="built_in">int</span>, </span></span><br><span class="line"><span class="params">                dropout: <span class="built_in">float</span>=<span class="number">0.1</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(MultiHeadedAttention, self).__init__()</span><br><span class="line">        <span class="keyword">assert</span> d_model % num_heads == <span class="number">0</span>, <span class="string">&quot;d_model must be divisible by num_heads&quot;</span></span><br><span class="line">        <span class="comment"># Assume v_dim always equals k_dim</span></span><br><span class="line">        self.k_dim = d_model // num_heads</span><br><span class="line">        self.num_heads = num_heads</span><br><span class="line">        self.proj_weights = clones(nn.Linear(d_model, d_model), <span class="number">4</span>) <span class="comment"># W^Q, W^K, W^V, W^O</span></span><br><span class="line">        self.attention_score = <span class="literal">None</span></span><br><span class="line">        self.dropout = nn.Dropout(p=dropout)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, </span></span><br><span class="line"><span class="params">                query:Tensor, </span></span><br><span class="line"><span class="params">                key: Tensor, </span></span><br><span class="line"><span class="params">                value: Tensor, </span></span><br><span class="line"><span class="params">                mask:<span class="type">Optional</span>[Tensor]=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            query: shape (batch_size, seq_len, d_model)</span></span><br><span class="line"><span class="string">            key: shape (batch_size, seq_len, d_model)</span></span><br><span class="line"><span class="string">            value: shape (batch_size, seq_len, d_model)</span></span><br><span class="line"><span class="string">            mask: shape (batch_size, seq_len, seq_len). Since we assume all data use a same mask, so</span></span><br><span class="line"><span class="string">                  here the shape also equals to (1, seq_len, seq_len)</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Return:</span></span><br><span class="line"><span class="string">            out: shape (batch_size, seq_len, d_model). The output of a multihead attention layer</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> mask <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            mask = mask.unsqueeze(<span class="number">1</span>)</span><br><span class="line">        batch_size = query.size(<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 1) Apply W^Q, W^K, W^V to generate new query, key, value</span></span><br><span class="line">        query, key, value \</span><br><span class="line">            = [proj_weight(x).view(batch_size, -<span class="number">1</span>, self.num_heads, self.k_dim).transpose(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">                <span class="keyword">for</span> proj_weight, x <span class="keyword">in</span> <span class="built_in">zip</span>(self.proj_weights, [query, key, value])] <span class="comment"># -1 equals to seq_len</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2) Calculate attention score and the out</span></span><br><span class="line">        out, self.attention_score = attention(query, key, value, mask=mask, </span><br><span class="line">                                 dropout=self.dropout)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 3) &quot;Concat&quot; output</span></span><br><span class="line">        out = out.transpose(<span class="number">1</span>, <span class="number">2</span>).contiguous() \</span><br><span class="line">             .view(batch_size, -<span class="number">1</span>, self.num_heads * self.k_dim)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 4) Apply W^O to get the final output</span></span><br><span class="line">        out = self.proj_weights[-<span class="number">1</span>](out)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">clones</span>(<span class="params">module, N</span>):</span><br><span class="line">        <span class="string">&quot;Produce N identical layers.&quot;</span></span><br><span class="line">        <span class="keyword">return</span> nn.ModuleList([copy.deepcopy(module) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(N)])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">attention</span>(<span class="params">query: Tensor, </span></span><br><span class="line"><span class="params">              key: Tensor, </span></span><br><span class="line"><span class="params">              value: Tensor, </span></span><br><span class="line"><span class="params">              mask: <span class="type">Optional</span>[Tensor] = <span class="literal">None</span>, </span></span><br><span class="line"><span class="params">              dropout: <span class="built_in">float</span> = <span class="number">0.1</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Define how to calculate attention score</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        query: shape (batch_size, num_heads, seq_len, k_dim)</span></span><br><span class="line"><span class="string">        key: shape(batch_size, num_heads, seq_len, k_dim)</span></span><br><span class="line"><span class="string">        value: shape(batch_size, num_heads, seq_len, v_dim)</span></span><br><span class="line"><span class="string">        mask: shape (batch_size, num_heads, seq_len, seq_len). Since our assumption, here the shape is</span></span><br><span class="line"><span class="string">              (1, 1, seq_len, seq_len)</span></span><br><span class="line"><span class="string">    Return:</span></span><br><span class="line"><span class="string">        out: shape (batch_size, v_dim). Output of an attention head.</span></span><br><span class="line"><span class="string">        attention_score: shape (seq_len, seq_len).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    k_dim = query.size(-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># shape (seq_len ,seq_len)，row: token，col: that token&#x27;s attention score</span></span><br><span class="line">    scores = torch.matmul(query, key.transpose(-<span class="number">2</span>, -<span class="number">1</span>)) / math.sqrt(k_dim)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> mask <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        scores = scores.masked_fill(mask == <span class="number">0</span>, -<span class="number">1e10</span>)</span><br><span class="line"></span><br><span class="line">    attention_score = F.softmax(scores, dim = -<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> dropout <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        attention_score = dropout(attention_score)</span><br><span class="line">        </span><br><span class="line">    out = torch.matmul(attention_score, value)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> out, attention_score <span class="comment"># shape: (seq_len, v_dim), (seq_len, seq_lem)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    d_model = <span class="number">8</span></span><br><span class="line">    seq_len = <span class="number">3</span></span><br><span class="line">    batch_size = <span class="number">6</span></span><br><span class="line">    num_heads = <span class="number">2</span></span><br><span class="line">    <span class="comment"># mask = None</span></span><br><span class="line">    mask = torch.tril(torch.ones((seq_len, seq_len)), diagonal = <span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">input</span> = torch.rand(batch_size, seq_len, d_model)</span><br><span class="line">    multi_attn = MultiHeadedAttention(num_heads = num_heads, d_model = d_model, dropout = <span class="number">0.1</span>)</span><br><span class="line">    out = multi_attn(query = <span class="built_in">input</span>, key = <span class="built_in">input</span>, value = <span class="built_in">input</span>, mask = mask)</span><br><span class="line">    <span class="built_in">print</span>(out.shape)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/202404241151445.webp" alt="动图"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/Tranformer3.html" title="Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/e5ad.html" title="Transformer学习笔记一：Positional Encoding（位置编码）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Transformer学习笔记一：Positional Encoding（位置编码）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">-.-</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9ASelf-Attention%EF%BC%88%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Transformer学习笔记二：Self-Attention（自注意力机制）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AC%94%E8%AE%B0%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">一、笔记架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Attention%E6%9E%84%E9%80%A0"><span class="toc-number">1.2.</span> <span class="toc-text">二、Attention构造</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Attention%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 Attention的基本运作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Attention%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B%E5%9B%BE%E8%A7%A3"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 Attention的计算过程图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Masked-Attention"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 Masked Attention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Multihead-Attention"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 Multihead Attention</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Attention%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.3.</span> <span class="toc-text">三、Attention代码实践</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/5212.html" title="电脑环境配置">电脑环境配置</a><time datetime="2024-04-28T15:17:31.425Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer_chen.html" title="陈硕--Transformer-Attention Is All You Need">陈硕--Transformer-Attention Is All You Need</a><time datetime="2024-04-28T15:17:31.423Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/c3df.html" title="第二章 Transformer">第二章 Transformer</a><time datetime="2024-04-28T15:17:31.421Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/7bc6.html" title="Transformer学习笔记四：ResNet（残差网络）">Transformer学习笔记四：ResNet（残差网络）</a><time datetime="2024-04-28T15:17:31.420Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer3.html" title="Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)">Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)</a><time datetime="2024-04-28T15:17:31.419Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By -.-</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b2"></script><script src="/js/main.js?v=4.14.0-b2"></script><script src="/js/tw_cn.js?v=4.14.0-b2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams'
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.14.0-b2"></script></div></div></body></html>

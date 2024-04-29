@@ -1,0 +1,667 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>1 3 Transformer | 我的网站</title><meta name="author" content="-.-"><meta name="copyright" content="-.-"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 Transformer背景介绍1.1 Transformer的诞生 2018年10月，Google发出一篇论文《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》, BERT模型横空出世, 并横扫NLP领域11项任务的最佳成绩!  论文地址: https:&#x2F;&#x2F;arxiv.org&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1 3 Transformer">
+<meta property="og:url" content="http://example.com/2024/04/463e.html">
+<meta property="og:site_name" content="我的网站">
+<meta property="og:description" content="第一章 Transformer背景介绍1.1 Transformer的诞生 2018年10月，Google发出一篇论文《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》, BERT模型横空出世, 并横扫NLP领域11项任务的最佳成绩!  论文地址: https:&#x2F;&#x2F;arxiv.org&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-04-28T15:17:31.415Z">
+<meta property="article:modified_time" content="2024-04-28T15:44:56.170Z">
+<meta property="article:author" content="-.-">
+<meta property="article:tag" content="Transformer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/04/463e.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1 3 Transformer',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-28 23:44:56'
+}</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="我的网站"></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">1 3 Transformer</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-28T15:17:31.415Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-28T15:44:56.170Z" title="更新于 2024-04-28 23:44:56">2024-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>28分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="1 3 Transformer"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第一章-Transformer背景介绍"><a href="#第一章-Transformer背景介绍" class="headerlink" title="第一章 Transformer背景介绍"></a>第一章 Transformer背景介绍</h1><h2 id="1-1-Transformer的诞生"><a href="#1-1-Transformer的诞生" class="headerlink" title="1.1 Transformer的诞生"></a>1.1 Transformer的诞生</h2><hr>
+<p>2018年10月，Google发出一篇论文《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》, BERT模型横空出世, 并横扫NLP领域11项任务的最佳成绩!</p>
+<hr>
+<p>论文地址: <a href="http://link.zhihu.com/?target=https://arxiv.org/pdf/1810.04805.pdf">https://arxiv.org/pdf/1810.04805.pdf</a></p>
+<hr>
+<p>而在BERT中发挥重要作用的结构就是Transformer, 之后又相继出现XLNET，roBERT等模型击败了BERT，但是他们的核心没有变，仍然是：Transformer.</p>
+<hr>
+<h2 id="1-2-Transformer的优势"><a href="#1-2-Transformer的优势" class="headerlink" title="1.2 Transformer的优势"></a>1.2 Transformer的优势</h2><hr>
+<p>相比之前占领市场的LSTM和GRU模型，Transformer有两个显著的优势:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1, Transformer能够利用分布式GPU进行并行训练，提升模型训练效率.    </span><br><span class="line">2, 在分析预测更长的文本时, 捕捉间隔较长的语义关联效果更好.   </span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>下面是一张在测评比较图:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/v2-b07ae6d625c826984a7e357ee1c3ae79_1440w.webp" alt="img"></p>
+<hr>
+<h2 id="1-3-Transformer的市场"><a href="#1-3-Transformer的市场" class="headerlink" title="1.3 Transformer的市场"></a>1.3 Transformer的市场</h2><hr>
+<p>在著名的SOTA机器翻译榜单上, 几乎所有排名靠前的模型都使用Transformer,</p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/v2-493d94f73e744d3eaefbd18e394a6db0_1440w.webp" alt="img"></p>
+<p>其基本上可以看作是工业界的风向标, 市场空间自然不必多说！</p>
+<h1 id="第二章：-Transformer架构解析"><a href="#第二章：-Transformer架构解析" class="headerlink" title="第二章： Transformer架构解析"></a>第二章： Transformer架构解析</h1><h2 id="2-1-认识Transformer架构"><a href="#2-1-认识Transformer架构" class="headerlink" title="2.1 认识Transformer架构"></a>2.1 认识Transformer架构</h2><ul>
+<li><p>学习目标</p>
+<ul>
+<li><p>了解Transformer模型的作用.</p>
+</li>
+<li><p>了解Transformer总体架构图中各个组成部分的名称.</p>
+</li>
+</ul>
+</li>
+<li><p>Transformer模型的作用</p>
+<ul>
+<li>基于seq2seq架构的transformer模型可以完成NLP领域研究的典型任务, 如机器翻译, 文本生成等. 同时又可以构建预训练语言模型，用于不同任务的迁移学习.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>声明:</p>
+<ul>
+<li>在接下来的架构分析中, 我们将假设使用Transformer模型架构处理从一种语言文本到另一种语言文本的翻译工作, 因此很多命名方式遵循NLP中的规则. 比如: Embeddding层将称作文本嵌入层, Embedding层产生的张量称为词嵌入张量, 它的最后一维将称作词向量等.</li>
+</ul>
+</li>
+<li><p>Transformer总体架构图</p>
+</li>
+</ul>
+<p><img src="https://pic1.zhimg.com/80/v2-da7519ddb2c983cfc671d884a7646010_1440w.webp" alt="img"></p>
+<ul>
+<li>Transformer总体架构可分为四个部分:<ul>
+<li>输入部分</li>
+<li>输出部分</li>
+<li>编码器部分</li>
+<li>解码器部分</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>输入部分包含:<ul>
+<li>源文本嵌入层及其位置编码器</li>
+<li>目标文本嵌入层及其位置编码器</li>
+</ul>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/image-20231108192804130.png" alt="image-20231108192804130" style="zoom:80%;" />
+
+<p>输出部分包含:</p>
+<ul>
+<li>线性层</li>
+<li>softmax层</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/v2-4b2d21a7199c6f261c9caca82e213b96_1440w.webp" alt="img"></p>
+<p>编码器部分:</p>
+<ul>
+<li>由N个编码器层堆叠而成</li>
+<li>每个编码器层由两个子层连接结构组成</li>
+<li>第一个子层连接结构包括一个多头自注意力子层和规范化层以及一个残差连接</li>
+<li>第二个子层连接结构包括一个前馈全连接子层和规范化层以及一个残差连接</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/v2-306c89830ea9efe5953ae4d8b76492a4_1440w.webp" alt="img"></p>
+<p>解码器部分:</p>
+<ul>
+<li>由N个解码器层堆叠而成</li>
+<li>每个解码器层由三个子层连接结构组成</li>
+<li>第一个子层连接结构包括一个多头自注意力子层和规范化层以及一个残差连接</li>
+<li>第二个子层连接结构包括一个多头注意力子层和规范化层以及一个残差连接</li>
+<li>第三个子层连接结构包括一个前馈全连接子层和规范化层以及一个残差连接</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/20231108192527.png" alt="img"></p>
+<p><code>小节总结</code></p>
+<ul>
+<li>学习了Transformer模型的作用:<ul>
+<li>基于seq2seq架构的transformer模型可以完成NLP领域研究的典型任务, 如机器翻译, 文本生成等. 同时又可以构建预训练语言模型，用于不同任务的迁移学习.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Transformer总体架构可分为四个部分:<ul>
+<li>输入部分</li>
+<li>输出部分</li>
+<li>编码器部分</li>
+<li>解码器部分</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>输入部分包含:<ul>
+<li>源文本嵌入层及其位置编码器</li>
+<li>目标文本嵌入层及其位置编码器</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>输出部分包含:<ul>
+<li>线性层</li>
+<li>softmax处理器</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>编码器部分:</p>
+</li>
+<li><ul>
+<li>由N个编码器层堆叠而成</li>
+<li>每个编码器层由两个子层连接结构组成</li>
+<li>第一个子层连接结构包括一个多头自注意力子层和规范化层以及一个残差连接</li>
+<li>第二个子层连接结构包括一个前馈全连接子层和规范化层以及一个残差连接</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>解码器部分:</p>
+</li>
+<li><ul>
+<li>由N个解码器层堆叠而成</li>
+<li>每个解码器层由三个子层连接结构组成</li>
+<li>第一个子层连接结构包括一个多头自注意力子层和规范化层以及一个残差连接</li>
+<li>第二个子层连接结构包括一个多头注意力子层和规范化层以及一个残差连接</li>
+<li>第三个子层连接结构包括一个前馈全连接子层和规范化层以及一个残差连接</li>
+</ul>
+</li>
+</ul>
+<h1 id="第三章：Transformer经典案例"><a href="#第三章：Transformer经典案例" class="headerlink" title="第三章：Transformer经典案例"></a>第三章：Transformer经典案例</h1><h2 id="3-1-使用Transformer构建语言模型"><a href="#3-1-使用Transformer构建语言模型" class="headerlink" title="3.1 使用Transformer构建语言模型"></a>3.1 使用Transformer构建语言模型</h2><p><strong>学习目标</strong></p>
+<ul>
+<li>了解有关语言模型的知识.</li>
+<li>掌握使用Transformer构建语言模型的实现过程.</li>
+</ul>
+<hr>
+<ul>
+<li><p>什么是语言模型:</p>
+</li>
+<li><ul>
+<li>以一个符合语言规律的序列为输入，模型将利用序列间关系等特征，输出一个在所有词汇上的概率分布.这样的模型称为语言模型.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语言模型的训练语料一般来自于文章，对应的源文本和目标文本形如:</span></span><br><span class="line">src1 = <span class="string">&quot;I can do&quot;</span> tgt1 = <span class="string">&quot;can do it&quot;</span></span><br><span class="line">src2 = <span class="string">&quot;can do it&quot;</span>, tgt2 = <span class="string">&quot;do it &lt;eos&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><p>语言模型能解决哪些问题:</p>
+</li>
+<li><ul>
+<li>1, 根据语言模型的定义，可以在它的基础上完成机器翻译，文本生成等任务，因为我们通过最后输出的概率分布来预测下一个词汇是什么.</li>
+<li>2, 语言模型可以判断输入的序列是否为一句完整的话，因为我们可以根据输出的概率分布查看最大概率是否落在句子结束符上，来判断完整性.</li>
+<li>3, 语言模型本身的训练目标是预测下一个词，因为它的特征提取部分会抽象很多语言序列之间的关系，这些关系可能同样对其他语言类任务有效果.因此可以作为预训练模型进行迁移学习.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="整个案例的实现可分为以下五个步骤"><a href="#整个案例的实现可分为以下五个步骤" class="headerlink" title="整个案例的实现可分为以下五个步骤"></a>整个案例的实现可分为以下五个步骤</h3><ul>
+<li>第一步: 导入必备的工具包</li>
+<li>第二步: 导入wikiText-2数据集并作基本处理</li>
+<li>第三步: 构建用于模型输入的批次化数据</li>
+<li>第四步: 构建训练和评估函数</li>
+<li>第五步: 进行训练和评估(包括验证以及测试)</li>
+</ul>
+<hr>
+<h4 id="第一步-导入必备的工具包"><a href="#第一步-导入必备的工具包" class="headerlink" title="第一步: 导入必备的工具包"></a>第一步: 导入必备的工具包</h4><p>环境配置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py37_torch131 python=<span class="number">3.7</span></span><br><span class="line"></span><br><span class="line">conda activate py37_torch131</span><br><span class="line">conda install pytorch=<span class="number">1.3</span><span class="number">.1</span> torchvision cudatoolkit=<span class="number">10.0</span></span><br><span class="line">pip install jupyter tqdm opencv-python matplotlib pandas -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>pytorch版本必须使用1.3.1, python版本使用3.6.x</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install torch==<span class="number">1.3</span><span class="number">.1</span></span><br><span class="line">conda create -n post1 python=<span class="number">3.6</span></span><br><span class="line">conda activate post1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数学计算工具包math</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="comment"># torch以及torch.nn, torch.nn.functional</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="comment"># torch中经典文本数据集有关的工具包</span></span><br><span class="line"><span class="comment"># 具体详情参考下方torchtext介绍</span></span><br><span class="line"><span class="keyword">import</span> torchtext</span><br><span class="line"></span><br><span class="line"><span class="comment"># torchtext中的数据处理工具, get_tokenizer用于英文分词</span></span><br><span class="line"><span class="keyword">from</span> torchtext.data.utils <span class="keyword">import</span> get_tokenizer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 已经构建完成的TransformerModel</span></span><br><span class="line"><span class="keyword">from</span> pyitcast.transformer <span class="keyword">import</span> TransformerModel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><p>torchtext介绍:</p>
+<ul>
+<li>它是torch工具中处理NLP问题的常用数据处理包.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>torchtext的重要功能:</p>
+<ul>
+<li>对文本数据进行处理, 比如文本语料加载, 文本迭代器构建等.</li>
+<li>包含很多经典文本语料的预加载方法. 其中包括的语料有：用于情感分析的SST和IMDB, 用于问题分类的TREC, 用于及其翻译的 WMT14， IWSLT，以及用于语言模型任务wikiText-2, WikiText103, PennTreebank.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>我们这里使用wikiText-2来训练语言模型, 下面有关该数据集的相关详情:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/v2-c3b86dbc06ce07be24c262652041c9ba_720w.webp" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/image-20231108201728406.png" alt="image-20231108201728406"></p>
+<ul>
+<li>wikiText-2数据集的体量中等, 训练集共有600篇短文, 共208万左右的词汇, 33278个不重复词汇, OoV（有多少正常英文词汇不在该数据集中的占比）为2.6%，数据集中的短文都是维基百科中对一些概念的介绍和描述.</li>
+</ul>
+<hr>
+<p><strong>第二步: 导入wikiText-2数据集并作基本处理</strong> P48</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建语料域, 语料域是存放语料的数据结构, </span></span><br><span class="line"><span class="comment"># 它的四个参数代表给存放语料（或称作文本）施加的作用. </span></span><br><span class="line"><span class="comment"># 分别为 tokenize,使用get_tokenizer(&quot;basic_english&quot;)获得一个分割器对象,</span></span><br><span class="line"><span class="comment"># 分割方式按照文本为基础英文进行分割. </span></span><br><span class="line"><span class="comment"># init_token为给文本施加的起始符 &lt;sos&gt;给文本施加的终止符&lt;eos&gt;, </span></span><br><span class="line"><span class="comment"># 最后一个lower为True, 存放的文本字母全部小写.</span></span><br><span class="line">TEXT = torchtext.data.Field(tokenize=get_tokenizer(<span class="string">&quot;basic_english&quot;</span>),</span><br><span class="line">                            init_token=<span class="string">&#x27;&lt;sos&gt;&#x27;</span>,</span><br><span class="line">                            eos_token=<span class="string">&#x27;&lt;eos&gt;&#x27;</span>,</span><br><span class="line">                            lower=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最终获得一个Field对象.</span></span><br><span class="line"><span class="comment"># &lt;torchtext.data.field.Field object at 0x7fc42a02e7f0&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后使用torchtext的数据集方法导入WikiText2数据, </span></span><br><span class="line"><span class="comment"># 并切分为对应训练文本, 验证文本，测试文本, 并对这些文本施加刚刚创建的语料域.</span></span><br><span class="line">train_txt, val_txt, test_txt = torchtext.datasets.WikiText2.splits(TEXT)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我们可以通过examples[0].text取出文本对象进行查看.</span></span><br><span class="line"><span class="comment"># &gt;&gt;&gt; test_txt.examples[0].text[:10]</span></span><br><span class="line"><span class="comment"># [&#x27;&lt;eos&gt;&#x27;, &#x27;=&#x27;, &#x27;robert&#x27;, &#x27;&lt;unk&gt;&#x27;, &#x27;=&#x27;, &#x27;&lt;eos&gt;&#x27;, &#x27;&lt;eos&gt;&#x27;, &#x27;robert&#x27;, &#x27;&lt;unk&gt;&#x27;, &#x27;is&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将训练集文本数据构建一个vocab对象, </span></span><br><span class="line"><span class="comment"># 这样可以使用vocab对象的stoi方法统计文本共包含的不重复词汇总数.</span></span><br><span class="line">TEXT.build_vocab(train_txt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后选择设备cuda或者cpu</span></span><br><span class="line">device = torch.device(<span class="string">&quot;cuda&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="第三步-构建用于模型输入的批次化数据-P50"><a href="#第三步-构建用于模型输入的批次化数据-P50" class="headerlink" title="第三步: 构建用于模型输入的批次化数据 P50"></a>第三步: 构建用于模型输入的批次化数据 P50</h4><ul>
+<li>批次化过程的第一个函数batchify代码分析:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">batchify</span>(<span class="params">data, bsz</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;batchify函数用于将文本数据映射成连续数字, 并转换成指定的样式, 指定的样式可参考下图.</span></span><br><span class="line"><span class="string">       它有两个输入参数, data就是我们之前得到的文本数据(train_txt, val_txt, test_txt),</span></span><br><span class="line"><span class="string">       bsz是就是batch_size, 每次模型更新参数的数据量&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 使用TEXT的numericalize方法将单词映射成对应的连续数字.</span></span><br><span class="line">    data = TEXT.numericalize([data.examples[<span class="number">0</span>].text])</span><br><span class="line">    <span class="comment"># &gt;&gt;&gt; data</span></span><br><span class="line">    <span class="comment"># tensor([[   3],</span></span><br><span class="line">    <span class="comment">#    [  12],</span></span><br><span class="line">    <span class="comment">#    [3852],</span></span><br><span class="line">    <span class="comment">#    ...,</span></span><br><span class="line">    <span class="comment">#    [   6],</span></span><br><span class="line">    <span class="comment">#    [   3],</span></span><br><span class="line">    <span class="comment">#    [   3]])</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接着用数据词汇总数除以bsz,</span></span><br><span class="line">    <span class="comment"># 取整数得到一个nbatch代表需要多少次batch后能够遍历完所有数据</span></span><br><span class="line">    nbatch = data.size(<span class="number">0</span>) // bsz</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 之后使用narrow方法对不规整的剩余数据进行删除,</span></span><br><span class="line">    <span class="comment"># 第一个参数是代表横轴删除还是纵轴删除, 0为横轴，1为纵轴</span></span><br><span class="line">    <span class="comment"># 第二个和第三个参数代表保留开始轴到结束轴的数值.类似于切片</span></span><br><span class="line">    <span class="comment"># 可参考下方演示示例进行更深理解.</span></span><br><span class="line">    data = data.narrow(<span class="number">0</span>, <span class="number">0</span>, nbatch * bsz)</span><br><span class="line">    <span class="comment"># &gt;&gt;&gt; data</span></span><br><span class="line">    <span class="comment"># tensor([[   3],</span></span><br><span class="line">    <span class="comment">#    [  12],</span></span><br><span class="line">    <span class="comment">#    [3852],</span></span><br><span class="line">    <span class="comment">#    ...,</span></span><br><span class="line">    <span class="comment">#    [  78],</span></span><br><span class="line">    <span class="comment">#    [ 299],</span></span><br><span class="line">    <span class="comment">#    [  36]])</span></span><br><span class="line">    <span class="comment"># 后面不能形成bsz个的一组数据被删除</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接着我们使用view方法对data进行矩阵变换, 使其成为如下样式:</span></span><br><span class="line">    <span class="comment"># tensor([[    3,    25,  1849,  ...,     5,    65,    30],</span></span><br><span class="line">    <span class="comment">#    [   12,    66,    13,  ...,    35,  2438,  4064],</span></span><br><span class="line">    <span class="comment">#    [ 3852, 13667,  2962,  ...,   902,    33,    20],</span></span><br><span class="line">    <span class="comment">#    ...,</span></span><br><span class="line">    <span class="comment">#    [  154,     7,    10,  ...,     5,  1076,    78],</span></span><br><span class="line">    <span class="comment">#    [   25,     4,  4135,  ...,     4,    56,   299],</span></span><br><span class="line">    <span class="comment">#    [    6,    57,   385,  ...,  3168,   737,    36]])</span></span><br><span class="line">    <span class="comment"># 因为会做转置操作, 因此这个矩阵的形状是[None, bsz],</span></span><br><span class="line">    <span class="comment"># 如果输入是训练数据的话，形状为[104335, 20], 可以通过打印data.shape获得.</span></span><br><span class="line">    <span class="comment"># 也就是data的列数是等于bsz的值的.</span></span><br><span class="line">    data = data.view(bsz, -<span class="number">1</span>).t().contiguous()</span><br><span class="line">    <span class="comment"># 最后将数据分配在指定的设备上.</span></span><br><span class="line">    <span class="keyword">return</span> data.to(device)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>batchify的样式转化图:</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/image-20231108133731374.png" alt="image-20231108133731374" style="zoom:80%;" />
+
+<ul>
+<li>大写字母A，B，C … 代表句子中的每个单词.</li>
+</ul>
+<hr>
+<ul>
+<li>torch.narrow演示:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.narrow(<span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">tensor([[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.narrow(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">tensor([[ <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">5</span>,  <span class="number">6</span>],</span><br><span class="line">        [ <span class="number">8</span>,  <span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>接下来我们将使用batchify来处理训练数据，验证数据以及测试数据 <code>P51</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 训练数据的batch size</span></span><br><span class="line">batch_size = <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证和测试数据（统称为评估数据）的batch size</span></span><br><span class="line">eval_batch_size = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得train_data, val_data, test_data</span></span><br><span class="line">train_data = batchify(train_txt, batch_size)</span><br><span class="line">val_data = batchify(val_txt, eval_batch_size)</span><br><span class="line">test_data = batchify(test_txt, eval_batch_size)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>上面的分割批次并没有进行源数据与目标数据的处理, 接下来我们将根据语言模型训练的语料规定来构建源数据与目标数据.</li>
+</ul>
+<p>语言模型训练的语料规定:</p>
+<ul>
+<li>如果源数据为句子ABCD, ABCD代表句子中的词汇或符号, 则它的目标数据为BCDE, BCDE分别代表ABCD的下一个词汇.</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/beiyoudaxue/pic2023@main/img/image-20231108134624521.png" alt="image-20231108134624521" style="zoom:80%;" />
+
+<ul>
+<li>如图所示，我们这里的句子序列是竖着的, 而且我们发现如果用一个批次处理完所有数据, 以训练数据为例, 每个句子长度高达104335, 这明显是不科学的, 因此我们在这里要限定每个批次中的句子<code>长度允许的最大值</code>bptt.</li>
+</ul>
+<hr>
+<ul>
+<li>批次化过程的第二个函数get_batch代码分析:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 令子长度允许的最大值bptt为35</span></span><br><span class="line">bptt = <span class="number">35</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_batch</span>(<span class="params">source, i</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;用于获得每个批次合理大小的源数据和目标数据.</span></span><br><span class="line"><span class="string">       参数source是通过batchify得到的train_data/val_data/test_data.</span></span><br><span class="line"><span class="string">       i是具体的批次次数.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 首先我们确定句子长度, 它将是在bptt和len(source) - 1 - i中最小值</span></span><br><span class="line">    <span class="comment"># 实质上, 前面的批次中都会是bptt的值, 只不过最后一个批次中, 句子长度</span></span><br><span class="line">    <span class="comment"># 可能不够bptt的35个, 因此会变为len(source) - 1 - i的值.</span></span><br><span class="line">    seq_len = <span class="built_in">min</span>(bptt, <span class="built_in">len</span>(source) - <span class="number">1</span> - i)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 语言模型训练的源数据的第i批数据将是batchify的结果的切片[i:i+seq_len]</span></span><br><span class="line">    data = source[i:i+seq_len]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据语言模型训练的语料规定, 它的目标数据是源数据向后移动一位</span></span><br><span class="line">    <span class="comment"># 因为最后目标数据的切片会越界, 因此使用view(-1)来保证形状正常.</span></span><br><span class="line">    target = source[i+<span class="number">1</span>:i+<span class="number">1</span>+seq_len].view(-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> data, target</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输入实例:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以测试集数据为例</span></span><br><span class="line">source = test_data</span><br><span class="line">i = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>输出效果:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">data = tensor([[   <span class="number">12</span>,  <span class="number">1053</span>,   <span class="number">355</span>,   <span class="number">134</span>,    <span class="number">37</span>,     <span class="number">7</span>,     <span class="number">4</span>,     <span class="number">0</span>,   <span class="number">835</span>,  <span class="number">9834</span>],</span><br><span class="line">        [  <span class="number">635</span>,     <span class="number">8</span>,     <span class="number">5</span>,     <span class="number">5</span>,   <span class="number">421</span>,     <span class="number">4</span>,    <span class="number">88</span>,     <span class="number">8</span>,   <span class="number">573</span>,  <span class="number">2511</span>],</span><br><span class="line">        [    <span class="number">0</span>,    <span class="number">58</span>,     <span class="number">8</span>,     <span class="number">8</span>,     <span class="number">6</span>,   <span class="number">692</span>,   <span class="number">544</span>,     <span class="number">0</span>,   <span class="number">212</span>,     <span class="number">5</span>],</span><br><span class="line">        [   <span class="number">12</span>,     <span class="number">0</span>,   <span class="number">105</span>,    <span class="number">26</span>,     <span class="number">3</span>,     <span class="number">5</span>,     <span class="number">6</span>,     <span class="number">0</span>,     <span class="number">4</span>,    <span class="number">56</span>],</span><br><span class="line">        [    <span class="number">3</span>, <span class="number">16074</span>, <span class="number">21254</span>,   <span class="number">320</span>,     <span class="number">3</span>,   <span class="number">262</span>,    <span class="number">16</span>,     <span class="number">6</span>,  <span class="number">1087</span>,    <span class="number">89</span>],</span><br><span class="line">        [    <span class="number">3</span>,   <span class="number">751</span>,  <span class="number">3866</span>,    <span class="number">10</span>,    <span class="number">12</span>,    <span class="number">31</span>,   <span class="number">246</span>,   <span class="number">238</span>,    <span class="number">79</span>,    <span class="number">49</span>],</span><br><span class="line">        [  <span class="number">635</span>,   <span class="number">943</span>,    <span class="number">78</span>,    <span class="number">36</span>,    <span class="number">12</span>,   <span class="number">475</span>,    <span class="number">66</span>,    <span class="number">10</span>,     <span class="number">4</span>,   <span class="number">924</span>],</span><br><span class="line">        [    <span class="number">0</span>,  <span class="number">2358</span>,    <span class="number">52</span>,     <span class="number">4</span>,    <span class="number">12</span>,     <span class="number">4</span>,     <span class="number">5</span>,     <span class="number">0</span>, <span class="number">19831</span>,    <span class="number">21</span>],</span><br><span class="line">        [   <span class="number">26</span>,    <span class="number">38</span>,    <span class="number">54</span>,    <span class="number">40</span>,  <span class="number">1589</span>,  <span class="number">3729</span>,  <span class="number">1014</span>,     <span class="number">5</span>,     <span class="number">8</span>,     <span class="number">4</span>],</span><br><span class="line">        [   <span class="number">33</span>, <span class="number">17597</span>,    <span class="number">33</span>,  <span class="number">1661</span>,    <span class="number">15</span>,     <span class="number">7</span>,     <span class="number">5</span>,     <span class="number">0</span>,     <span class="number">4</span>,   <span class="number">170</span>],</span><br><span class="line">        [  <span class="number">335</span>,   <span class="number">268</span>,   <span class="number">117</span>,     <span class="number">0</span>,     <span class="number">0</span>,     <span class="number">4</span>,  <span class="number">3144</span>,  <span class="number">1557</span>,     <span class="number">0</span>,   <span class="number">160</span>],</span><br><span class="line">        [  <span class="number">106</span>,     <span class="number">4</span>,  <span class="number">4706</span>,  <span class="number">2245</span>,    <span class="number">12</span>,  <span class="number">1074</span>,    <span class="number">13</span>,  <span class="number">2105</span>,     <span class="number">5</span>,    <span class="number">29</span>],</span><br><span class="line">        [    <span class="number">5</span>, <span class="number">16074</span>,    <span class="number">10</span>,  <span class="number">1087</span>,    <span class="number">12</span>,   <span class="number">137</span>,   <span class="number">251</span>, <span class="number">13238</span>,     <span class="number">8</span>,     <span class="number">4</span>],</span><br><span class="line">        [  <span class="number">394</span>,   <span class="number">746</span>,     <span class="number">4</span>,     <span class="number">9</span>,    <span class="number">12</span>,  <span class="number">6032</span>,     <span class="number">4</span>,  <span class="number">2190</span>,   <span class="number">303</span>, <span class="number">12651</span>],</span><br><span class="line">        [    <span class="number">8</span>,   <span class="number">616</span>,  <span class="number">2107</span>,     <span class="number">4</span>,     <span class="number">3</span>,     <span class="number">4</span>,   <span class="number">425</span>,     <span class="number">0</span>,    <span class="number">10</span>,   <span class="number">510</span>],</span><br><span class="line">        [ <span class="number">1339</span>,   <span class="number">112</span>,    <span class="number">23</span>,   <span class="number">335</span>,     <span class="number">3</span>, <span class="number">22251</span>,  <span class="number">1162</span>,     <span class="number">9</span>,    <span class="number">11</span>,     <span class="number">9</span>],</span><br><span class="line">        [ <span class="number">1212</span>,   <span class="number">468</span>,     <span class="number">6</span>,   <span class="number">820</span>,     <span class="number">9</span>,     <span class="number">7</span>,  <span class="number">1231</span>,  <span class="number">4202</span>,  <span class="number">2866</span>,   <span class="number">382</span>],</span><br><span class="line">        [    <span class="number">6</span>,    <span class="number">24</span>,   <span class="number">104</span>,     <span class="number">6</span>,     <span class="number">4</span>,     <span class="number">4</span>,     <span class="number">7</span>,    <span class="number">10</span>,     <span class="number">9</span>,   <span class="number">588</span>],</span><br><span class="line">        [   <span class="number">31</span>,   <span class="number">190</span>,     <span class="number">0</span>,     <span class="number">0</span>,   <span class="number">230</span>,   <span class="number">267</span>,     <span class="number">4</span>,   <span class="number">273</span>,   <span class="number">278</span>,     <span class="number">6</span>],</span><br><span class="line">        [   <span class="number">34</span>,    <span class="number">25</span>,    <span class="number">47</span>,    <span class="number">26</span>,  <span class="number">1864</span>,     <span class="number">6</span>,   <span class="number">694</span>,     <span class="number">0</span>,  <span class="number">2112</span>,     <span class="number">3</span>],</span><br><span class="line">        [   <span class="number">11</span>,     <span class="number">6</span>,    <span class="number">52</span>,   <span class="number">798</span>,     <span class="number">8</span>,    <span class="number">69</span>,    <span class="number">20</span>,    <span class="number">31</span>,    <span class="number">63</span>,     <span class="number">9</span>],</span><br><span class="line">        [ <span class="number">1800</span>,    <span class="number">25</span>,  <span class="number">2141</span>,  <span class="number">2442</span>,   <span class="number">117</span>,    <span class="number">31</span>,   <span class="number">196</span>,  <span class="number">7290</span>,     <span class="number">4</span>,   <span class="number">298</span>],</span><br><span class="line">        [   <span class="number">15</span>,   <span class="number">171</span>,    <span class="number">15</span>,    <span class="number">17</span>,  <span class="number">1712</span>,    <span class="number">13</span>,   <span class="number">217</span>,    <span class="number">59</span>,   <span class="number">736</span>,     <span class="number">5</span>],</span><br><span class="line">        [ <span class="number">4210</span>,   <span class="number">191</span>,   <span class="number">142</span>,    <span class="number">14</span>,  <span class="number">5251</span>,   <span class="number">939</span>,    <span class="number">59</span>,    <span class="number">38</span>, <span class="number">10055</span>, <span class="number">25132</span>],</span><br><span class="line">        [  <span class="number">302</span>,    <span class="number">23</span>, <span class="number">11718</span>,    <span class="number">11</span>,    <span class="number">11</span>,   <span class="number">599</span>,   <span class="number">382</span>,   <span class="number">317</span>,     <span class="number">8</span>,    <span class="number">13</span>],</span><br><span class="line">        [   <span class="number">16</span>,  <span class="number">1564</span>,     <span class="number">9</span>,  <span class="number">4808</span>,     <span class="number">6</span>,     <span class="number">0</span>,     <span class="number">6</span>,     <span class="number">6</span>,     <span class="number">4</span>,     <span class="number">4</span>],</span><br><span class="line">        [    <span class="number">4</span>,     <span class="number">7</span>,    <span class="number">39</span>,     <span class="number">7</span>,  <span class="number">3934</span>,     <span class="number">5</span>,     <span class="number">9</span>,     <span class="number">3</span>,  <span class="number">8047</span>,   <span class="number">557</span>],</span><br><span class="line">        [  <span class="number">394</span>,     <span class="number">0</span>, <span class="number">10715</span>,  <span class="number">3580</span>,  <span class="number">8682</span>,    <span class="number">31</span>,   <span class="number">242</span>,     <span class="number">0</span>, <span class="number">10055</span>,   <span class="number">170</span>],</span><br><span class="line">        [   <span class="number">96</span>,     <span class="number">6</span>,   <span class="number">144</span>,  <span class="number">3403</span>,     <span class="number">4</span>,    <span class="number">13</span>,  <span class="number">1014</span>,    <span class="number">14</span>,     <span class="number">6</span>,  <span class="number">2395</span>],</span><br><span class="line">        [    <span class="number">4</span>,     <span class="number">3</span>, <span class="number">13729</span>,    <span class="number">14</span>,    <span class="number">40</span>,     <span class="number">0</span>,     <span class="number">5</span>,    <span class="number">18</span>,   <span class="number">676</span>,  <span class="number">3267</span>],</span><br><span class="line">        [ <span class="number">1031</span>,     <span class="number">3</span>,     <span class="number">0</span>,   <span class="number">628</span>,  <span class="number">1589</span>,    <span class="number">22</span>, <span class="number">10916</span>, <span class="number">10969</span>,     <span class="number">5</span>, <span class="number">22548</span>],</span><br><span class="line">        [    <span class="number">9</span>,    <span class="number">12</span>,     <span class="number">6</span>,    <span class="number">84</span>,    <span class="number">15</span>,    <span class="number">49</span>,  <span class="number">3144</span>,     <span class="number">7</span>,   <span class="number">102</span>,    <span class="number">15</span>],</span><br><span class="line">        [  <span class="number">916</span>,    <span class="number">12</span>,     <span class="number">4</span>,   <span class="number">203</span>,     <span class="number">0</span>,   <span class="number">273</span>,   <span class="number">303</span>,   <span class="number">333</span>,  <span class="number">4318</span>,     <span class="number">0</span>],</span><br><span class="line">        [    <span class="number">6</span>,    <span class="number">12</span>,     <span class="number">0</span>,  <span class="number">4842</span>,     <span class="number">5</span>,    <span class="number">17</span>,     <span class="number">4</span>,    <span class="number">47</span>,  <span class="number">4138</span>,  <span class="number">2072</span>],</span><br><span class="line">        [   <span class="number">38</span>,   <span class="number">237</span>,     <span class="number">5</span>,    <span class="number">50</span>,    <span class="number">35</span>,    <span class="number">27</span>, <span class="number">18530</span>,   <span class="number">244</span>,    <span class="number">20</span>,     <span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line">target =  tensor([  <span class="number">635</span>,     <span class="number">8</span>,     <span class="number">5</span>,     <span class="number">5</span>,   <span class="number">421</span>,     <span class="number">4</span>,    <span class="number">88</span>,     <span class="number">8</span>,   <span class="number">573</span>,  <span class="number">2511</span>,</span><br><span class="line">            <span class="number">0</span>,    <span class="number">58</span>,     <span class="number">8</span>,     <span class="number">8</span>,     <span class="number">6</span>,   <span class="number">692</span>,   <span class="number">544</span>,     <span class="number">0</span>,   <span class="number">212</span>,     <span class="number">5</span>,</span><br><span class="line">           <span class="number">12</span>,     <span class="number">0</span>,   <span class="number">105</span>,    <span class="number">26</span>,     <span class="number">3</span>,     <span class="number">5</span>,     <span class="number">6</span>,     <span class="number">0</span>,     <span class="number">4</span>,    <span class="number">56</span>,</span><br><span class="line">            <span class="number">3</span>, <span class="number">16074</span>, <span class="number">21254</span>,   <span class="number">320</span>,     <span class="number">3</span>,   <span class="number">262</span>,    <span class="number">16</span>,     <span class="number">6</span>,  <span class="number">1087</span>,    <span class="number">89</span>,</span><br><span class="line">            <span class="number">3</span>,   <span class="number">751</span>,  <span class="number">3866</span>,    <span class="number">10</span>,    <span class="number">12</span>,    <span class="number">31</span>,   <span class="number">246</span>,   <span class="number">238</span>,    <span class="number">79</span>,    <span class="number">49</span>,</span><br><span class="line">          <span class="number">635</span>,   <span class="number">943</span>,    <span class="number">78</span>,    <span class="number">36</span>,    <span class="number">12</span>,   <span class="number">475</span>,    <span class="number">66</span>,    <span class="number">10</span>,     <span class="number">4</span>,   <span class="number">924</span>,</span><br><span class="line">            <span class="number">0</span>,  <span class="number">2358</span>,    <span class="number">52</span>,     <span class="number">4</span>,    <span class="number">12</span>,     <span class="number">4</span>,     <span class="number">5</span>,     <span class="number">0</span>, <span class="number">19831</span>,    <span class="number">21</span>,</span><br><span class="line">           <span class="number">26</span>,    <span class="number">38</span>,    <span class="number">54</span>,    <span class="number">40</span>,  <span class="number">1589</span>,  <span class="number">3729</span>,  <span class="number">1014</span>,     <span class="number">5</span>,     <span class="number">8</span>,     <span class="number">4</span>,</span><br><span class="line">           <span class="number">33</span>, <span class="number">17597</span>,    <span class="number">33</span>,  <span class="number">1661</span>,    <span class="number">15</span>,     <span class="number">7</span>,     <span class="number">5</span>,     <span class="number">0</span>,     <span class="number">4</span>,   <span class="number">170</span>,</span><br><span class="line">          <span class="number">335</span>,   <span class="number">268</span>,   <span class="number">117</span>,     <span class="number">0</span>,     <span class="number">0</span>,     <span class="number">4</span>,  <span class="number">3144</span>,  <span class="number">1557</span>,     <span class="number">0</span>,   <span class="number">160</span>,</span><br><span class="line">          <span class="number">106</span>,     <span class="number">4</span>,  <span class="number">4706</span>,  <span class="number">2245</span>,    <span class="number">12</span>,  <span class="number">1074</span>,    <span class="number">13</span>,  <span class="number">2105</span>,     <span class="number">5</span>,    <span class="number">29</span>,</span><br><span class="line">            <span class="number">5</span>, <span class="number">16074</span>,    <span class="number">10</span>,  <span class="number">1087</span>,    <span class="number">12</span>,   <span class="number">137</span>,   <span class="number">251</span>, <span class="number">13238</span>,     <span class="number">8</span>,     <span class="number">4</span>,</span><br><span class="line">          <span class="number">394</span>,   <span class="number">746</span>,     <span class="number">4</span>,     <span class="number">9</span>,    <span class="number">12</span>,  <span class="number">6032</span>,     <span class="number">4</span>,  <span class="number">2190</span>,   <span class="number">303</span>, <span class="number">12651</span>,</span><br><span class="line">            <span class="number">8</span>,   <span class="number">616</span>,  <span class="number">2107</span>,     <span class="number">4</span>,     <span class="number">3</span>,     <span class="number">4</span>,   <span class="number">425</span>,     <span class="number">0</span>,    <span class="number">10</span>,   <span class="number">510</span>,</span><br><span class="line">         <span class="number">1339</span>,   <span class="number">112</span>,    <span class="number">23</span>,   <span class="number">335</span>,     <span class="number">3</span>, <span class="number">22251</span>,  <span class="number">1162</span>,     <span class="number">9</span>,    <span class="number">11</span>,     <span class="number">9</span>,</span><br><span class="line">         <span class="number">1212</span>,   <span class="number">468</span>,     <span class="number">6</span>,   <span class="number">820</span>,     <span class="number">9</span>,     <span class="number">7</span>,  <span class="number">1231</span>,  <span class="number">4202</span>,  <span class="number">2866</span>,   <span class="number">382</span>,</span><br><span class="line">            <span class="number">6</span>,    <span class="number">24</span>,   <span class="number">104</span>,     <span class="number">6</span>,     <span class="number">4</span>,     <span class="number">4</span>,     <span class="number">7</span>,    <span class="number">10</span>,     <span class="number">9</span>,   <span class="number">588</span>,</span><br><span class="line">           <span class="number">31</span>,   <span class="number">190</span>,     <span class="number">0</span>,     <span class="number">0</span>,   <span class="number">230</span>,   <span class="number">267</span>,     <span class="number">4</span>,   <span class="number">273</span>,   <span class="number">278</span>,     <span class="number">6</span>,</span><br><span class="line">           <span class="number">34</span>,    <span class="number">25</span>,    <span class="number">47</span>,    <span class="number">26</span>,  <span class="number">1864</span>,     <span class="number">6</span>,   <span class="number">694</span>,     <span class="number">0</span>,  <span class="number">2112</span>,     <span class="number">3</span>,</span><br><span class="line">           <span class="number">11</span>,     <span class="number">6</span>,    <span class="number">52</span>,   <span class="number">798</span>,     <span class="number">8</span>,    <span class="number">69</span>,    <span class="number">20</span>,    <span class="number">31</span>,    <span class="number">63</span>,     <span class="number">9</span>,</span><br><span class="line">         <span class="number">1800</span>,    <span class="number">25</span>,  <span class="number">2141</span>,  <span class="number">2442</span>,   <span class="number">117</span>,    <span class="number">31</span>,   <span class="number">196</span>,  <span class="number">7290</span>,     <span class="number">4</span>,   <span class="number">298</span>,</span><br><span class="line">           <span class="number">15</span>,   <span class="number">171</span>,    <span class="number">15</span>,    <span class="number">17</span>,  <span class="number">1712</span>,    <span class="number">13</span>,   <span class="number">217</span>,    <span class="number">59</span>,   <span class="number">736</span>,     <span class="number">5</span>,</span><br><span class="line">         <span class="number">4210</span>,   <span class="number">191</span>,   <span class="number">142</span>,    <span class="number">14</span>,  <span class="number">5251</span>,   <span class="number">939</span>,    <span class="number">59</span>,    <span class="number">38</span>, <span class="number">10055</span>, <span class="number">25132</span>,</span><br><span class="line">          <span class="number">302</span>,    <span class="number">23</span>, <span class="number">11718</span>,    <span class="number">11</span>,    <span class="number">11</span>,   <span class="number">599</span>,   <span class="number">382</span>,   <span class="number">317</span>,     <span class="number">8</span>,    <span class="number">13</span>,</span><br><span class="line">           <span class="number">16</span>,  <span class="number">1564</span>,     <span class="number">9</span>,  <span class="number">4808</span>,     <span class="number">6</span>,     <span class="number">0</span>,     <span class="number">6</span>,     <span class="number">6</span>,     <span class="number">4</span>,     <span class="number">4</span>,</span><br><span class="line">            <span class="number">4</span>,     <span class="number">7</span>,    <span class="number">39</span>,     <span class="number">7</span>,  <span class="number">3934</span>,     <span class="number">5</span>,     <span class="number">9</span>,     <span class="number">3</span>,  <span class="number">8047</span>,   <span class="number">557</span>,</span><br><span class="line">          <span class="number">394</span>,     <span class="number">0</span>, <span class="number">10715</span>,  <span class="number">3580</span>,  <span class="number">8682</span>,    <span class="number">31</span>,   <span class="number">242</span>,     <span class="number">0</span>, <span class="number">10055</span>,   <span class="number">170</span>,</span><br><span class="line">           <span class="number">96</span>,     <span class="number">6</span>,   <span class="number">144</span>,  <span class="number">3403</span>,     <span class="number">4</span>,    <span class="number">13</span>,  <span class="number">1014</span>,    <span class="number">14</span>,     <span class="number">6</span>,  <span class="number">2395</span>,</span><br><span class="line">            <span class="number">4</span>,     <span class="number">3</span>, <span class="number">13729</span>,    <span class="number">14</span>,    <span class="number">40</span>,     <span class="number">0</span>,     <span class="number">5</span>,    <span class="number">18</span>,   <span class="number">676</span>,  <span class="number">3267</span>,</span><br><span class="line">         <span class="number">1031</span>,     <span class="number">3</span>,     <span class="number">0</span>,   <span class="number">628</span>,  <span class="number">1589</span>,    <span class="number">22</span>, <span class="number">10916</span>, <span class="number">10969</span>,     <span class="number">5</span>, <span class="number">22548</span>,</span><br><span class="line">            <span class="number">9</span>,    <span class="number">12</span>,     <span class="number">6</span>,    <span class="number">84</span>,    <span class="number">15</span>,    <span class="number">49</span>,  <span class="number">3144</span>,     <span class="number">7</span>,   <span class="number">102</span>,    <span class="number">15</span>,</span><br><span class="line">          <span class="number">916</span>,    <span class="number">12</span>,     <span class="number">4</span>,   <span class="number">203</span>,     <span class="number">0</span>,   <span class="number">273</span>,   <span class="number">303</span>,   <span class="number">333</span>,  <span class="number">4318</span>,     <span class="number">0</span>,</span><br><span class="line">            <span class="number">6</span>,    <span class="number">12</span>,     <span class="number">0</span>,  <span class="number">4842</span>,     <span class="number">5</span>,    <span class="number">17</span>,     <span class="number">4</span>,    <span class="number">47</span>,  <span class="number">4138</span>,  <span class="number">2072</span>,</span><br><span class="line">           <span class="number">38</span>,   <span class="number">237</span>,     <span class="number">5</span>,    <span class="number">50</span>,    <span class="number">35</span>,    <span class="number">27</span>, <span class="number">18530</span>,   <span class="number">244</span>,    <span class="number">20</span>,     <span class="number">6</span>,</span><br><span class="line">           <span class="number">13</span>,  <span class="number">1083</span>,    <span class="number">35</span>,  <span class="number">1990</span>,   <span class="number">653</span>,    <span class="number">13</span>,    <span class="number">10</span>,    <span class="number">11</span>,  <span class="number">1538</span>,    <span class="number">56</span>])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="第四步-构建训练和评估函数-P52"><a href="#第四步-构建训练和评估函数-P52" class="headerlink" title="第四步: 构建训练和评估函数 P52"></a>第四步: 构建训练和评估函数 P52</h4><ul>
+<li>设置模型超参数和初始化模型</li>
+<li>设置模型超参数和初始化模型</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过TEXT.vocab.stoi方法获得不重复词汇总数</span></span><br><span class="line">ntokens = <span class="built_in">len</span>(TEXT.vocab.stoi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 词嵌入大小为200</span></span><br><span class="line">emsize = <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 前馈全连接层的节点数</span></span><br><span class="line">nhid = <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 编码器层的数量</span></span><br><span class="line">nlayers = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多头注意力机制的头数</span></span><br><span class="line">nhead = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 置0比率</span></span><br><span class="line">dropout = <span class="number">0.2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将参数输入到TransformerModel中</span></span><br><span class="line">model = TransformerModel(ntokens, emsize, nhead, nhid, nlayers, dropout).to(device)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模型初始化后, 接下来进行损失函数和优化方法的选择.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 关于损失函数, 我们使用nn自带的交叉熵损失</span></span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 学习率初始值定为5.0</span></span><br><span class="line">lr = <span class="number">5.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 优化器选择torch自带的SGD随机梯度下降方法, 并把lr传入其中</span></span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=lr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义学习率调整方法, 使用torch自带的lr_scheduler, 将优化器传入其中.</span></span><br><span class="line">scheduler = torch.optim.lr_scheduler.StepLR(optimizer, <span class="number">1.0</span>, gamma=<span class="number">0.95</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>模型训练代码分析: P53</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入时间工具包</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;训练函数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 模型开启训练模式</span></span><br><span class="line">    model.train()</span><br><span class="line">    <span class="comment"># 定义初始损失为0</span></span><br><span class="line">    total_loss = <span class="number">0.</span></span><br><span class="line">    <span class="comment"># 获得当前时间</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    <span class="comment"># 开始遍历批次数据</span></span><br><span class="line">    <span class="keyword">for</span> batch, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">range</span>(<span class="number">0</span>, train_data.size(<span class="number">0</span>) - <span class="number">1</span>, bptt)):</span><br><span class="line">        <span class="comment"># 通过get_batch获得源数据和目标数据</span></span><br><span class="line">        data, targets = get_batch(train_data, i)</span><br><span class="line">        <span class="comment"># 设置优化器初始梯度为0梯度</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        <span class="comment"># 将数据装入model得到输出</span></span><br><span class="line">        output = model(data)</span><br><span class="line">        <span class="comment"># 将输出和目标数据传入损失函数对象</span></span><br><span class="line">        loss = criterion(output.view(-<span class="number">1</span>, ntokens), targets)</span><br><span class="line">        <span class="comment"># 损失进行反向传播以获得总的损失</span></span><br><span class="line">        loss.backward()</span><br><span class="line">        <span class="comment"># 使用nn自带的clip_grad_norm_方法进行梯度规范化, 防止出现梯度消失或爆炸</span></span><br><span class="line">        torch.nn.utils.clip_grad_norm_(model.parameters(), <span class="number">0.5</span>)</span><br><span class="line">        <span class="comment"># 模型参数进行更新</span></span><br><span class="line">        optimizer.step()</span><br><span class="line">        <span class="comment"># 将每层的损失相加获得总的损失</span></span><br><span class="line">        total_loss += loss.item()</span><br><span class="line">        <span class="comment"># 日志打印间隔定为200</span></span><br><span class="line">        log_interval = <span class="number">200</span></span><br><span class="line">        <span class="comment"># 如果batch是200的倍数且大于0，则打印相关日志</span></span><br><span class="line">        <span class="keyword">if</span> batch % log_interval == <span class="number">0</span> <span class="keyword">and</span> batch &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 平均损失为总损失除以log_interval</span></span><br><span class="line">            cur_loss = total_loss / log_interval</span><br><span class="line">            <span class="comment"># 需要的时间为当前时间减去开始时间</span></span><br><span class="line">            elapsed = time.time() - start_time</span><br><span class="line">            <span class="comment"># 打印轮数, 当前批次和总批次, 当前学习率, 训练速度(每豪秒处理多少批次),</span></span><br><span class="line">            <span class="comment"># 平均损失, 以及困惑度, 困惑度是衡量语言模型的重要指标, 它的计算方法就是</span></span><br><span class="line">            <span class="comment"># 对交叉熵平均损失取自然对数的底数.</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;| epoch &#123;:3d&#125; | &#123;:5d&#125;/&#123;:5d&#125; batches | &#x27;</span></span><br><span class="line">                  <span class="string">&#x27;lr &#123;:02.2f&#125; | ms/batch &#123;:5.2f&#125; | &#x27;</span></span><br><span class="line">                  <span class="string">&#x27;loss &#123;:5.2f&#125; | ppl &#123;:8.2f&#125;&#x27;</span>.<span class="built_in">format</span>(</span><br><span class="line">                    epoch, batch, <span class="built_in">len</span>(train_data) // bptt, scheduler.get_lr()[<span class="number">0</span>],</span><br><span class="line">                    elapsed * <span class="number">1000</span> / log_interval,</span><br><span class="line">                    cur_loss, math.exp(cur_loss)))</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 每个批次结束后, 总损失归0</span></span><br><span class="line">            total_loss = <span class="number">0</span></span><br><span class="line">            <span class="comment"># 开始时间取当前时间</span></span><br><span class="line">            start_time = time.time()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模型评估代码分析: <code>P54</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">evaluate</span>(<span class="params">eval_model, data_source</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;评估函数, 评估阶段包括验证和测试,</span></span><br><span class="line"><span class="string">       它的两个参数eval_model为每轮训练产生的模型</span></span><br><span class="line"><span class="string">       data_source代表验证或测试数据集&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 模型开启评估模式</span></span><br><span class="line">    eval_model.<span class="built_in">eval</span>()</span><br><span class="line">    <span class="comment"># 总损失归0</span></span><br><span class="line">    total_loss = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 因为评估模式模型参数不变, 因此反向传播不需要求导, 以加快计算</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        <span class="comment"># 与训练过程相同, 但是因为过程不需要打印信息, 因此不需要batch数</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, data_source.size(<span class="number">0</span>) - <span class="number">1</span>, bptt):</span><br><span class="line">            <span class="comment"># 首先还是通过通过get_batch获得验证数据集的源数据和目标数据</span></span><br><span class="line">            data, targets = get_batch(data_source, i)</span><br><span class="line">            <span class="comment"># 通过eval_model获得输出</span></span><br><span class="line">            output = eval_model(data)</span><br><span class="line">            <span class="comment"># 对输出形状扁平化, 变为全部词汇的概率分布</span></span><br><span class="line">            output_flat = output.view(-<span class="number">1</span>, ntokens)</span><br><span class="line">            <span class="comment"># 获得评估过程的总损失</span></span><br><span class="line">            total_loss += criterion(output_flat, targets).item()</span><br><span class="line">            <span class="comment"># 计算平均损失</span></span><br><span class="line">            cur_loss = total_loss / ((data_source.size(<span class="number">0</span>) - <span class="number">1</span>) / bptt)            </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回平均损失</span></span><br><span class="line">    <span class="keyword">return</span> cur_loss</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="第五步-进行训练和评估-包括验证以及测试-P55"><a href="#第五步-进行训练和评估-包括验证以及测试-P55" class="headerlink" title="第五步: 进行训练和评估(包括验证以及测试) P55"></a>第五步: 进行训练和评估(包括验证以及测试) P55</h4><ul>
+<li>模型的训练与验证代码分析:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先初始化最佳验证损失，初始值为无穷大</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">best_val_loss = <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义训练轮数</span></span><br><span class="line">epochs = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义最佳模型变量, 初始值为None</span></span><br><span class="line">best_model = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用for循环遍历轮数</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, epochs + <span class="number">1</span>):</span><br><span class="line">    <span class="comment"># 首先获得轮数开始时间</span></span><br><span class="line">    epoch_start_time = time.time()</span><br><span class="line">    <span class="comment"># 调用训练函数</span></span><br><span class="line">    train()</span><br><span class="line">    <span class="comment"># 该轮训练后我们的模型参数已经发生了变化</span></span><br><span class="line">    <span class="comment"># 将模型和评估数据传入到评估函数中</span></span><br><span class="line">    val_loss = evaluate(model, val_data)</span><br><span class="line">    <span class="comment"># 之后打印每轮的评估日志，分别有轮数，耗时，验证损失以及验证困惑度</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">89</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;| end of epoch &#123;:3d&#125; | time: &#123;:5.2f&#125;s | valid loss &#123;:5.2f&#125; | &#x27;</span></span><br><span class="line">          <span class="string">&#x27;valid ppl &#123;:8.2f&#125;&#x27;</span>.<span class="built_in">format</span>(epoch, (time.time() - epoch_start_time),</span><br><span class="line">                                     val_loss, math.exp(val_loss)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">89</span>)</span><br><span class="line">    <span class="comment"># 我们将比较哪一轮损失最小，赋值给best_val_loss，</span></span><br><span class="line">    <span class="comment"># 并取该损失下的模型为best_model</span></span><br><span class="line">    <span class="keyword">if</span> val_loss &lt; best_val_loss:</span><br><span class="line">        best_val_loss = val_loss</span><br><span class="line">        <span class="comment"># 使用深拷贝，拷贝最优模型</span></span><br><span class="line">        best_model = copy.deepcopy(model)</span><br><span class="line">    <span class="comment"># 每轮都会对优化方法的学习率做调整</span></span><br><span class="line">    scheduler.step()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出效果:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">| epoch   <span class="number">1</span> |   <span class="number">200</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">30.03</span> | loss  <span class="number">7.68</span> | ppl  <span class="number">2158.52</span></span><br><span class="line">| epoch   <span class="number">1</span> |   <span class="number">400</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.90</span> | loss  <span class="number">5.26</span> | ppl   <span class="number">193.39</span></span><br><span class="line">| epoch   <span class="number">1</span> |   <span class="number">600</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.90</span> | loss  <span class="number">4.07</span> | ppl    <span class="number">58.44</span></span><br><span class="line">| epoch   <span class="number">1</span> |   <span class="number">800</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.88</span> | loss  <span class="number">3.41</span> | ppl    <span class="number">30.26</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">1000</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.89</span> | loss  <span class="number">2.98</span> | ppl    <span class="number">19.72</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">1200</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.90</span> | loss  <span class="number">2.79</span> | ppl    <span class="number">16.30</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">1400</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.91</span> | loss  <span class="number">2.67</span> | ppl    <span class="number">14.38</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">1600</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.92</span> | loss  <span class="number">2.58</span> | ppl    <span class="number">13.19</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">1800</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.91</span> | loss  <span class="number">2.43</span> | ppl    <span class="number">11.32</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">2000</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.92</span> | loss  <span class="number">2.39</span> | ppl    <span class="number">10.93</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">2200</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.91</span> | loss  <span class="number">2.33</span> | ppl    <span class="number">10.24</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">2400</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.91</span> | loss  <span class="number">2.36</span> | ppl    <span class="number">10.59</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">2600</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.90</span> | loss  <span class="number">2.33</span> | ppl    <span class="number">10.31</span></span><br><span class="line">| epoch   <span class="number">1</span> |  <span class="number">2800</span>/ <span class="number">2981</span> batches | lr <span class="number">5.00</span> | ms/batch <span class="number">28.92</span> | loss  <span class="number">2.26</span> | ppl     <span class="number">9.54</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">| end of epoch   <span class="number">1</span> | time: <span class="number">90.01</span>s | valid loss  <span class="number">1.32</span> | valid ppl     <span class="number">3.73</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">| epoch   <span class="number">2</span> |   <span class="number">200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">29.08</span> | loss  <span class="number">2.18</span> | ppl     <span class="number">8.83</span></span><br><span class="line">| epoch   <span class="number">2</span> |   <span class="number">400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">2.11</span> | ppl     <span class="number">8.24</span></span><br><span class="line">| epoch   <span class="number">2</span> |   <span class="number">600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">1.98</span> | ppl     <span class="number">7.23</span></span><br><span class="line">| epoch   <span class="number">2</span> |   <span class="number">800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">2.00</span> | ppl     <span class="number">7.39</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">1000</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.94</span> | loss  <span class="number">1.94</span> | ppl     <span class="number">6.96</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">1200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.92</span> | loss  <span class="number">1.97</span> | ppl     <span class="number">7.15</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">1400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.94</span> | loss  <span class="number">1.98</span> | ppl     <span class="number">7.28</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">1600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.92</span> | loss  <span class="number">1.97</span> | ppl     <span class="number">7.16</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">1800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">1.92</span> | ppl     <span class="number">6.84</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">2000</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">1.96</span> | ppl     <span class="number">7.11</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">2200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.93</span> | loss  <span class="number">1.92</span> | ppl     <span class="number">6.80</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">2400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.94</span> | loss  <span class="number">1.94</span> | ppl     <span class="number">6.93</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">2600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.76</span> | loss  <span class="number">1.91</span> | ppl     <span class="number">6.76</span></span><br><span class="line">| epoch   <span class="number">2</span> |  <span class="number">2800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.75</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.89</span> | ppl     <span class="number">6.64</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">| end of epoch   <span class="number">2</span> | time: <span class="number">89.71</span>s | valid loss  <span class="number">1.01</span> | valid ppl     <span class="number">2.74</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">| epoch   <span class="number">3</span> |   <span class="number">200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.88</span> | loss  <span class="number">1.78</span> | ppl     <span class="number">5.96</span></span><br><span class="line">| epoch   <span class="number">3</span> |   <span class="number">400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.89</span> | ppl     <span class="number">6.59</span></span><br><span class="line">| epoch   <span class="number">3</span> |   <span class="number">600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.72</span> | ppl     <span class="number">5.58</span></span><br><span class="line">| epoch   <span class="number">3</span> |   <span class="number">800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.73</span> | ppl     <span class="number">5.63</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">1000</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.73</span> | loss  <span class="number">1.65</span> | ppl     <span class="number">5.22</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">1200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.74</span> | loss  <span class="number">1.69</span> | ppl     <span class="number">5.40</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">1400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.74</span> | loss  <span class="number">1.73</span> | ppl     <span class="number">5.66</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">1600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.75</span> | ppl     <span class="number">5.73</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">1800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.74</span> | loss  <span class="number">1.67</span> | ppl     <span class="number">5.33</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">2000</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.74</span> | loss  <span class="number">1.69</span> | ppl     <span class="number">5.41</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">2200</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.74</span> | loss  <span class="number">1.66</span> | ppl     <span class="number">5.26</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">2400</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.76</span> | loss  <span class="number">1.69</span> | ppl     <span class="number">5.43</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">2600</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.71</span> | ppl     <span class="number">5.55</span></span><br><span class="line">| epoch   <span class="number">3</span> |  <span class="number">2800</span>/ <span class="number">2981</span> batches | lr <span class="number">4.51</span> | ms/batch <span class="number">28.75</span> | loss  <span class="number">1.72</span> | ppl     <span class="number">5.58</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">| end of epoch   <span class="number">3</span> | time: <span class="number">89.26</span>s | valid loss  <span class="number">0.85</span> | valid ppl     <span class="number">2.33</span></span><br><span class="line">-----------------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>模型测试代码分析: <code>P56</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 我们仍然使用evaluate函数，这次它的参数是best_model以及测试数据</span></span><br><span class="line">test_loss = evaluate(best_model, test_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印测试日志，包括测试损失和测试困惑度</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;=&#x27;</span> * <span class="number">89</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;| End of training | test loss &#123;:5.2f&#125; | test ppl &#123;:8.2f&#125;&#x27;</span>.<span class="built_in">format</span>(</span><br><span class="line">    test_loss, math.exp(test_loss)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;=&#x27;</span> * <span class="number">89</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>输出效果:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">=========================================================================================</span><br><span class="line">| End of training | test loss  <span class="number">0.83</span> | test ppl     <span class="number">2.30</span></span><br><span class="line">=========================================================================================</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="小节总结"><a href="#小节总结" class="headerlink" title="小节总结"></a>小节总结</h3><ul>
+<li>学习了什么是语言模型:<ul>
+<li>以一个符合语言规律的序列为输入，模型将利用序列间关系等特征，输出一个在所有词汇上的概率分布.这样的模型称为语言模型.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>学习了语言模型能解决哪些问题:<ul>
+<li>1, 根据语言模型的定义，可以在它的基础上完成机器翻译，文本生成等任务，因为我们通过最后输出的概率分布来预测下一个词汇是什么.</li>
+<li>2, 语言模型可以判断输入的序列是否为一句完整的话，因为我们可以根据输出的概率分布查看最大概率是否落在句子结束符上，来判断完整性.</li>
+<li>3, 语言模型本身的训练目标是预测下一个词，因为它的特征提取部分会抽象很多语言序列之间的关系，这些关系可能同样对其他语言类任务有效果.因此可以作为预训练模型进行迁移学习.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>学习并实现了整个案例的五个步骤:<ul>
+<li>第一步: 导入必备的工具包</li>
+<li>第二步: 导入wikiText-2数据集并作基本处理</li>
+<li>第三步: 构建用于模型输入的批次化数据</li>
+<li>第四步: 构建训练和评估函数</li>
+<li>第五步: 进行训练和评估(包括验证以及测试)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>第一步: 导入必备的工具包<ul>
+<li>torchtext介绍: 它是torch工具中处理NLP问题的常用数据处理包.</li>
+<li>对文本数据进行处理, 比如文本语料加载, 文本迭代器构建等.</li>
+<li>包含很多经典文本语料的预加载方法. 其中包括的语料有：用于情感分析的SST和IMDB, 用于问题分类的TREC, 用于及其翻译的 WMT14， IWSLT，以及用于语言模型任务wikiText-2, WikiText103, PennTreebank.</li>
+<li>wikiText-2数据集的体量中等, 训练集共有600篇短文, 共208万左右的词汇, 33278个不重复词汇, OvV（有多少正常英文词汇不在该数据集中的占比）为2.6%，数据集中的短文都是维基百科中对一些概念的介绍和描述.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>第二步: 导入wikiText-2数据集并作基本处理<ul>
+<li>通过torchtext中的方法获得了train_txt, val_txt, test_txt.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>第三步: 构建用于模型输入的批次化数据<ul>
+<li>实现了批次化过程的第一个函数batchify, 用于将文本数据映射成连续数字, 并转换成指定的样式.</li>
+<li>实现了批次化过程的第二个函数get_batch, 用于获得每个批次合理大小的源数据和目标数据.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>第四步: 构建训练和评估函数<ul>
+<li>构建了用于训练的函数train()</li>
+<li>构建了用于评估的函数evaluate()</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>第五步: 进行训练和评估(包括验证以及测试)<ul>
+<li>首先实现了模型训练与验证过程, 并打印了结果.</li>
+<li>最后实现了模型的测试过程, 得到了不错的困惑度指标.</li>
+</ul>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Transformer/">Transformer</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/e5ad.html" title="Transformer学习笔记一：Positional Encoding（位置编码）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Transformer学习笔记一：Positional Encoding（位置编码）</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/34872.html" title="MATLAB代码"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MATLAB代码</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/04/Tranformer_chen.html" title="陈硕--Transformer-Attention Is All You Need"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-28</div><div class="title">陈硕--Transformer-Attention Is All You Need</div></div></a></div><div><a href="/2024/04/c3df.html" title="第二章 Transformer"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-28</div><div class="title">第二章 Transformer</div></div></a></div><div><a href="/2024/04/Tranformer3.html" title="Transformer学习笔记三：为什么Transformer要用LayerNorm&#x2F;Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-28</div><div class="title">Transformer学习笔记三：为什么Transformer要用LayerNorm&#x2F;Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">-.-</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-Transformer%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">第一章 Transformer背景介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Transformer%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 Transformer的诞生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Transformer%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Transformer的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Transformer%E7%9A%84%E5%B8%82%E5%9C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 Transformer的市场</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A-Transformer%E6%9E%B6%E6%9E%84%E8%A7%A3%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">第二章： Transformer架构解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%A4%E8%AF%86Transformer%E6%9E%B6%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 认识Transformer架构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9ATransformer%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">第三章：Transformer经典案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E4%BD%BF%E7%94%A8Transformer%E6%9E%84%E5%BB%BA%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 使用Transformer构建语言模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%B8%AA%E6%A1%88%E4%BE%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8F%AF%E5%88%86%E4%B8%BA%E4%BB%A5%E4%B8%8B%E4%BA%94%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.1.</span> <span class="toc-text">整个案例的实现可分为以下五个步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%AF%BC%E5%85%A5%E5%BF%85%E5%A4%87%E7%9A%84%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">第一步: 导入必备的工具包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E6%9E%84%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%A8%A1%E5%9E%8B%E8%BE%93%E5%85%A5%E7%9A%84%E6%89%B9%E6%AC%A1%E5%8C%96%E6%95%B0%E6%8D%AE-P50"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">第三步: 构建用于模型输入的批次化数据 P50</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9E%84%E5%BB%BA%E8%AE%AD%E7%BB%83%E5%92%8C%E8%AF%84%E4%BC%B0%E5%87%BD%E6%95%B0-P52"><span class="toc-number">3.1.1.3.</span> <span class="toc-text">第四步: 构建训练和评估函数 P52</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83%E5%92%8C%E8%AF%84%E4%BC%B0-%E5%8C%85%E6%8B%AC%E9%AA%8C%E8%AF%81%E4%BB%A5%E5%8F%8A%E6%B5%8B%E8%AF%95-P55"><span class="toc-number">3.1.1.4.</span> <span class="toc-text">第五步: 进行训练和评估(包括验证以及测试) P55</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E8%8A%82%E6%80%BB%E7%BB%93"><span class="toc-number">3.1.2.</span> <span class="toc-text">小节总结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/5212.html" title="电脑环境配置">电脑环境配置</a><time datetime="2024-04-28T15:17:31.425Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer_chen.html" title="陈硕--Transformer-Attention Is All You Need">陈硕--Transformer-Attention Is All You Need</a><time datetime="2024-04-28T15:17:31.423Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/c3df.html" title="第二章 Transformer">第二章 Transformer</a><time datetime="2024-04-28T15:17:31.421Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/7bc6.html" title="Transformer学习笔记四：ResNet（残差网络）">Transformer学习笔记四：ResNet（残差网络）</a><time datetime="2024-04-28T15:17:31.420Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer3.html" title="Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)">Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)</a><time datetime="2024-04-28T15:17:31.419Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By -.-</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b2"></script><script src="/js/main.js?v=4.14.0-b2"></script><script src="/js/tw_cn.js?v=4.14.0-b2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams'
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.14.0-b2"></script></div></div></body></html>

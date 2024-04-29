@@ -1,0 +1,1686 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>北邮地图 | 我的网站</title><meta name="author" content="-.-"><meta name="copyright" content="-.-"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="北邮地图                 :root {                --sushe-color: #d2a8ef;                --lvse-color: #62be9d;                --color-jiao_xue_lou: #cae270;                --colo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北邮地图">
+<meta property="og:url" content="http://example.com/2024/04/7ed0.html">
+<meta property="og:site_name" content="我的网站">
+<meta property="og:description" content="北邮地图                 :root {                --sushe-color: #d2a8ef;                --lvse-color: #62be9d;                --color-jiao_xue_lou: #cae270;                --colo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-04-28T15:17:31.400Z">
+<meta property="article:modified_time" content="2024-04-28T15:44:56.168Z">
+<meta property="article:author" content="-.-">
+<meta property="article:tag" content="北邮地图">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/04/7ed0.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '北邮地图',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-04-28 23:44:56'
+}</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="我的网站"></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">北邮地图</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-28T15:17:31.400Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-28T15:44:56.168Z" title="更新于 2024-04-28 23:44:56">2024-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>32分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="北邮地图"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>北邮地图</title>
+     <style>
+          :root {
+               --sushe-color: #d2a8ef;
+               --lvse-color: #62be9d;
+               --color-jiao_xue_lou: #cae270;
+               --color-shi_tang: #e36297;
+               --color-sports: #b7c2ee;
+               --entrance-color: #e2e8cd;
+               --jiashuqu-color: #09f5f5;
+               --color-li-fa: #bbf1d4; /* 理发店*/
+               /* 北边的路*/
+               --d: 20;
+               --a: 0.7;
+               --x_distance: var(--d);
+               --y_distance: 100;
+               --x_scale: var(--a);
+               --y_scale: var(--a);
+               --x_scale_little: var(--a);
+               --y_scale_little: var(--a);
+               /* 字体大小 */
+               --font_size_first: 10;
+               --font_size_second: 18;
+               --font_size_third: 5;
+
+          }
+
+
+
+          /* 1设置弹框 */
+          .modal {
+               display: none;
+               position: fixed;
+               z-index: 1;
+               left: 1px;
+               top: 30px;
+               width: 100%;
+               height: 300%;
+               overflow: auto;
+               background-color: rgba(0, 0, 0, 0.4);
+          }
+
+          .modal-content {
+               background-color: #fefefe;
+               margin: 10% auto;
+               padding: 20px;
+               border: 0 solid #888;
+               width: 50%;
+               border-radius: 15px;
+          }
+
+          .close {
+               color: #aaa;
+               float: right;
+               font-size: 28px;
+               font-weight: bold;
+               border-radius: 15px;
+          }
+
+          .close:hover,
+          .close:focus {
+               color: black;
+               text-decoration: none;
+               cursor: pointer;
+          }
+
+          /* 全局整体 */
+          .box {
+               color: black;
+               position: absolute;
+               letter-spacing: 0; /* 文字间水平距离 */
+               line-height: calc((var(--font_size_first) + 2 ) * 1px); /* 文字间垂直距离 */
+               display: flex;  /* 设置为flex布局 */
+               align-items: center; /* 垂直居中 */
+               justify-content: center; /* 水平居中 */
+               font-size: calc(var(--font_size_first) * 1px);
+               text-align: center;
+               top: 0px;
+               left: var(--d);
+               width: 300px;
+               height: 200px;
+          }
+
+          .beiyoukeji {
+               color: black;
+               background-color: #c75779;
+               z-index: 1;
+               left: calc((var(--x_distance) + 0)*var(--x_scale)*1px);
+               top: calc((var(--y_distance) + 100)*var(--y_scale)*1px);
+               width: calc(75 * var(--x_scale_little)*1px);
+               height: calc(130 * var(--y_scale_little)*1px);
+
+          }
+
+          .xue11 {
+               color: black;
+               background-color: var(--sushe-color);
+               left: calc((var(--x_distance) + 75)*var(--x_scale)*1px);
+               top: calc((var(--y_distance) + 100)*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little)*1px);
+               height: calc(45 * var(--y_scale_little)*1px);
+               z-index: 1;
+          }
+
+          .xue9 {
+               background-color: var(--sushe-color);
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((190 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(73 * var(--x_scale_little)*1px);
+               height: calc(45 * var(--y_scale_little)*1px);
+               z-index: 1;
+          }
+
+          .j9 {
+               background-color: var(--color-jiao_xue_lou);
+               z-index: 1;
+               left: calc((148 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((190 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(27 * var(--x_scale_little) * 1px);
+               height: calc(45 * var(--y_scale_little) * 1px);
+          }
+
+          .x10 {
+               background-color: var(--sushe-color);
+               z-index: 1;
+               left: calc((191 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((130 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(105 * var(--x_scale_little) * 1px);
+               height: calc(100 * var(--y_scale_little) * 1px);
+          }
+
+          .jg {
+               background-color: var(--sushe-color);
+               left: calc((var(--x_distance) + 350)*var(--x_scale)*1px);
+               top: calc((var(--y_distance) + 130)*var(--y_scale)*1px);
+               width: calc(95 * var(--x_scale_little)*1px);
+               height: calc(60 * var(--y_scale_little)*1px);
+               z-index: 1;
+          }
+          .zhong_you {
+               background-color: #eec0c0;
+               line-height: calc((var(--font_size_first) + 0 ) * 1px);
+               font-size: calc(var(--font_size_first) * 1px);
+               left: calc((var(--x_distance) + 390)*var(--x_scale)*1px);
+               top: calc((var(--y_distance) + 110)*var(--y_scale)*1px);
+               width: calc(55 * var(--x_scale_little)*1px);
+               height: calc(30 * var(--y_scale_little)*1px);
+               z-index: 1;
+          }
+
+          .xh {
+               letter-spacing: 0;
+               background-color: var(--sushe-color);
+               left: calc((var(--x_distance) + 350)*var(--x_scale)*1px);
+               top: calc((var(--y_distance) + 208)*var(--y_scale)*1px);
+               width: calc(93 * var(--x_scale_little)*1px);
+               height: calc(100 * var(--y_scale_little)*1px);
+               z-index: 1;
+          }
+
+          .x6 {
+               background-color: var(--sushe-color);
+               left: calc((460 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((130 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(45 * var(--x_scale_little) * 1px);
+               height: calc(100 * var(--y_scale_little) * 1px);
+               z-index: 1;
+          }
+
+          .x61 {
+               background-color: var(--sushe-color);
+               left: calc((505 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((130 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(65 * var(--x_scale_little) * 1px);
+               height: calc(37 * var(--y_scale_little) * 1px);
+               z-index: 1;
+          }
+
+          .x62 {
+               background-color: var(--sushe-color);
+               left: calc((505 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((195 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(35 * var(--x_scale_little) * 1px);
+               height: calc(35 * var(--y_scale_little) * 1px);
+               z-index: 1;
+          }
+
+          .xi_hong_dian1 {
+               background-color: red;
+               left: calc((500 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((165 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(17 * var(--x_scale_little) * 1px);
+               height: calc(17 * var(--y_scale_little) * 1px);
+               z-index: 1;
+          }
+
+
+          .zao_tang {
+               background-color: #7be7ad;
+               font-size: calc((var(--font_size_first) + 0 )* 1px);
+               line-height: calc(((--font_size_first) + 0 ) * 1px);
+               left: calc((458 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((245 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(28 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+               z-index: 1;
+          }
+
+          .ge_ge_li_fa_dian {
+               background-color: var(--color-li-fa);
+               left: calc((486 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((245 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_first) + 0 )* 1px);
+               line-height: calc(((--font_size_first) + 0 ) * 1px);
+               z-index: 1;
+          }
+
+          .tai_yang_neng_shui_fang {
+               background-color: #96e3ba;
+               left: calc((516 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((245 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+               font-size: calc(var(--font_size_third) * 1px);
+               line-height: calc((var(--font_size_third) + 7 ) * 1px); /* 文字间垂直距离 */
+          }
+
+          .guo_lu_fang {
+               background-color: #78d7db;
+               left: calc((546 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((245 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(28 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+               font-size: calc(var(--font_size_third) * 1px);
+               line-height: calc((var(--font_size_third) + 7 ) * 1px);
+          }
+
+          .jsq {
+               background-color: var(--jiashuqu-color);
+               left: calc((597 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((129 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(215 * var(--x_scale_little) * 1px);
+               height: calc(69 * var(--y_scale_little) * 1px);
+
+          }
+
+          .qing_nian_guo_yu {
+               line-height: 15px;
+               background-color: #6aacd5;
+               left: calc((710 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((170 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(102 * var(--x_scale_little) * 1px);
+               height: calc(28 * var(--y_scale_little) * 1px);
+
+          }
+
+          .ke_yan_lou {
+               background-color: var(--color-jiao_xue_lou);
+               left: calc((579 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((218 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(102 * var(--x_scale_little) * 1px);
+               height: calc(94 * var(--y_scale_little) * 1px);
+          }
+
+          .Jia_shu_qu2 {
+               background-color: var(--jiashuqu-color);
+               left: calc((712 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((218 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(102 * var(--x_scale_little) * 1px);
+               height: calc(83 * var(--y_scale_little) * 1px);
+          }
+          .qngy {
+               background-color: var(--sushe-color);
+               left: calc((0 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((238 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(45 * var(--x_scale_little) * 1px);
+               height: calc(90 * var(--y_scale_little) * 1px);
+               line-height: calc((var(--font_size_second) + 0 ) * 1px);
+
+          }
+
+          .lxs {
+               background-color: var(--sushe-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((255 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(41 * var(--y_scale_little) * 1px);
+               line-height: calc((var(--font_size_first) + 0 ) * 1px);
+          }
+
+          .xin_shi_tang {
+               background-color: var(--color-shi_tang);
+
+               left: calc((193 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((250 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(105 * var(--x_scale_little) * 1px);
+               height: calc(52 * var(--y_scale_little) * 1px);
+          }
+
+          .x13 {
+               background-color: var(--sushe-color);
+
+               left: calc((0 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((344 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(47 * var(--x_scale_little) * 1px);
+               height: calc(168 * var(--y_scale_little) * 1px);
+          }
+
+          .x5 {
+               background-color: var(--sushe-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((320 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(42 * var(--y_scale_little) * 1px);
+          }
+
+          .cd1 {
+               background-color: var(--lvse-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((373 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+
+          .x3 {
+               background-color: var(--sushe-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((435 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(40 * var(--y_scale_little) * 1px);
+          }
+
+          .x8 {
+               background-color: var(--sushe-color);
+
+               left: calc((192 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((320 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(108 * var(--x_scale_little) * 1px);
+               height: calc(42 * var(--y_scale_little) * 1px);
+          }
+
+          .cd2 {
+               background-color: var(--lvse-color);
+
+               left: calc((192 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((372 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(108 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+
+          .x4 {
+               background-color: var(--sushe-color);
+
+               left: calc((192 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((435 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(108 * var(--x_scale_little) * 1px);
+               height: calc(40 * var(--y_scale_little) * 1px);
+          }
+
+          .cd3 {
+               background-color: var(--lvse-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((478 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(45 * var(--y_scale_little) * 1px);
+
+          }
+
+          .cd4 {
+               background-color: var(--lvse-color);
+
+               left: calc((192 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((478 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(108 * var(--x_scale_little) * 1px);
+               height: calc(45 * var(--y_scale_little) * 1px);
+          }
+
+          .x1 {
+               background-color: var(--sushe-color);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((527 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(100 * var(--x_scale_little) * 1px);
+               height: calc(38 * var(--y_scale_little) * 1px);
+          }
+
+          .x2 {
+               background-color: var(--sushe-color);
+
+               left: calc((192 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((527 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(108 * var(--x_scale_little) * 1px);
+               height: calc(38 * var(--y_scale_little) * 1px);
+          }
+
+          .kd1 {
+               background-color: var(--sushe-color);
+
+               left: calc((342 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(37 * var(--x_scale_little) * 1px);
+               height: calc(74 * var(--y_scale_little) * 1px);
+          }
+
+          .mai_dang_lao {
+
+               background-color: var(--sushe-color);
+
+               left: calc((410 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(25 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_third) + 0 )* 1px);
+               line-height: calc(((--font_size_third) + 0 ) * 1px);
+          }
+
+          .wu_mei {
+               background-color: #eeb1b1;
+
+               left: calc((435 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(50 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+          }
+
+          .mlt {
+               background-color: #eaf2b6;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+
+               left: calc((480 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(27 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+          }
+
+          .shui_guo_dian {
+               background-color: #e35770;
+     
+               left: calc((507 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(27 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_third) + 0 )* 1px);
+               line-height: calc(((--font_size_third) + 0 ) * 1px);
+          }
+
+          .da_yin_dian {
+               background-color: #e26f47;
+               left: calc((534 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((327 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(39 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_third) + 0 )* 1px);
+               line-height: calc(((--font_size_third) - 5 ) * 1px);
+          }
+
+          .jiao_gong_can_ting {
+               background-color: var(--color-shi_tang);
+               left: calc((470 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((347 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(103 * var(--x_scale_little) * 1px);
+               height: calc(30 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_third) + 4 )* 1px);
+               line-height: calc(((--font_size_third) + 2 ) * 1px);
+          }
+
+          .xue_sheng_shu_wu {
+               background-color: #bbc660;
+               left: calc((490 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((377 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(83 * var(--x_scale_little) * 1px);
+               height: calc(22 * var(--y_scale_little) * 1px);
+
+          }
+
+          .xue_sheng_chu {
+               background-color: #efbaba;
+               left: calc((435 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((377 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(72 * var(--x_scale_little) * 1px);
+               height: calc(22 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_third) + 0 )* 1px);
+               line-height: calc(((--font_size_third) + 0 ) * 1px);
+          }
+
+          .lao_shi_tang {
+               background-color: var(--color-shi_tang);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((598 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((337 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(80 * var(--x_scale_little) * 1px);
+               height: calc(92 * var(--y_scale_little) * 1px);
+          }
+
+          .jsq2 {
+
+               background-color:  var(--jiashuqu-color);
+               left: calc((688 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((337 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(45 * var(--x_scale_little) * 1px);
+               height: calc(92 * var(--y_scale_little) * 1px);
+          }
+
+          .bwi {
+               background-color: #a4d45b;
+
+               left: calc((748 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((317 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(65 * var(--x_scale_little) * 1px);
+               height: calc(112 * var(--y_scale_little) * 1px);
+          }
+
+          .tug {
+               background-color: var(--sushe-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((457 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((427 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(112 * var(--x_scale_little) * 1px);
+               height: calc(140 * var(--y_scale_little) * 1px);
+          }
+
+          .lan_qiu_chang {
+               background-color: var(--color-sports);
+               left: calc((598 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((453 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(80 * var(--x_scale_little) * 1px);
+               height: calc(112 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_second) - 2 )* 1px);
+               line-height: calc((var(--font_size_second) + 0 ) * 1px);
+          }
+
+          .wqi {
+               background-color: #68e37b;
+
+               left: calc((678 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((453 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(112 * var(--y_scale_little) * 1px);
+          }
+
+          .pqi {
+               background-color: #67e2d0;
+
+
+               left: calc((708 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((453 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(112 * var(--y_scale_little) * 1px);
+          }
+
+          .x29 {
+               background-color: var(--sushe-color);
+
+               left: calc((758 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((453 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(55 * var(--x_scale_little) * 1px);
+               height: calc(112 * var(--y_scale_little) * 1px);
+          }
+
+          .ti_yu_guan {
+               background-color: var(--color-sports);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((707 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((600 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(77 * var(--x_scale_little) * 1px);
+               height: calc(126 * var(--y_scale_little) * 1px);
+          }
+
+          .ygr {
+               background-color: #deb476;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((784 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((600 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(37 * var(--x_scale_little) * 1px);
+               height: calc(189 * var(--y_scale_little) * 1px);
+          }
+
+          .cao_chang {
+               background-color: var(--color-sports);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((714 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((805 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(110 * var(--x_scale_little) * 1px);
+               height: calc(259 * var(--y_scale_little) * 1px);
+          }
+
+          .qmjs {
+               background-color: #ded684;
+               left: calc((714 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((750 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(53 * var(--x_scale_little) * 1px);
+               height: calc(49 * var(--y_scale_little) * 1px);
+          }
+
+          .dks {
+               background-color: var(--lvse-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((598 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((600 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(89 * var(--x_scale_little) * 1px);
+               height: calc(126 * var(--y_scale_little) * 1px);
+          }
+
+          .j1 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((348 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((670 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(222 * var(--x_scale_little) * 1px);
+               height: calc(56 * var(--y_scale_little) * 1px);
+          }
+
+          .j11 {
+               background-color: #cae270;
+
+
+               left: calc((348 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((648 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(48 * var(--x_scale_little) * 1px);
+               height: calc(92 * var(--y_scale_little) * 1px);
+          }
+
+          .j12 {
+               background-color: #cae270;
+
+               left: calc((523 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((648 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(46 * var(--x_scale_little) * 1px);
+               height: calc(92 * var(--y_scale_little) * 1px);
+          }
+
+          .vl {
+               background-color: #cae270;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((475 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((760 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(98 * var(--x_scale_little) * 1px);
+               height: calc(128 * var(--y_scale_little) * 1px);
+          }
+
+          .kxht {
+               background-color: #cae270;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((597 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((760 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(92 * var(--x_scale_little) * 1px);
+               height: calc(108 * var(--y_scale_little) * 1px);
+          }
+
+          .j2 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((351 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((950 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(209 * var(--x_scale_little) * 1px);
+               height: calc(58 * var(--y_scale_little) * 1px);
+          }
+
+          .j21 {
+               background-color: #cae270;
+
+               left: calc((351 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((920 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(45 * var(--x_scale_little) * 1px);
+               height: calc(115 * var(--y_scale_little) * 1px);
+          }
+
+          .j22 {
+               background-color: #cae270;
+
+               left: calc((515 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((920 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(45 * var(--x_scale_little) * 1px);
+               height: calc(115 * var(--y_scale_little) * 1px);
+          }
+
+          .bm {
+               background-color: var(--entrance-color);
+               font-size: calc((var(--font_size_first) + 5) * 1px);
+               line-height: calc((var(--font_size_first) + 5 ) * 1px);
+
+               left: calc((290 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((100 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(65 * var(--x_scale_little) * 1px);
+               height: calc(15 * var(--y_scale_little) * 1px);
+          }
+
+          .xi_men {
+               background-color: var(--entrance-color);
+               font-size: calc((var(--font_size_first) + 5) * 1px);
+               line-height: calc((var(--font_size_first) + 5 ) * 1px);
+               left: calc((0 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((782 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(20 * var(--x_scale_little) * 1px);
+               height: calc(90 * var(--y_scale_little) * 1px);
+          }
+
+          .dong_men {
+               background-color: var(--entrance-color);
+               font-size: calc((var(--font_size_first) + 5) * 1px);
+               line-height: calc((var(--font_size_first) + 5 ) * 1px);
+
+               left: calc((832 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((542 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(20 * var(--x_scale_little) * 1px);
+               height: calc(76 * var(--y_scale_little) * 1px);
+          }
+
+          .j4 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((640 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(222 * var(--x_scale_little) * 1px);
+               height: calc(55 * var(--y_scale_little) * 1px);
+          }
+
+          .j41 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((610 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(49 * var(--x_scale_little) * 1px);
+               height: calc(110 * var(--y_scale_little) * 1px);
+          }
+
+          .j42 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((250 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((610 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(49 * var(--x_scale_little) * 1px);
+               height: calc(110 * var(--y_scale_little) * 1px);
+          }
+
+          .j3 {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((75 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((920 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(225 * var(--x_scale_little) * 1px);
+               height: calc(110 * var(--y_scale_little) * 1px);
+          }
+          .j3_da_yin_dian {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_third) *2 ) * 1px);
+              font-size: calc(var(--font_size_third) *2* 1px);
+               left: calc((245 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((960 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(25 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+          .xyy {
+               background-color: #63e21a;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((79 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1065 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(220 * var(--x_scale_little) * 1px);
+               height: calc(40 * var(--y_scale_little) * 1px);
+          }
+
+          .zhong_men {
+               background-color: var(--entrance-color);
+               font-size: calc((var(--font_size_first) + 5) * 1px);
+               line-height: calc((var(--font_size_first) + 5 ) * 1px);
+
+               left: calc((308 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1090 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(60 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+          }
+
+          .nan_qu_chao_shi {
+               background-color: #2abd65;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((191 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1130 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(106 * var(--x_scale_little) * 1px);
+               height: calc(56 * var(--y_scale_little) * 1px);
+          }
+
+          .qmjs2 {
+               background-color: #2abd65;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((365 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1132 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(240 * var(--x_scale_little) * 1px);
+               height: calc(36 * var(--y_scale_little) * 1px);
+          }
+          .gan_xi_feng_ren_dian {
+               background-color: #e3d4c4;
+               line-height: calc((var(--font_size_second)  ) *0.7* 1px);
+               font-size: calc(var(--font_size_second)*0.7 * 1px);
+               left: calc((455 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1070 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(40 * var(--x_scale_little) * 1px);
+               height: calc(36 * var(--y_scale_little) * 1px);
+          }
+
+          .bwyey {
+               background-color: #2abd65;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+
+               left: calc((610 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1132 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(95 * var(--x_scale_little) * 1px);
+               height: calc(132 * var(--y_scale_little) * 1px);
+          }
+
+          .njuq {
+               background-color: var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((389 + var(--x_distance))*var(--x_scale)*1px);
+               top: calc((1059 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(300 * var(--x_scale_little) * 1px);
+               height: calc(48 * var(--y_scale_little) * 1px);
+          }
+
+          .njuq1 {
+               background-color:  var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((730 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1072 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(85 * var(--x_scale_little) * 1px);
+               height: calc(85 * var(--y_scale_little) * 1px);
+          }
+
+          .lsvw1 {
+               background-color: var(--lvse-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((75 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((760 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(106 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+          }
+
+          .lsvw2 {
+               background-color: var(--lvse-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((200 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((760 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(102 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+          }
+
+          .lsvw3 {
+               background-color: var(--lvse-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((75 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((830 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(106 * var(--x_scale_little) * 1px);
+               height: calc(65 * var(--y_scale_little) * 1px);
+          }
+
+          .lsvw4 {
+               background-color: var(--lvse-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((200 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((830 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(102 * var(--x_scale_little) * 1px);
+               height: calc(65 * var(--y_scale_little) * 1px);
+          }
+
+          .zxx {
+               background-color: #c3d1ef;
+               font-size: calc((var(--font_size_first) + 2 )* 1px);
+               line-height: calc(((--font_size_first) + 2 ) * 1px);
+               left: calc((235 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((795 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(36 * var(--x_scale_little) * 1px);
+               height: calc(67 * var(--y_scale_little) * 1px);
+          }
+
+          .xiao_xun_shi {
+               background-color: #b9cef5;
+               font-size: calc((var(--font_size_first) + 2 )* 1px);
+               line-height: calc(((--font_size_first) + 2 ) * 1px);
+               left: calc((175 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((799 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+          }
+
+          .ke_xin_wang_luo {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_first) + 5 ) * 1px);
+               font-size: calc((var(--font_size_first) + 4) * 1px);
+               left: calc((577 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((920 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(113 * var(--x_scale_little) * 1px);
+               height: calc(115 * var(--y_scale_little) * 1px);
+          }
+
+          .hong_tong_lou {
+               background-color: var(--color-jiao_xue_lou);
+               font-size: calc((var(--font_size_second) - 2 )* 1px);
+               line-height: calc((var(--font_size_second) - 2 ) * 1px);
+               left: calc(( var(--d))*var(--x_scale)*1px);
+               top: calc((565 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(47 * var(--x_scale_little) * 1px);
+               height: calc(65 * var(--y_scale_little) * 1px);
+          }
+
+          .xsl {
+               background-color: palevioletred;
+               left: calc((356 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((427 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(79 * var(--x_scale_little) * 1px);
+               height: calc(40 * var(--y_scale_little) * 1px);
+          }
+
+          .shi_guang_guang_chang {
+               background-color: palevioletred;
+               left: calc((356 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((529 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(79 * var(--x_scale_little) * 1px);
+               height: calc(38 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_second) - 0 )* 1px);
+               line-height: calc((var(--font_size_second) - 0 ) * 1px);
+          }
+
+          .xing_zheng_ban_gong_lou {
+               background-color: palevioletred;
+               /*line-height: calc((var(--font_size_second) + 2 ) * 1px);*/
+               /*font-size: calc(var(--font_size_second) * 1px);*/
+               left: calc((430 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((593 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(79 * var(--x_scale_little) * 1px);
+               height: calc(77 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_second) - 5 )* 1px);
+               line-height: calc(((--font_size_second) - 5 ) * 1px);
+          }
+
+          .cai_wu_chu {
+               background-color: palevioletred;
+               left: calc((350 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((593 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(70 * var(--x_scale_little) * 1px);
+               height: calc(25 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_second) - 7 )* 1px);
+               line-height: calc(((--font_size_second) + 2 ) * 1px);
+          }
+
+          .hou_qin_lou {
+               background-color: #a48ce8;
+               left: calc((350 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((617 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(70 * var(--x_scale_little) * 1px);
+               height: calc(25 * var(--y_scale_little) * 1px);
+               font-size: calc((var(--font_size_second) - 7 )* 1px);
+               line-height: calc(((--font_size_second) + 2 ) * 1px);
+          }
+
+          .bj {
+               background-color: #5dd0db;
+               left: calc((580 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1278 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(155 * var(--x_scale_little) * 1px);
+               height: calc(54 * var(--y_scale_little) * 1px);
+               line-height: calc((var(--font_size_second) - 1 ) * 1px);
+               font-size: calc((var(--font_size_second) - 1 )  * 1px);
+          }
+
+          .jsq3 {
+               background-color:  var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((460 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1278 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(115 * var(--x_scale_little) * 1px);
+               height: calc(54 * var(--y_scale_little) * 1px);
+          }
+
+          .jsq4 {
+               background-color:  var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+               font-size: calc(var(--font_size_second) * 1px);
+               left: calc((365 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1174 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(240 * var(--x_scale_little) * 1px);
+               height: calc(89 * var(--y_scale_little) * 1px);
+          }
+
+          .jsq5 {
+               background-color:  var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((80 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1180 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(175 * var(--x_scale_little) * 1px);
+               height: calc(78 * var(--y_scale_little) * 1px);
+          }
+
+          .sd {
+               background-color: #7e8def;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((255 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1180 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(43 * var(--x_scale_little) * 1px);
+               height: calc(78 * var(--y_scale_little) * 1px);
+          }
+          .xue_yuan_li_fa {
+               background-color: #e4f5bf;
+               line-height: calc((var(--font_size_third) + 5 ) * 1px);
+              font-size: calc(var(--font_size_third) * 2px);
+               left: calc((255 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1200 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(43 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+          }
+          .nan_men_shuo_guo {
+               background-color: #e3d6d3;
+               line-height: calc((var(--font_size_third) + 5 ) * 1px);
+              font-size: calc(var(--font_size_third) * 2px);
+               left: calc((255 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1183 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(43 * var(--x_scale_little) * 1px);
+               height: calc(20 * var(--y_scale_little) * 1px);
+          }
+          .jsq6 {
+               background-color: var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+              font-size: calc(var(--font_size_second) * 1px);
+               left: calc((80 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1265 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(183 * var(--x_scale_little) * 1px);
+               height: calc(90 * var(--y_scale_little) * 1px);
+          }
+
+          .jsq7 {
+               background-color: var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((260 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1305 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(97 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+
+          .hcp {
+               background-color: #765de7;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);
+              font-size: calc(var(--font_size_second) * 1px);
+               left: calc((362 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1305 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(52 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+
+           .nan_men {
+                background-color: var(--entrance-color);
+                font-size: calc((var(--font_size_first) + 0) * 1px);
+                line-height: calc((var(--font_size_first) - 5 ) * 1px);
+                left: calc((420 + var(--x_distance)) * var(--x_scale) * 1px);
+                top: calc((1345 + var(--y_distance))*var(--y_scale)*1px);
+                width: calc(60 * var(--x_scale_little) * 1px);
+                height: calc(20 * var(--y_scale_little) * 1px);
+          }
+
+          .ming_guang_lou {
+               background-color: var(--color-jiao_xue_lou);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((743 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1178 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(70 * var(--x_scale_little) * 1px);
+               height: calc(183 * var(--y_scale_little) * 1px);
+          }
+
+          .jsq8 {
+               background-color:  var(--jiashuqu-color);
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc(( var(--d))*var(--x_scale)*1px);
+               top: calc((1065 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(68 * var(--x_scale_little) * 1px);
+               height: calc(290 * var(--y_scale_little) * 1px);
+          }
+
+          .shang_pu {
+               background-color: #eebcf6;
+               line-height: calc((var(--font_size_second) + 2 ) * 1px);font-size: calc(var(--font_size_second) * 1px);
+               left: calc((80 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1130 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(110 * var(--x_scale_little) * 1px);
+               height: calc(50 * var(--y_scale_little) * 1px);
+          }
+          .sheng_shi_hao {
+               background-color: var(--color-li-fa);
+               line-height: calc((var(--font_size_second) *0.7 ) * 1px);
+              font-size: calc(var(--font_size_second) *0.6* 1px);
+               left: calc((40 + var(--x_distance)) * var(--x_scale) * 1px);
+               top: calc((1120 + var(--y_distance))*var(--y_scale)*1px);
+               width: calc(30 * var(--x_scale_little) * 1px);
+               height: calc(60 * var(--y_scale_little) * 1px);
+          }
+
+
+
+     </style>
+</head>
+
+<body>
+     <p style="color: white;font-size:500px;line-height: 1.0">.</p>
+     <p style="color: white;font-size:500px;line-height: 1.0">.</p>
+     <div class="box beiyoukeji"><p style="color: black">北邮科技酒店</p></div>
+     <div class="box xue11"><p style="color: black">学11</p></div>
+     <div class="box xue9"><p style="color: black">学9</p></div>
+     <div class="box j9"><p style="color: black">教9</p></div>
+     <div class="box x10"><p style="color: black">学10</p></div>
+     <div class="box jg"><p style="color: black">经管楼</p></div>
+
+
+
+     <div class="box xh"><p style="color: black">学生活动中心</p></div>
+     <div class="box x6"><p style="color: black">学6</p></div>
+     <div class="box x61"><p style="color: black"></p></div>
+     <div class="box x62"><p style="color: black"></p></div>
+     <button class="box xi_hong_dian1" onclick="openModal('modal6')">洗烘店</button>
+     <div id="modal6" class="modal"><div class="modal-content">
+         <span class="close" onclick="closeModal('modal6')">&times;&times;&times;</span>
+         <p>24小时开放</p>
+         <a target="_blank" rel="noopener" href="https://www.bupt.life/hong_xi_dian">具体详情</a>
+     </div></div>
+
+
+
+     <button class="box zao_tang" onclick="openModal('moda20')">澡堂</button>
+     <div id="moda20" class="modal"><div class="modal-content">
+         <span class="close" onclick="closeModal('moda20')">&times;&times;&times;</span>
+         <p>澡堂开放:15:00-23:30</p></div></div>
+
+
+     <button class="box ge_ge_li_fa_dian" onclick="openModal('modal19')">理发店</button>
+     <div id="modal19" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal19')">&times;&times;&times;</span>
+
+          <p>格格理发店 营业时间 08:00-20:00</p></div></div>
+
+
+     <div class="box tai_yang_neng_shui_fang"><a style="color: black" href="#" title="开放:08:00-22:00">水房</a></div>
+     <div class="box guo_lu_fang"><p style="color: black">锅炉房</p></div>
+     <div class="box jsq"><p style="color: black">家属区</p></div>
+     <div class="box qing_nian_guo_yu"><p style="color: black"></p></div>
+     <div class="box ke_yan_lou"><p style="color: black">科研楼</p></div>
+     <div class="box Jia_shu_qu2"><p style="color: black">家属区</p></div>
+     <div class="box qngy"><p style="color: black">青年公寓</p></div>
+     <div class="box lxs"><p style="color: black">留学生公寓</p></div>
+     <div class="box xin_shi_tang"><p style="color: black">新食堂</p></div>
+     <button class="box xin_shi_tang" onclick="openModal('modal7')">新食堂</button>
+<div id="modal7" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('modal7')">&times;&times;&times;</span>
+    <p>新食堂：待添加</p></div></div>
+
+     <div class="box x13"><p style="color: black">学13</p></div>
+     <div class="box x5"><p style="color: black">学5</p></div>
+     <div class="box cd1"><p style="color: black">草地</p></div>
+     <div class="box x3"><p style="color: black">学3</p></div>
+     <div class="box x8"><p style="color: black">学8</p></div>
+     <div class="box cd2"><p style="color: black">草地</p></div>
+     <div class="box x4"><p style="color: black">学4</p></div>
+     <div class="box cd3"><p style="color: black">草地</p></div>
+     <div class="box cd4"><p style="color: black">草地</p></div>
+     <div class="box x1"><p style="color: black">学1</p></div>
+     <div class="box x2"><p style="color: black">学2</p></div>
+     <div class="box kd1"><p style="color: black"></p></div>
+     <button class="box mai_dang_lao" onclick="openModal('modal8')">麦当劳</button>
+     <div id="modal8" class="modal"><div class="modal-content">
+         <span class="close" onclick="closeModal('modal8')">&times;&times;&times;</span>
+         <p>麦当劳 拟开业</p></div></div>
+
+
+     <button class="box wu_mei" onclick="openModal('modal9')">物美</button>
+     <div id="modal9" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal9')">&times;&times;&times;</span>
+          <p>物美 待添加</p></div></div>
+
+     <div class="box mlt"><p style="color: black"></p></div>
+     <div class="box shui_guo_dian"><a style="color: black" href="#" title="开放:14:00-16:00">水果店</a></div>
+     <div class="box da_yin_dian"><p style="color: black">打印店</p></div>
+
+     <button class="box jiao_gong_can_ting" onclick="openModal('modal10')">教工餐厅</button>
+     <div id="modal10" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal10')">&times;&times;&times;</span>
+          <p>教工餐厅开放:08:00-21:00</p></div></div>
+
+     <div class="box xue_sheng_shu_wu"><p style="color: black"></p></div> <!-- 学苑书屋-->
+     <div class="box xue_sheng_chu"><p style="color: black">学生处</p></div>
+
+     <button class="box lao_shi_tang" onclick="openModal('modal11')">老食堂</button>
+     <div id="modal11" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal11')">&times;&times;&times;</span>
+          <p>老食堂开放:08:00-21:00</p></div></div>
+
+     <div class="box jsq2"><p style="color: black">家属区</p></div>
+     <div class="box bwi"><p style="color: black">保卫处&基建处</p></div>
+
+
+     <button class="box tug" onclick="openModal('modal3')">图书馆</button>
+     <div id="modal3" class="modal">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('modal3')">&times;&times;&times;</span>
+               <p>图书馆放时间:08:00-21:00</p></div></div>
+
+
+
+     <button class="box lan_qiu_chang" onclick="openModal('modal1')">篮球场</button>
+     <div id="modal1" class="modal">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('modal1')">&times;&times;&times;</span>
+               <p>篮球场开放时间</p>
+               <a target="_blank" rel="noopener" href="https://www.bupt.life/lan_qiu_chang">具体详情</a>
+               <p>08:00-21:00</p></div></div>
+
+     <div class="box wqi"><p style="color: black">网球场</p></div>
+     <div class="box pqi"><p style="color: black">排球场</p></div>
+     <div class="box x29"><p style="color: black">学29</p></div>
+<!--     <div class="box ti_yu_guan"><p style="color: black">体育馆</p></div>-->
+     <button class="box ti_yu_guan" onclick="openModal('modal12')">体育馆</button>
+     <div id="modal12" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal12')">&times;&times;&times;</span>
+          <p>体育馆 待添加</p></div></div>
+
+
+     <button class="box ygr" onclick="openModal('modal13')">游泳馆</button>
+     <div id="modal13" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal13')">&times;&times;&times;</span>
+          <p>游泳馆 待添加</p></div></div>
+
+
+     <button class="box cao_chang" onclick="openModal('modal2')">操场</button>
+     <div id="modal2" class="modal">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('modal2')">&times;&times;&times;</span>
+               <p>操场开放时间:08:00-21:00</p></div></div>
+
+     <div class="box qmjs"><p style="color: black">全民健身</p></div>
+     <div class="box dks"><p style="color: black">大空地</p></div>
+     <div class="box j1"><p style="color: black">教一楼</p></div>
+     <div class="box j11"><p style="color: black"></p></div>
+     <div class="box j12"><p style="color: black"></p></div>
+     <div class="box vl"><p style="color: black">主楼</p></div>
+     <div class="box kxht"><p style="color: black">科学会堂</p></div>
+     <div class="box j2"><p style="color: black">教二楼</p></div>
+     <div class="box j21"><p style="color: black"></p></div>
+     <div class="box j22"><p style="color: black"></p></div>
+     <button class="box bm" onclick="openModal('modal5')">北门</button>
+     <div id="modal5" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;&times;&times;</span>
+          <p>北门已开</p>
+          <p>开放时间：06:00 - 24:00</p>
+         <a target="_blank" rel="noopener" href="https://cdn.staticaly.com/gh/yangmulao/blogcdn@master/img/20230331191350.png">北门最新图片</a>
+
+     </div></div>
+
+     <button class="box xi_men" onclick="openModal('modal4')">西门</button>
+     <div id="modal4" class="modal">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('modal4')">&times;&times;&times;</span>
+               <p>西门开放时间:早8:00 - 晚11:00</p></div></div>
+
+     <button class="box dong_men" onclick="openModal('modal14')">东门</button>
+     <div id="modal14" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal14')">&times;&times;&times;</span>
+          <p>东门 24小时开放</p>
+     </div></div>
+
+     <div class="box j4"><p style="color: black">教四楼</p></div>
+
+     <div class="box j41"><p style="color: black"></p></div>
+     <div class="box j42"><p style="color: black"></p></div>
+     <div class="box j3"><p style="color: black">教三楼</p></div>
+
+      <button class="box j3_da_yin_dian" onclick="openModal('modal20')">打印店</button>
+     <div id="modal20" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal20')">&times;&times;&times;</span>
+          <p>教三 打印店</p>
+          <p>营业时间:早8:00 - 晚9:30，节假日不休</p>
+          <p>价格和其他家一样</p>
+     </div></div>
+
+     <button class="box xyy" onclick="openModal('modal15')">校医院</button>
+     <div id="modal15" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal15')">&times;&times;&times;</span>
+          <p>校医院 待添加</p></div></div>
+
+
+     <button class="box zhong_men" onclick="openModal('modal16')">中门</button>
+     <div id="modal16" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal16')">&times;&times;&times;</span>
+          <p>中门开放时间:早8:00 - 晚11:00</p></div></div>
+
+
+     <div class="box nan_qu_chao_shi"><p style="color: black">超市</p></div>
+     <div class="box qmjs2"><p style="color: black"></p></div>  <!-- 家属南区 全民健身-->
+
+
+          
+
+     <div class="box bwyey"><p style="color: black">北邮幼儿园</p></div>
+     <div class="box njuq"><p style="color: black">家属区</p></div>  <!-- 家属区教二下边-->
+     <div class="box njuq1"><p style="color: black">家属区</p></div>  <!-- 家属区操场下面-->
+     <div class="box lsvw1"><p style="color: black"></p></div>
+     <div class="box lsvw2"><p style="color: black"></p></div>
+     <div class="box lsvw3"><p style="color: black"></p></div>
+     <div class="box lsvw4"><p style="color: black"></p></div>
+     <div class="box zxx"><p style="color: black">主席像</p></div>
+     <div class="box xiao_xun_shi"><p style="color: black">校训石</p></div>
+     <div class="box ke_xin_wang_luo"><p style="color: black">可信网络通信协同创新中心</p></div>
+     <div class="box hong_tong_lou"><p style="color: black">鸿通楼</p></div>
+     <div class="box xsl"><p style="color: black">小松林</p></div>
+     <div class="box shi_guang_guang_chang"><p style="color: black">时光广场</p></div>
+     <div class="box xing_zheng_ban_gong_lou"><p style="color: black">行政办公楼</p></div>
+     <div class="box cai_wu_chu"><p style="color: black">财务处</p></div>
+     <div class="box hou_qin_lou"><p style="color: black">后勤楼</p></div>
+     <div class="box bj"><p style="color: black">北交附属中学</p></div>
+     <div class="box jsq3"><p style="color: black">家属区</p></div>
+     <div class="box jsq4"><p style="color: black">家属区</p></div>
+     <div class="box jsq5"><p style="color: black">家属区</p></div>  <!-- 家属区商铺下面-->
+     <div class="box sd"><p style="color: black"></p></div>
+
+     <button class="box xue_yuan_li_fa" onclick="openModal('modal22')">理发</button>
+     <div id="modal22" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal22')">&times;&times;&times;</span>
+     <p>学苑造型理发店 营业时间：早8:00 - 晚10:00</p><p>男士35，女士40</p>
+     </div></div>
+
+      <button class="box nan_men_shuo_guo" onclick="openModal('modal23')">水果</button>
+     <div id="modal23" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal23')">&times;&times;&times;</span>
+        <p>北邮南区便民菜站</p>
+        <p>营业时间：早6:00-晚10:00</p>
+        <p>卖应季水果和日常水果</p>
+         <a target="_blank" rel="noopener" href="https://www.bupt.life/nan_men_shui_guo">具体详情</a>
+     </div></div>
+
+     <button class="box gan_xi_feng_ren_dian" onclick="openModal('modal21')">干洗店</button>
+     <div id="modal21" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal21')">&times;&times;&times;</span>
+          <p>可缝纫 干洗 换拉链 修电瓶车、自行车</p>
+          <a target="_blank" rel="noopener" href="https://www.bupt.life/nan_men_gan_xi_dian">具体详情</a>
+     </div></div>
+
+     <div class="box jsq6"><p style="color: black"></p></div>  <!-- 家属区商铺下下面1-->
+     <div class="box jsq7"><p style="color: black"></p></div>  <!-- 家属区南门左边2-->
+     <div class="box hcp"><p style="color: black"></p></div>
+     <div class="box nan_men"><p style="color: black">南门</p></div>
+     <div class="box ming_guang_lou"><p style="color: black">明光楼</p></div>
+     <div class="box jsq8"><p style="color: black"></p></div>   <!-- 左下边家属区-->
+     <div class="box shang_pu"><p style="color: black">商铺</p></div>
+
+
+     <button class="box sheng_shi_hao" onclick="openModal('modal18')">圣士豪</button>
+     <div id="modal18" class="modal"><div class="modal-content">
+          <span class="close" onclick="closeModal('modal18')">&times;&times;&times;</span>
+          <p>圣士豪理发店 营业时间：早10:00 - 晚9:30</p>
+            <a target="_blank" rel="noopener" href="https://www.bupt.life/sheng_shi_hao">具体详情</a>
+     </div></div>
+
+     <button class="box zhong_you" onclick="openModal('modal24')">快递</button>
+     <div id="modal24" class="modal">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('modal24')">&times;&times;&times;</span>
+               <p>中邮快递</p> <p>营业时间:早8:00-晚8:00</p>
+          </div></div>
+
+
+     <script>
+          // 1打开弹窗
+          function openModal(modalId) { var modal = document.getElementById(modalId); modal.style.display = "block"; }
+          // 2关闭弹窗
+          function closeModal(modalId) { var modal = document.getElementById(modalId); modal.style.display = "none"; }
+          // 3点击模态框外部区域也可以关闭弹窗
+          window.onclick = function (event) {
+               var modals = document.getElementsByClassName("modal");
+               for (var i = 0; i < modals.length; i++) { if (event.target === modals[i]) { modals[i].style.display = "none"; } }
+          }
+     </script>
+</body>
+
+</html></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8C%97%E9%82%AE%E5%9C%B0%E5%9B%BE/">北邮地图</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/hexo_build.html" title="Hexo个人博客搭建"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo个人博客搭建</div></div></a></div><div class="next-post pull-right"><a href="/2024/04/my_paper.html" title="自己的文章"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自己的文章</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">-.-</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/5212.html" title="电脑环境配置">电脑环境配置</a><time datetime="2024-04-28T15:17:31.425Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer_chen.html" title="陈硕--Transformer-Attention Is All You Need">陈硕--Transformer-Attention Is All You Need</a><time datetime="2024-04-28T15:17:31.423Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/c3df.html" title="第二章 Transformer">第二章 Transformer</a><time datetime="2024-04-28T15:17:31.421Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/7bc6.html" title="Transformer学习笔记四：ResNet（残差网络）">Transformer学习笔记四：ResNet（残差网络）</a><time datetime="2024-04-28T15:17:31.420Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/Tranformer3.html" title="Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)">Transformer学习笔记三：为什么Transformer要用LayerNorm/Batch Normalization &amp; Layer Normalization （批量&amp;层标准化)</a><time datetime="2024-04-28T15:17:31.419Z" title="发表于 2024-04-28 23:17:31">2024-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By -.-</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b2"></script><script src="/js/main.js?v=4.14.0-b2"></script><script src="/js/tw_cn.js?v=4.14.0-b2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams'
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.14.0-b2"></script></div></div></body></html>
