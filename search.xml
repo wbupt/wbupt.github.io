@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>英文写作</title>
+      <link href="/2024/07/english_learn.html"/>
+      <url>/2024/07/english_learn.html</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="英文写作"><a href="#英文写作" class="headerlink" title="英文写作"></a>英文写作</h1><hr><p><code>英文润色</code>：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Below is a paragraph from an academic paper. Polish the writing to meet the academic style,improve the spelling, grammar, clarity, concision and overall readability. When necessary, rewrite the whole sentence. Furthermore, list all modification and explain the reasons to do so in markdown table. Paragraph ：</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><code>学术-中文转英文</code>:</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I want you to act as a scientific English-Chinese translator, I will provide you with some paragraphs in one language and your task is to accurately and academically translate the paragraphs only into the other language. Do not repeat the original provided paragraphs after translation. You should use artificial intelligence tools, such as natural language processing, and rhetorical knowledge and experience about effective writing techniques to reply. I&#x27;ll give you my paragraphs as follows, tell me what language it is written in, and then translate：</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 英文写作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>KAN网络</title>
       <link href="/2024/07/kan_model.html"/>
       <url>/2024/07/kan_model.html</url>
